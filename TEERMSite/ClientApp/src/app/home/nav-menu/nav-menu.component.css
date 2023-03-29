@@ -1,0 +1,83 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  
+}
+
+button.navbar-toggler{
+  background-color: white;
+}
+
+.nav-div{
+  background-color: #3B3C93;
+  width: 100%;
+}
+
+ul li .nav-link {
+  color:white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  background-color: #3B3C93;
+  border: none;
+
+}
+.dropdown:hover .dropdown-menu li a:hover {
+  background-color: yellow;
+  color : blue;
+}
+
+.dropdown:hover .dropdown-menu li a:focus{
+  background-color: white;
+  color :#3B3C93
+}
+
+
+.dropdown:hover .dropdown-menu li a{
+  color : white;
+  text-align: left;
+}
+@keyframes dropmenu {
+  0% { height: 0px;}
+  100% { height: min-content;}
+}
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .nav-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #3B3C93;
+  }
+}
+@media (max-width:600px) {
+  html {
+    font-size : 14px;
+  }
+  .nav-div{
+    display: flex;
+    flex-direction: column;
+    background-color: #3B3C93;
+    width: 100%;
+  }
+  .navbar-nav{
+    padding-left: 20px;
+  }
+  
+}
+
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+ul li a{
+    text-align: left;
+    font-size: 18px;
+}

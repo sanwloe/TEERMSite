@@ -1,0 +1,85 @@
+<header>
+  <nav class="navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+    <div class="nav-div">
+      <a class="navbar-brand" [routerLink]="['/']"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar navbar-collapse collapse d-sm-inline-flex justify-content-center"
+        [ngClass]="{ show: isExpanded }">
+
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/index']">{{ 'index.nav-menu.main' | transloco }}</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="dropdown nav-item">
+              <a class="nav-link" id="dropdownMenuButton"
+                aria-expanded="false">
+                {{ 'index.nav-menu.orgcommittee' | transloco }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuli">
+                <li><a class="dropdown-item" [routerLink]="['management-team']">{{ 'index.nav-menu.submenu.orgcommittee.1' | transloco }}</a></li>
+                <li><a class="dropdown-item" [routerLink]="['program-comittee']">{{ 'index.nav-menu.submenu.orgcommittee.2' | transloco }}</a></li>
+                <li><a class="dropdown-item" [routerLink]="['organizational-committee']">{{ 'index.nav-menu.submenu.orgcommittee.3' | transloco }}</a></li>
+              </ul>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="dropdown nav-item">
+              <a class="nav-link" id="dropdownMenuli" aria-expanded="false">
+                {{ 'index.home.historyconf' | transloco }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuli">
+                <li><a class="dropdown-item" [routerLink]="['conferencehistory/history']">{{ 'index.nav-menu.submenu.historyconf.1' | transloco }}</a></li>
+                <li><a class="dropdown-item" [routerLink]="['conferencehistory/funders']">{{ 'index.nav-menu.submenu.historyconf.2' | transloco }}</a></li>
+
+
+              </ul>
+            </a>
+          </li>
+          
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['thematicdirections']">{{ 'index.nav-menu.thematicdirections' | transloco }}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="dropdown nav-item">
+              <a class="nav-link" id="dropdownMenuButton"
+                aria-expanded="false">
+                {{ 'index.nav-menu.publicationrequirements' | transloco }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuli">
+                <li><a class="dropdown-item" [routerLink]="['publicationrequirements']">{{ 'index.nav-menu.submenu.publicationrequirements.1' | transloco }}</a></li>
+                <li><a class="dropdown-item" [routerLink]="['requirementstheses']">{{ 'index.nav-menu.submenu.publicationrequirements.2' | transloco }}</a></li>
+                
+                
+              </ul>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['conferenceprogram']">{{'index.nav-menu.confprogram' | transloco}}</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['importantdates']">{{ 'index.nav-menu.importantdates' | transloco }}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["/auth"]'> {{ 'index.home.registration' | transloco }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

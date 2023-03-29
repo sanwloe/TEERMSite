@@ -1,0 +1,13 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+p{
+    font-size: 26px;
+}
+li{
+    font-size: 22px;
+}

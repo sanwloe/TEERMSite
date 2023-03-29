@@ -1,0 +1,33 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-position: inside;
+    list-style-type: none;
+    text-align: center;
+}
+
+figcaption{
+    padding-left: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+figure{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    height: 400px;
+    width: 270px;
+}
+
+@media (max-width:600px) {
+    img {
+        width: 300px;
+        height: 400px;
+      }
+    figure{
+        display: block;
+    }
+}

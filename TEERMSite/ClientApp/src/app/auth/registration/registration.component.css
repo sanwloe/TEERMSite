@@ -1,0 +1,15 @@
+div label,input,div{
+    padding : 10px;
+}
+
+
+div button{
+    padding-bottom : 10px;
+    margin-bottom: 10px;
+}
+
+.formsign{
+    border-radius: 5%;
+    background-color: aliceblue;
+    width: 33%;
+}

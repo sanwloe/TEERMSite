@@ -1,0 +1,48 @@
+<div style="position: absolute; display: flex;height: 100%;width:100%">
+    <form style="display: flex;height: 100%;width: 100%;align-items: center;justify-content: center;">
+        <div class="formsign" style="display: flex;flex-direction: column;width: 50%;">
+            <!---->
+            <input emailvalid type="email" class="form-control is-valid" id="emailvalid" placeholder="{{ 'auth.register.email' | transloco }}"
+                required>
+            <div class="valid-feedback">
+                {{ 'auth.register.ok' | transloco }}
+            </div>
+            <!---->
+            <!---->
+            <input namevalid type="text" class="form-control is-valid" id="namevalid" placeholder="{{ 'auth.register.name' | transloco }}"
+                required>
+            <div class="valid-feedback">
+                {{ 'auth.register.ok' | transloco }}
+            </div>
+            <!---->
+            <!---->
+            <input numbervalid type="tel" class="form-control is-valid" id="phonenumber" placeholder="{{ 'auth.register.phone' | transloco }}"
+                required>
+            <div class="valid-feedback">
+                {{ 'auth.register.ok' | transloco }}
+            </div>
+            <!---->
+            <!---->
+            <input type="text" class="form-control is-valid" id="nameorg" placeholder="{{ 'auth.register.nameoforganiz' | transloco }}" required>
+            <div class="valid-feedback">
+                {{ 'auth.register.ok' | transloco }}
+            </div>
+            <!---->
+            <!---->
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="validatedCustomFile">
+                <label class="custom-file-label" for="validatedCustomFile">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            {{ 'auth.register.selectfile' | transloco }}
+                        </font>
+                    </font>
+                </label>
+            </div>
+            <!---->
+            <br>
+            <button class="btn btn-primary" type="submit">Реєстрація!</button>
+            <a [routerLink]="['/index']" >Back</a>
+        </div>
+    </form>
+</div>

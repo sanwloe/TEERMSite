@@ -1,0 +1,24 @@
+h2{
+    text-align: center;
+}
+
+h5{
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+
+}
+img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+li{
+    padding-left : 10px;
+    padding-bottom: 10px;
+}

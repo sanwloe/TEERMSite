@@ -1,0 +1,161 @@
+{
+    "index" : 
+    {
+        "progcomite" : "Program Committee",
+        "socnet": {
+            "seach": "Search : ",
+            "oursocnet": "Our social networks : ",
+            "lang": "Site language :",
+            "navigate": "Navigate",
+            "logotext1" : "International scientific and practical conference",
+            "logotext2" : "Theoretical and Experimental Research in Materials Science and Mechanical Engineering"
+
+        },
+        "nav-menu": {
+            "orgcommittee": "Comittees",
+            "main": "Main",
+            "thematicdirections": "Thematic Directions",
+            "publicationrequirements": "Publication Requirements",
+            "confprogram": "Conference Program",
+            "importantdates": "Important Dates",
+            "submenu" : {
+                "historyconf.1" : "History",
+                "historyconf.2" : "Funders",
+                "orgcommittee.1" : "Management Team",
+                "orgcommittee.2" : "Program Committee",
+                "orgcommittee.3" : "Organizational Committee",
+                "publicationrequirements.1" : "Requirements for registration of articles",
+                "publicationrequirements.2" : "Requirements for theses"              
+            }
+        },
+        "home": {
+            "registrdate": "Time left to register : \n {{days}} days, {{hours}} hours , {{minutes}} minutes , {{seconds}} seconds",
+            "historyconf": "History of conferences",
+            "registration": "Registration / Log-in",
+            "co-organizers": "Co-organizers",
+            "ourPartnersAndPromoter": "Our partners and Promoters",
+            "days" : "Days",
+            "hours": "Hours",
+            "minutes" : "Minutes",
+            "seconds" : "Seconds",
+            "time" : "Time left for registration : ",
+            "meta" : "The purpose of the conference is the development of science, the exchange of ideas and scientific and technical information about research conducted by scientists, students and young scientists. Special attention is planned to be paid to manufacturing technologies and research of operational properties of products using composite, ceramic, polymer and granulometric materials. Exchange of information, experience and deepening of knowledge, first of all, of young scientists, graduate students and specialists in the field of modern problems and methodology of structurally heterogeneous materials is envisaged. Considerable attention will be paid to the use of computer technologies in modeling and researching the structural and operational characteristics of modern construction materials. The features and mechanisms of the introduction of the latest resource- and energy-saving technologies are analyzed, taking into account modern forms of production."
+        },
+        "thematicdirections" : {
+            "1" : "Advanced materials for industrial use..",
+            "2" : "Modeling of materials, simulation and optimization.",
+            "3" : "Problems of mechanics of plasticity and destruction of materials.",
+            "4" : "Micromechanics, effective properties of auxetics.",
+            "5" : "Mechanical engineering and automation technology in mechanical engineering.",
+            "6" : "Green energy, bio- and medical materials.",
+            "7" : "Percolation and fractal aspects of modern materials science.",
+            "8" : "Smart production and industry - Industry 5."
+        },
+        "importantdates" : {
+            "date" : "Important Dates : ",
+            "1" : "I. For participants who plan to participate in the conference remotely:",
+            "2" : "II. For participants planning to personally participate in the work of the conference:",
+            "1.1" : "05/23/2023 – deadline for submission of report abstracts and payment of the organizational fee;",
+            "1.2" : "25.05. 2023 – approval and distribution of the conference program;",
+            "1.3" : "05/26/2023 – distribution of electronic materials of the conference;",
+            "1.4" : "29.05. 2023. 12:00 opening of the conference. Plenary meeting;",
+            "1.5" : "30-05 - 31.05. 2023 work in sections;",
+            "1.6" : "01.06.2023 closing of the conference.",
+            "2.info" : "05.05.2023 - the deadline for accepting applications for personal participation in the conference, the deadline for booking seats at the \"Prolisok\" recreation center, website: - www.prolisok.info, Tel: +38 097 212 5061; +38 095 554 6474. (Reservations at the recreation center are made personally by each participant of the conference. The term of stay at the recreation center can be increased if desired and include medical services in addition to rest).",
+            "2.1" : "05.05.2023 - the deadline for accepting applications for personal participation in the work of the conference;",
+            "2.2" : "05/23/2023 – deadline for abstracts of reports and payment of the organizational fee;",
+            "2.3" : "25.05. 2023 – approval and distribution of the conference program;",
+            "2.4" : "05/29/2023 09-10 - registration of conference participants, 10-11-30 familiarization with the present LNTU and excursion;",
+            "2.5" : "29.05. 2023. 12:00 opening of the conference. Plenary meeting;",
+            "2.6" : "29.05. 2023 3:00 p.m. - departure of the participants to the boarding house \"Prolisok\";",
+            "2.7" : "30-05 - 31.05. 2023 work in sections;",
+            "2.8" : "01.06.2023 closing of the conference."
+        },
+        "management-team" : {
+            "header" : "Management Team",
+            "header2" : "Co-chairs of the Organization",
+            "1" : "Rector of Lutsk National Technical University, doctor of economic sciences, professor",
+            "1.name" : "Iryna Mykhaylivna Vakhovich",
+            "2" : "director of the Western Scientific Center of the National Academy of Sciences of Ukraine, doctor of physical and mathematical sciences, professor, academician of the National Academy of Sciences of Ukraine",
+            "2.name" : "Nazarchuk Zinovii Teodorovych",
+            "3" : "Director of the Institute of Materials Science Problems of the National Academy of Sciences of Ukraine, Doctor of Technical Sciences, Professor, Corresponding Member of the National Academy of Sciences of Ukraine",
+            "3.name" : "Bagliuk Gennadiy Anatoliyovych",
+            "4" : "deputy director for scientific work of the Institute of Superhard Materials of the National Academy of Sciences of Ukraine, doctor of technical sciences, professor, corresponding member of the National Academy of Sciences"
+            ,"4.name" : "Serhii Anatoliyovych Klymenko"
+        },
+        "orgcommittee":{
+            "header" : "Organizational committee",
+            "header2" : "Deputies",
+            "header3" : "Committee Members",
+            "1" : "The head of the organizing committee is Doctor of Technical Sciences, Professor Viktor Rud",
+            "2" : "Doctor of Economics, Professor Olena Lyutak",
+            "3" : "Ph.D.Associate professor Mykola Melnychuk",
+            "4" : "Professor Valentina Tkachuk",
+            "5" : "Ph.D.Associate professor Ihor Murovany",
+            "6" : "Ph.D.Associate professor Yulia Povstyana",
+            "7" : "Ph.D.Associate professor Sergiy Shymchuk",
+            "8" : "Ph.D.Associate professor Oleksandr Klymenko",
+            "9.1" : "Scientific secretary of the conference",
+            "9.2" : "Ph.D.Associate professor Lyudmila Samchuk",
+            "10" : "Ph.D., Associate professor Dmytro Husachuk",
+            "11" : "Ph.D., Associate Professor Nataliya Zaychuk",
+            "12" : "Ph.D., Associate professor Vitaly Kashytskyi",
+            "13" : "Ph.D., Associate Professor Yuliya Melnyk",
+            "14" : "Ph.D., Associate professor Oksana Sadova",
+            "15" : "Ph.D., Associate professor Yuriy Feshchuk",
+            "16" : "Ph.D., Associate professor Tetyana Furs"
+        },
+        "funders" : {
+            "header1" : "The initiators of the conference in the specified format were",
+            "name1" : "Skorokhod Valeriy Volodymyrovych",
+            "name2" : "Lebedyev Anatoliy Oleksiyovych",
+            "name3" : "Volodymyrovych Viktor Bozhydarnyk",
+            "name4" : "Stern Mykhailo Borisovych",
+            "name5" : "RUD VIKTOR DMYTROVYCH",
+            "descr1" : "belongs to the generation of outstanding scientists in the field of modern materials science, whose activities coincided with the creation in 1955 and the establishment of the Institute of Problems of Materials Science of the National Academy of Sciences of Ukraine. Understanding the exceptional importance of knowledge of the essence of technological processes of powder metallurgy for the development of materials for modern technology, V.V. Skorokhod devoted his scientific research to the creation of the fundamental foundations of these processes and the substantiation of engineering methods of their management. The works of the scientist in the field of theoretical materials science and the scientific foundations of powder metallurgy had a decisive influence and continue to influence the level of material science developments and are well-deserved recognition among material scientists, and the pedagogical activity of Valery Volodymyrovych certainly determined the high quality of materials science education in higher education. Valery Volodymyrovych Skorokhod was born on July 28, 1934 in Nikopol, Dnipropetrovsk region, in an intelligent teaching family. In 1951, after graduating from Kovel secondary school No. 3, he entered the Kyiv Polytechnic Institute at the metallurgical faculty and, having graduated in 1956, received a diploma with honors in the specialty \"Metalology and heat treatment of metals\". V.V. Skorokhod is the author of more than 465 scientific works, including 8 monographs and 30 inventions and patents. Already in his first scientific works, devoted to the theoretical study of the physical and rheological properties of powder heterogeneous materials taking into account their real structure, the problems of description and interpretation of these properties are solved on the basis of fundamental studies of the physics of metals and the mechanics of deformation of solid bodies. Since 1981, V.V. Skorokhod is a valid member of the International Institute of Sintering Science at the Serbian Academy of Sciences and Arts. In 1985, he was elected a corresponding member of the National Academy of Sciences of Ukraine in the specialty \"Materials Science\", in 1990 - a full member in the specialty \"Materials Science and Powder Metallurgy\". In 1987, the scientist was awarded the State Prize of Ukraine in the field of science and technology for the development of special pseudoalloys, and in 1995 he was awarded the honorary title of \"Honored Worker of Science and Technology of Ukraine\". V.V. Skorokhod is an honorary participant of the World Round Table Conferences on Sintering, an honorary member of the Serbian Academy of Sciences and Arts (1998), an honorary member of the Polish Ceramic Society, he was awarded the International Prize named after Ya.I. Frenkel, Since 1981, under his leadership, the international seminar \"Rheological models and processes of deformation of powder and composite materials\" has been operating, the work of which contributed to the formation of a new direction - the mechanics of deformable powder bodies. Versatile scientist, talented organizer, V.V. Skorokhod founded a scientific school, the work of which is the foundation of the modern development of various technologies. Among his students are more than 10 doctors and 30 candidates of sciences.",
+            "descr2" : "The creative path of Academician of the National Academy of Sciences of Ukraine, Doctor of Technical Sciences, Professor Anatoly Oleksiyovych Lebedev is inextricably linked with the Institute of Strength Problems named after H.S. Pisarenko of the National Academy of Sciences of Ukraine, where he worked as a chief researcher. The main tasks of the Institute are theoretical and experimental studies of the criteria for the strength of materials and the load-bearing capacity of structural elements operating in extreme conditions. A.A. Lebedev is a scientist with a wide range of scientific interests in the field of mechanics of deformed solids and strength of structures. His name is associated with the formation of physically based concepts of the equations of state of materials of various classes, taking into account temperature, load modes, the nature of structure transformation and other factors. He is the author of more than 550 scientific publications, including 22 monographs, and has more than 50 inventions. In 2001, he was awarded the title of honorary doctor of NTUU \"KPI\". Under his leadership, 40 candidates and 7 doctors of science were trained. A.A. Lebedev - head of the Scientific Council on the problem of \"Mechanics of a deformable solid body\" at the Department of Mechanics of the National Academy of Sciences of Ukraine, deputy chairman of the National Committee for Theoretical and Applied Mechanics of Ukraine, member of the National Committee for Theoretical and Applied Mechanics of the Russian Federation, the New York Academy of Sciences, the European Structural Integrity Society (ESIS), the American Society of Metals (ASM International), the Technical Committee of the European Association for Experimental ( EURASEM), an INTAS expert, a valid member of the Russian Academy for Quality Problems and the St. Petersburg Academy for Strength Problems.",
+            "descr3" : "in 1970, he graduated from Lviv University, where he obtained a higher education in the specialty \"mechanics\". In 1974, he defended his thesis for the award of the scientific degree of Candidate of Physical and Mathematical Sciences. Scientific-pedagogical activity began in Lutsk. The future rector worked in the following positions: senior laboratory technician of the State University named after Franka, assistant, senior lecturer, dean, acting director of the general technical faculty of the Lutsk branch of the Lviv Polytechnic Institute, director of the Lutsk branch of the Lviv Polytechnic Institute, rector of the Lutsk Polytechnic Institute, rector of the Lutsk State Technical University, rector of the national university. Viktor Volodymyrovych headed the university since 1977, which is a record for Ukraine. Thanks to his multifaceted pedagogical and organizational talent, Lutsk National Technical University turned into one of the leading higher technical educational institutions of Ukraine. Honored worker of public education of Ukraine, full member of the Academy of Engineering Sciences, academician of the Academy of Economic Cybernetics, corresponding member of the Academy of Management and Entrepreneurship, academician of the Academy of Sciences of the Higher School of Ukraine. For his significant contribution to the organization and development of science, he was awarded the Order of Merit III, II degrees, and the title \"Honored Worker of Public Education of Ukraine\"."
+            ,"vidlntu" : "from Lutsk National Technical University"
+            ,"descr4" : "The organization of the first International scientific and practical conference \"Theoretical and experimental research in modern technologies of materials science and mechanical engineering\" was commissioned by the Institute of Problems of Materials Science of the National Academy of Sciences of Ukraine named after I.M. Frantsevich"
+        },
+        "requirements-theses" : {
+            "header1" : "General requirements for theses",
+            "header2" : "The structure of theses",
+            "1.1" : "1. Theses are drawn up on A4 paper (210x297 mm) (save the file in *.doc or *.docx format).",
+            "1.2" : "2. Orientation: book-oriented.",
+            "1.3" : "3. Margins: all sides 2 cm.",
+            "1.4" : "4. Paragraph: 1.25 cm.",
+            "1.5" : "5. Line spacing: single.",
+            "1.6" : "6. Font size: pin: 12 \"Times New Roman\".",
+            "1.7" : "7. Transfer arrangement: not used.",
+            "1.8" : "8. Page numbering: not used.",
+            "1.9" : "9. Figures and tables: should be submitted immediately after the text where they are mentioned for the first time or on the next page. All figures must be accompanied by captions, and tables must have titles (orientation of table titles is right). Table text font size: pin: 10-12 \"Times New Roman\". The landscape version of figures and tables is not used. Drawings must be presented in graphic editors (*.bmp, *.jpg, *.tif, *.cdr). Drawings created in the Word editor are not accepted.",
+            "1.10" : "10. Formulas: internal formula editor in Microsoft Word.",
+            "1.11" : "11. Literature: in square brackets in the text [1, p. 2], the list of references is provided at the end of the text in alphabetical order or in the order of references.",
+            "1.12" : "12. The volume of abstracts of the report: from 1 to 3 pages.",
+            "2.1" : "1. Title of theses in capital letters (bold font).",
+            "2.2" : "2. Surname and initials of the author (or authors) (bold font), academic degree, academic title, position (if desired, you can specify (ORCID ID, phone number and email address for correspondence), name of the institution (place of work), (font normal).",
+            "2.3" : "3. Main text.",
+            "2.4" : "4. List of references (if necessary).",
+            "textend" : "Theses should be sent to Oleksandr Dmytrovych Klymenko at"
+        }
+    },
+    "auth" :
+    {
+        "register" :
+        {
+            "name" : "Surname, Name, Patronymic",
+            "regme" : "Sign-Up!",
+            "selectfile" : "Select file .ZIP 20 MB",
+            "ok" : "Good!",
+            "email" : "Email : ",
+            "phone" : "Phone number : ",
+            "academicstatus" : "Academic status : ",
+            "nameoforganiz" : "Name of the organization, position :",
+            "mailadress" : "Postal address",
+            "zipfile": "Files : ",
+            "topicreport" : "Topic Report : ",
+            "formparticipiation" : "Form of Participiation : "
+        }
+    }
+}
