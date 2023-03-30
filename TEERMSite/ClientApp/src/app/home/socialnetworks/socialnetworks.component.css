@@ -1,26 +1,54 @@
-#maindiv{
+header{
     /* background-image: url('../../../assets/test5.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%; */
     background-color: #3B3C93;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
     color:white;
 }
-#div1{
+.header_section{
     padding: 20px;
     display: flex;
     flex-wrap: wrap;   
 }
-#div1-3{
+.header_section-2{
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
     order: 3;
 }
 
-#div1-1{
-    width: 50%; display: inline-flex;justify-content: start;
+
+.header_section-1 img {
+
+    width: 100%;
+    height: auto;
 }
-#div1-2{
-    width: 50%; display: inline-flex;justify-content: end;
+
+.header_section-3{
+    justify-content: end;
 }
+
+.form-select{
+    margin: 0 auto;
+    font-size: 14px; 
+    width: max-content;
+    height: 40px;
+}
+
+p {
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+}
+span {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+}
+
 #div2-1{
     display: flex;
     justify-content: end;
@@ -31,24 +59,23 @@
 }
 
 @media (max-width : 600px) {
-    #div1{
+    .header_section{
         display: flex;
-        /* flex-wrap: wrap; */
         padding : 0px;
         padding-top : 20px;
         height: min-content;
         align-items: center;
     }
-    #div1-1{        
-    }
-    #div1-1 img {
+
+    .header_section-1 img {
         width: 100%;
         height: 100%;
     }
-    #div1-2{        
-        display: flex;
+    .header_section-2{
+        font-size: 17px;
+    }
+    .header_section-3{        
         justify-content: left;
-        flex-direction: column;
         padding: 5%;
         align-items: flex-end;        
     }  
@@ -61,24 +88,40 @@
         padding-left: 20px;
         padding-right: 0;
     }
+    .form-select{
+        margin: 0 auto;
+        font-size: 14px; 
+        width: max-content;
+        height: 40px;
+    }
+    
+    p {
+        text-align: center;
+        font-size: 20px;
+    }
 }
 @media(min-width:1024px){
-    #div1{
+    .header_section{
+        align-items: center;
+        justify-items: center;
         justify-content: space-between;
         flex-wrap: nowrap;
     }
-    #div1-1{
+    .header_section-1{
+        text-align: center;
         width: 20%;
     }   
-    #div1-1 img {
+    .header_section-1 img {
         object-fit: contain;
     }
-    #div1-2{
+    .header_section-2{
+        
+        text-align: center;
         width: 20%;
         order: 3;
     }   
-    #div1-3{
+    .header_section-3{
         order: 2;      
-        max-width: 50%;  
+        width: 45%;  
     }
 }

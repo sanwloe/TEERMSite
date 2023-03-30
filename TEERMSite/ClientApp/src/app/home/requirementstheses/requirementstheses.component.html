@@ -1,6 +1,6 @@
 <div class="container">
-    <p>{{ 'index.requirements-theses.header1' | transloco }}</p>
-    <ul>
+    <p class="general">{{ 'index.requirements-theses.header1' | transloco }}</p>
+    <ul class="general_list">
         <li>{{ 'index.requirements-theses.1.1' | transloco }}</li>
         <li>{{ 'index.requirements-theses.1.2' | transloco }}</li>
         <li>{{ 'index.requirements-theses.1.3' | transloco }}</li>
@@ -15,15 +15,17 @@
         <li>{{ 'index.requirements-theses.1.12' | transloco }}</li>
     </ul>
 
-    <p>{{ 'index.requirements-theses.header2' | transloco }}</p>
+    <p class="general">{{ 'index.requirements-theses.header2' | transloco }}</p>
     <ul>
         <li>{{ 'index.requirements-theses.2.1' | transloco }}</li>
         <li>{{ 'index.requirements-theses.2.2' | transloco }}</li>
         <li>{{ 'index.requirements-theses.2.3' | transloco }}</li>
         <li>{{ 'index.requirements-theses.2.4' | transloco }}</li>
     </ul>
-    <p>
-        {{ 'index.requirements-theses.textend' | transloco }} :<br>
-    E-mail: o.klymenko@lntu.edu.ua<br>
-    т. : +38 095 472 8583</p>
+    <hr>
+    <p class="footer-info">
+        <span class="footer-text">{{ 'index.requirements-theses.textend' | transloco }} :</span>
+        <span class="footer-email">E-mail: o.klymenko@lntu.edu.ua</span>
+        <span class="footer-phone">т. : +38 095 472 8583</span>
+    </p>
 </div>

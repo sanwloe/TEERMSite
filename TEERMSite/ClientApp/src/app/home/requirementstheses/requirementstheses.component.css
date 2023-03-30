@@ -1,3 +1,15 @@
+
+.general{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.general_list{
+    gap: 10px;
+}
+
 ul{
     display: flex;
     flex-direction: column;
@@ -5,9 +17,35 @@ ul{
     list-style-type: none;
 }
 
-p{
+
+li{
     font-size: 18px;
 }
-li{
-    font-size: 16px;
+
+li::marker{
+    content: url(pen.svg);
+}
+
+.footer-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-text{
+    font-weight: 700;
+    font-size: 20px;
+
+}
+
+.footer-email{
+    font-weight: 500;
+    color: blue;
+    font-size: 20px;
+}
+
+.footer-phone{
+    font-weight: 500;
+    /* color: brown; */
+    font-size: 20px;
 }

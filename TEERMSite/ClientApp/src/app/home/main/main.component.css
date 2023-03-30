@@ -1,14 +1,31 @@
+.container{
+    padding: 10px 0 0 0 ;
+}
+
+.main{
+
+}
+
+.main_timer-title{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.main_info {
+    padding: 0px 100px ;
+    text-align: justify;
+}
+
+
+
+
 p{
+    font-family: 'Roboto';
+    font-weight: 300;
     font-size: 18px;
 }
-/* #organizators1 img {
-  height: 150px;
-  width: 400px;
-}
-#organizators2 img {
-  height: 80px;
-  width: 100px;
-} */
 #organizators1 img {
   object-fit: contain;
 }
@@ -38,6 +55,11 @@ p{
 }
 
 .timer{
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
   display:flex;
   justify-content:center;
 }
@@ -48,7 +70,11 @@ p{
   text-align: center;
   justify-content: center;
   height: 80px;
-  width: 60px;
+  font-size: 34px;
+  font-weight: 700;
+  width: 80px;
+  margin-bottom: 7px;
+  
   background-color: black;
   color:white;
   border-radius: 10px;
@@ -58,7 +84,9 @@ p{
  
 }
 .timer span{
-  font-size:16px;
+    font-family: 'Roboto';
+    font-weight: 500;
+  font-size: 18px;
 }
 
 ul{
@@ -74,7 +102,10 @@ ul{
 } */
 
 
-
+.carousel .slide .carousel-fade{
+    display: flex;
+    justify-content: center;
+}
 .carousel-item {
   display: flex;
   height: auto;
@@ -95,6 +126,16 @@ ul{
 
 
 @media (max-width:600px) {
+
+  .timer p{
+    height: 65px;
+    font-size: 28px;
+    width: 65px; 
+  }
+  .timer span{
+    font-size: 16px;
+  }
+  
   img {
       width: 300px;
       height: 300px;

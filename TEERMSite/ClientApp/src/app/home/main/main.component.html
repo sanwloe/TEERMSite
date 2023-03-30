@@ -1,38 +1,29 @@
 <div class="container">
-  <div class="div1">
-    <!-- <div>
-      <p style="text-align: center;font-size: 26px;">
-        {{ 'index.socnet.logotext1' | transloco }}
-        <br>
-        {{ 'index.socnet.logotext2' | transloco }}
-        <br>
-        (TERMM-2023)
-      </p>
-    </div> -->
-    <p style="display: flex;justify-content: center;">{{ 'index.home.time' | transloco }}</p>
+  <section class="main">
+    <p class='main_timer-title'>{{ 'index.home.time' | transloco }}</p>
     <div class="timer">
-      <div>
-        <p>{{ days }}</p>
-        <span>{{ 'index.home.days' | transloco }}</span>
-      </div>
-      <div>
-        <p>{{ hours }}</p>
-        <span>{{ 'index.home.hours' | transloco }}</span>
-      </div>
-      <div>
-        <p>{{ minutes }}</p>
-        <span>{{ 'index.home.minutes' | transloco }}</span>
-      </div>
-      <div>
-        <p>{{ seconds }}</p>
-        <span>{{ 'index.home.seconds' | transloco }}</span>
-      </div>
-      {{ result }}
+        <div>
+            <p>{{ days }}</p>
+            <span>{{ 'index.home.days' | transloco }}</span>
+        </div>
+        <div>
+            <p>{{ hours }}</p>
+            <span>{{ 'index.home.hours' | transloco }}</span>
+        </div>
+        <div>
+            <p>{{ minutes }}</p>
+            <span>{{ 'index.home.minutes' | transloco }}</span>
+        </div>
+        <div>
+            <p>{{ seconds }}</p>
+            <span>{{ 'index.home.seconds' | transloco }}</span>
+        </div>
+        {{ result }}
     </div>
     <hr />
     <div>
       <div style="margin: 6% 8% 6% 8%;">
-        <div style="display: flex;justify-content: center;" id="ind0" class="carousel slide carousel-fade"
+        <div id="ind0" class="carousel slide carousel-fade"
           data-interval="4000" data-ride="carousel">
           <ol class="carousel-indicators">
           </ol>
@@ -220,6 +211,7 @@
             <img src="../../../assets/organizators/tohoku.png" alt="">
           </a>
         </li>
+
         <li>
           <a href="https://www.rtu.lv/en">
             <img src="../../../assets/organizators/rigaTU.jpg" alt="">
@@ -242,7 +234,6 @@
           </a>
         </li>
       </ul>
-    </div>
-
-  </div>
+    </div> 
+  </section>
 </div>

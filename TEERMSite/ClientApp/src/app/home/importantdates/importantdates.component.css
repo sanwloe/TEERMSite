@@ -1,15 +1,44 @@
 
+.important-text{
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+}
 
-ul{
+.dates-list{
+    padding-bottom: 30px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
     list-style-position: inside;
     list-style-type: none;
 }
 
-p{
+.dates-list-item{
+    position: relative;
+    margin-left: 30px;
     font-size: 18px;
 }
-li{
-    font-size: 16px;
+
+.dates-list-item::before {
+    position: absolute;
+    display: block;
+    left: -30px;
+    top: 3;
+    content: url(calendar.svg);
+    display: inline-block;
+    
+  }
+
+.member{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline;
+    margin-bottom: 5px;
+}
+
+p{
+    font-size: 18px;
 }

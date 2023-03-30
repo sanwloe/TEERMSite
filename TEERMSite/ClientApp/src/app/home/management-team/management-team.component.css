@@ -1,3 +1,5 @@
+
+
 ul {
     display: flex;
     flex-direction: column;
@@ -6,13 +8,33 @@ ul {
     text-align: center;
 }
 
-figcaption {
+
+
+.management_h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.team_name{
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.team_info{
     font-size: 16px;
     text-align: center;
 }
 
 p{
     font-size: 22px;
+}
+
+.coChairs{
+    font-size: 30px;
+    text-align: center;
 }
 
 .list{
@@ -37,18 +59,23 @@ p{
 
 
 @media (max-width:600px) {
-    /* img {
-        width: 300px;
-        height: 400px;
-      } */
+
     .list{
         display: flex;
         flex-direction: column;
     }
-    .list li {
+
+    .list .list-item {
+        margin-top: 170px;
         height: 450px;
         width: 100%;
     }
+
+
+    .list  :nth-of-type(1){
+        margin-top: 10px;
+    }
+
     .rector {
         max-width: 100%;
         margin-left: auto;

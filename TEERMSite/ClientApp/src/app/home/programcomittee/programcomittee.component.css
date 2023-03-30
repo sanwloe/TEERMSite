@@ -1,6 +1,26 @@
+
+h2{
+    padding-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 36px;
+}
+
 ul{
     list-style-type: none;
 }
 li{
+    font-size: 18px;
     padding: 1%;
+}
+
+ul li::marker{
+    width: 5px;
+    height: 5px;
+    content: url(placeholder.svg);
+}
+
+span{
+    color: blue;
+    font-weight: 500;
 }
