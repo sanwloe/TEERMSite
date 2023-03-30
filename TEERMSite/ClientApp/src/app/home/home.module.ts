@@ -8,7 +8,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from '../home/home.component';
 import { ImportantdatesComponent } from './importantdates/importantdates.component';
 import { ConferenceprogramComponent } from './conferenceprogram/conferenceprogram.component';
-import { PublicationrequierementsComponent } from './publicationrequierements/publicationrequierements.component';
+import { InformationPartnersComponent } from './information-partners/information-partners.component';
 import { ThematicdirectionsComponent } from './thematicdirections/thematicdirections.component';
 import { OrganizationalcommitteeComponent } from './organizationalcommittee/organizationalcommittee.component';
 import { MainComponent } from './main/main.component';
@@ -30,16 +30,16 @@ const routes : Routes=[
         children:
         [
             { path : '', component : MainComponent},
-            { path : 'importantdates', component : ImportantdatesComponent },
-            { path : 'conferenceprogram',component : ConferenceprogramComponent},
-            { path : 'publicationrequirements',component : PublicationrequierementsComponent},
-            { path : 'thematicdirections',component : ThematicdirectionsComponent},
+            { path : 'important-dates', component : ImportantdatesComponent },
+            { path : 'conference-program',component : ConferenceprogramComponent},
+            { path : 'info-partners',component : InformationPartnersComponent},
+            { path : 'thematic-directions',component : ThematicdirectionsComponent},
             { path : 'organizational-committee',component : OrganizationalcommitteeComponent },
-            { path : 'conferencehistory',component : ConferencehistoryComponent,children : [
+            { path : 'conference-history',component : ConferencehistoryComponent,children : [
               { path : 'history',component : HistoryComponent },
               { path : 'funders',component : FundersComponent }
             ] },
-            { path : 'requirementstheses',component : RequirementsthesesComponent},
+            { path : 'requirements-theses',component : RequirementsthesesComponent},
             { path : 'management-team',component : ManagementTeamComponent },
             { path : 'program-comittee',component : ProgramcomitteeComponent},
         ]
@@ -50,7 +50,7 @@ const routes : Routes=[
     NavMenuComponent,
     ImportantdatesComponent,
     ConferenceprogramComponent,
-    PublicationrequierementsComponent,
+    InformationPartnersComponent,
     ThematicdirectionsComponent,
     OrganizationalcommitteeComponent,
     SocialnetworksComponent,

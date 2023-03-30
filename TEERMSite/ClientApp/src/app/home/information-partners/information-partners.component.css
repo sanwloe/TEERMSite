@@ -1,0 +1,18 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style-position: inside;
+    list-style-type: none;
+}
+ul li{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+p{
+    padding-left: 30px;
+}
+img{
+    height: 300px;
+    width: 300px;
+}

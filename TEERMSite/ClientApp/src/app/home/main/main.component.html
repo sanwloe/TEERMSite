@@ -105,9 +105,14 @@
     </div>
     <hr>
     <div>
-      <p style="text-align: justify;">
-        {{ 'index.home.meta' | transloco }}
-      </p>
+      <h4 style="text-align: center;">
+        {{ 'index.home.placehead' | transloco }}
+      </h4>
+      <p [innerHTML]="'index.home.place' | transloco"></p>
+    </div>
+    <hr>
+    <div>
+      <p [innerHTML]="'index.home.meta' | transloco" style="text-align: justify;"></p>
     </div>
     <hr>
     <div>
@@ -124,7 +129,7 @@
           </a>
         </li>
       </ul>
-      <ul id = "organizators2">
+      <ul id="organizators2">
         <li>
           <a href="https://lntu.edu.ua/uk/struktura/cafedries/kafedra-inozemnoyi-ta-ukrayinskoyi-filolohiyi">
             <img src="../../../assets/organizators/cafedralanguage.jpg">
@@ -210,8 +215,34 @@
             <img src="../../../assets/organizators/ZNC.jpg" alt="">
           </a>
         </li>
+        <li>
+          <a href="https://www.tohoku.ac.jp/">
+            <img src="../../../assets/organizators/tohoku.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.rtu.lv/en">
+            <img src="../../../assets/organizators/rigaTU.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="http://www.pk.edu.pl">
+            <img src="../../../assets/organizators/pk.edu.pl.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.lunduniversity.lu.se/">
+            <img
+              src="../../../assets/organizators/Lunds_universitet.svg.png" alt="">
+            </a>
+          </li>
+        <li>
+          <a href="https://www.aztu.edu.az/az">
+            <img src="../../../assets/organizators/aztu.edu.png" alt="">
+          </a>
+        </li>
       </ul>
     </div>
-    
+
   </div>
 </div>
