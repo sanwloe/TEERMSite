@@ -134,7 +134,9 @@ ul{
       height: auto;
     }
 }
-
+.wadaw{
+  font-size: 22px;
+}
 @keyframes timerAnimation {
   0% {
     width: 0%;
