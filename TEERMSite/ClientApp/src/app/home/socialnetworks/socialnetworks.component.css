@@ -7,15 +7,16 @@ header{
     color:white;
 }
 .header_section{
-    padding: 20px;
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
+    align-content: center;
+    vertical-align: auto;
+
 }
 .header_section-2{
-    text-align: center;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    padding: 20px 20px 20px 20px;
+    align-items: baseline;
     order: 3;
 }
 
@@ -27,7 +28,7 @@ header{
 }
 
 .header_section-3{
-    justify-content: end;
+    
 }
 
 .form-select{
@@ -44,19 +45,11 @@ p {
     font-size: 20px;
 }
 span {
-    font-family: 'Roboto';
     font-weight: 300;
     font-size: 24px;
 }
 
-#div2-1{
-    display: flex;
-    justify-content: end;
-}
-#div2-1 ul{
-    list-style-type: none;
-    padding-right: 40px;
-}
+
 
 @media (max-width : 600px) {
     .header_section{
@@ -72,7 +65,7 @@ span {
         height: 100%;
     }
     .header_section-2{
-        font-size: 17px;
+        
     }
     .header_section-3{        
         justify-content: left;
@@ -105,7 +98,6 @@ span {
         align-items: center;
         justify-items: center;
         justify-content: space-between;
-        flex-wrap: nowrap;
     }
     .header_section-1{
         text-align: center;
@@ -115,8 +107,6 @@ span {
         object-fit: contain;
     }
     .header_section-2{
-        
-        text-align: center;
         width: 20%;
         order: 3;
     }   
