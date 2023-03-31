@@ -1,0 +1,24 @@
+.conf{
+    padding-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.conf-title{
+    
+}
+
+.conf_list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.conf_list-item{
+
+}
+
+.conf-img{
+
+}
