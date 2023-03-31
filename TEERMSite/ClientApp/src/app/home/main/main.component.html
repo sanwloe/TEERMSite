@@ -95,145 +95,154 @@
       </div>
     </div>
     <hr>
-    <div>
-      <h4 style="text-align: center;">
+    <div class="place-info">
+      <h4 class="place-head">
         {{ 'index.home.placehead' | transloco }}
       </h4>
-      <p [innerHTML]="'index.home.place' | transloco"></p>
+      <p class="place-text" [innerHTML]="'index.home.place' | transloco"></p>
     </div>
     <hr>
-    <div>
-      <p [innerHTML]="'index.home.meta' | transloco" style="text-align: justify;"></p>
+    <div class='place-info'>
+      <p class="place-text" [innerHTML]="'index.home.meta' | transloco" style="text-align: justify;"></p>
     </div>
+
+    <div class="iframe-wrapper">
+      <div class="iframe">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.697084697389!2d25.29469441589103!3d50.72555867538421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4725999f0c446bab%3A0x94ed6f0c87bafa04!2z0YPQuy4g0JvRjNCy0L7QstGB0LrQsNGPLCA3NSwg0JvRg9GG0LosINCS0L7Qu9GL0L3RgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNDMwMDA!5e0!3m2!1sru!2sua!4v1680251141462!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="iframe">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.2284063451966!2d26.018637215893932!3d50.826933068046365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f5c2eca0d14af%3A0x7f34647a9f0b9e16!2sProlisok!5e0!3m2!1sru!2sua!4v1680251034550!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
     <hr>
-    <div>
-      <h2 style="text-align:center">{{'index.home.co-organizers' | transloco }}</h2>
-      <ul id="organizators1">
-        <li>
+    <div class="org-wrapper">
+      <h2 class="org-text">{{'index.home.co-organizers' | transloco }}</h2>
+      <div class="mainCoorganizators">
+        <div class="mainCoorganizators-item">
           <a href="https://mon.gov.ua/">
             <img src="../../../assets/organizators/ministerstvo.png">
           </a>
-        </li>
-        <li>
+        </div >
+        <div class="mainCoorganizators-item">
           <a href="https://lntu.edu.ua">
             <img src="../../../assets/organizators/LNTU.jpg">
           </a>
-        </li>
-      </ul>
-      <ul id="organizators2">
-        <li>
+        </div >
+      </div>
+      <div class="coorganizators">
+        <div class="coorganizators-item">
           <a href="https://lntu.edu.ua/uk/struktura/cafedries/kafedra-inozemnoyi-ta-ukrayinskoyi-filolohiyi">
             <img src="../../../assets/organizators/cafedralanguage.jpg">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://lntu.edu.ua/uk/struktura/cafedries/kafedra-galuzevogo-mashinobuduvannya">
             <img src="../../../assets/organizators/cafedramashinebuild.jpg">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://lntu.edu.ua/uk/struktura/cafedries/kafedra-inzheneriyi-prohramnoho-zabezpechennya">
             <img src="../../../assets/organizators/ipz.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://www.uzhnu.edu.ua/">
             <img src="../../../assets/organizators/UghorodskyiNU.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://lpnu.ua/">
             <img src="../../../assets/organizators/lvivskapolitehnica.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://vntu.edu.ua/">
             <img src="../../../assets/organizators/VNTU.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://lntu.edu.ua/uk/struktura/cafedries/kafedra-materialoznavstva">
             <img src="../../../assets/organizators/materialscience.jpg">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="http://www.ism.kiev.ua/">
             <img src="../../../assets/organizators/INM.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://tntu.edu.ua/">
             <img src="../../../assets/organizators/ternopilskyiNTU.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="">
             <img src="../../../assets/organizators/umt.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="http://www.materials.kiev.ua">
             <img src="../../../assets/organizators/IPMNANUkrainy.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://nung.edu.ua/">
             <img src="../../../assets/organizators/IvanoFrankivskOil.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://stu.cn.ua">
             <img src="../../../assets/organizators/Chernihivskapolitehnica.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://pollub.pl">
             <img src="../../../assets/organizators/politehnicalubelska.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://www.ipm.lviv.ua">
             <img src="../../../assets/organizators/FIMNANU.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://kpi.ua">
             <img src="../../../assets/organizators/KPI.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://znc.com.ua/">
             <img src="../../../assets/organizators/ZNC.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://www.tohoku.ac.jp/">
             <img src="../../../assets/organizators/tohoku.png" alt="">
           </a>
-        </li>
-
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://www.rtu.lv/en">
             <img src="../../../assets/organizators/rigaTU.jpg" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
+          
           <a href="http://www.pk.edu.pl">
             <img src="../../../assets/organizators/pk.edu.pl.png" alt="">
           </a>
-        </li>
-        <li>
+        </div>
+        <div class="coorganizators-item">
           <a href="https://www.lunduniversity.lu.se/">
-            <img
-              src="../../../assets/organizators/Lunds_universitet.svg.png" alt="">
-            </a>
-          </li>
-        <li>
-          <a href="https://www.aztu.edu.az/az">
-            <img src="../../../assets/organizators/aztu.edu.png" alt="">
+            <img src="../../../assets/organizators/Lunds_universitet.svg.png" alt="">
           </a>
-        </li>
-      </ul>
+        </div>
+        <div class="coorganizators-item">
+          <a href="https://www.aztu.edu.az/az">
+            <img src="../../../assets/organizators/aztu.edu.png" alt="" style='background-color: #8d8d8d; padding: 20px;'>
+          </a>
+        </div>
+      </div>
     </div> 
   </section>
 </div>
