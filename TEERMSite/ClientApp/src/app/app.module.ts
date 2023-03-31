@@ -13,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthComponent } from './auth/auth.component';
 import { ConferenceHistoryModule } from './home/conferencehistory/conference.module';
 import { ConferencesHistoryModule } from './home/conferencehistory/history/conferences/conferences.module';
+import { Error404Component } from './error404/error404.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ConferencesHistoryModule } from './home/conferencehistory/history/confe
     RouterModule.forRoot([
       { path: 'index', component : HomeComponent},
       { path: 'auth',component : AuthComponent},
-      { path:'' ,redirectTo : '/index',pathMatch : 'full' }
+      { path: '' ,redirectTo : '/index',pathMatch : 'full' },
+      { path: '**',component : Error404Component}
   ]),
     TranslocoRootModule
   ],
