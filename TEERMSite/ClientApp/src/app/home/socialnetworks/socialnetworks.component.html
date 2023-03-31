@@ -5,7 +5,7 @@
         </div>
         <div class="header_section-2">
             <a> {{ 'index.socnet.lang' | transloco }} &nbsp; </a>
-            <select class="form-select" (change)="changelang($event.target)">
+            <select [(ngModel)]="selectedLang" class="form-select" (change)="changelang($event.target)">
                 <option *ngFor="let lang of languages">{{ lang }}</option>
             </select>
         </div>

@@ -13,6 +13,9 @@ export class SocialnetworksComponent implements OnInit {
 
   isExpand: boolean = true;
   stylebutton: any = {};
+  selectedLang : string = this.servicelang.getActiveLang();
+
+
   toggle() {
       this.service.toggle_nav(!this.isExpand);
       this.isExpand = !this.isExpand;

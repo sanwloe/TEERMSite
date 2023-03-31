@@ -21,6 +21,7 @@ import { FundersComponent } from './conferencehistory/funders/funders.component'
 import { RequirementsthesesComponent } from './requirementstheses/requirementstheses.component';
 import { ManagementTeamComponent } from './management-team/management-team.component';
 import { ProgramcomitteeComponent } from './programcomittee/programcomittee.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -59,6 +60,7 @@ const routes : Routes=[
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes),
     TranslocoRootModule
   ],
