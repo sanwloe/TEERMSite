@@ -68,7 +68,7 @@ span {
 @media (max-width : 600px) {
     .header_section{
         display: flex;
-        padding : 0px;
+        padding-bottom: 70px;
         padding-top : 20px;
         height: min-content;
         align-items: center;
@@ -85,7 +85,9 @@ span {
         height: 100%;
     }
     .header_section-2{
-        position: static;
+        position: absolute;
+        left: -35%;
+        top: 395px;
         font-size: 17px;
     }
     .header_section-3{     
