@@ -40,6 +40,18 @@ ul li .nav-link {
   color : white;
   text-align: left;
 }
+.dropright-menu{
+  display: none;
+  position: absolute;
+  right : 0;
+  top: 0;
+}
+
+.dropright-menu.show{
+  display: block;
+}
+
+
 @keyframes dropmenu {
   0% { height: 0px;}
   100% { height: min-content;}

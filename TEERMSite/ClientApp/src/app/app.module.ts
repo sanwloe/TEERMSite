@@ -11,6 +11,8 @@ import { TranslocoRootModule } from './transloco-root.module';
 import { HomeComponent } from './home/home.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthComponent } from './auth/auth.component';
+import { ConferenceHistoryModule } from './home/conferencehistory/conference.module';
+import { ConferencesHistoryModule } from './home/conferencehistory/history/conferences/conferences.module';
 
 
 @NgModule({
@@ -20,9 +22,12 @@ import { AuthComponent } from './auth/auth.component';
   imports: [
     BrowserModule.withServerTransition({ appId: ''}),
     HttpClientModule,
+    
     FormsModule,
     AuthModule,
     HomeModule,
+    ConferenceHistoryModule,
+    ConferencesHistoryModule,
     RouterModule.forRoot([
       { path: 'index', component : HomeComponent},
       { path: 'auth',component : AuthComponent},

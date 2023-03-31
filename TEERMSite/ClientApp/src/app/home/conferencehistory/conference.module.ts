@@ -6,12 +6,19 @@ import { HistoryComponent } from './history/history.component';
 import { FundersComponent } from './funders/funders.component';
 import { HomeComponent } from '../home.component';
 import { ConferencehistoryComponent } from './conferencehistory.component';
+import { ConferencesHistoryModule } from './history/conferences/conferences.module';
 
 const routes : Routes=
 [
-  {
-    path : 'conferencehistory',component : ConferencehistoryComponent,
-  }    
+    { path : 'index',component : HomeComponent,children : [
+        { path : 'conference-history',component : ConferencehistoryComponent,children : [
+          { path : 'history',component : HistoryComponent },
+          { path : 'funders',component : FundersComponent }
+        ]},
+        
+    ] },
+    
+     
 ]
 @NgModule({
   declarations: [
@@ -21,7 +28,8 @@ const routes : Routes=
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    TranslocoRootModule
+    TranslocoRootModule,
+    ConferencesHistoryModule,
   ],
   exports : [
     RouterModule,

@@ -12,10 +12,14 @@ export class NavMenuComponent {
 
   isExpanded = true;
 
+  rightmenu = document.getElementById('droprightmenu');
+
   toggle() {
     this.isExpanded = !this.isExpanded;
     // this.dataservice.nav_expand = !this.isExpanded;
   }
+
+  showMenu = false;
 
 
 

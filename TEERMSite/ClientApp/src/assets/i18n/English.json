@@ -18,15 +18,22 @@
             "publicationrequirements": "Information Partners",
             "confprogram": "Conference Program",
             "importantdates": "Important Dates",
-            "submenu" : {
-                "historyconf.1" : "History",
-                "historyconf.2" : "Funders",
+            "historyconf.1" : "History",
+            "historyconf.2" : "Funders",
+            "submenu" : {        
                 "orgcommittee.1" : "Management Team",
                 "orgcommittee.2" : "Program Committee",
                 "orgcommittee.3" : "Organizational Committee",
                 "publicationrequirements.1" : "Requirements for registration of articles",
                 "publicationrequirements.2" : "Requirements for theses"              
-            }
+            },
+            "history.firstconf" : "I Conference (2007)",
+            "history.secondconf" : "II Conference (2009)",
+            "history.thirdconf" : "III Conference (2011)",
+            "history.fourthconf" : "IV Conference (2013)",
+            "history.fifthconf" : "V Conference (2015)",
+            "history.sixthconf" : "VI Conference (2016)",
+            "history.seventhconf" : "VII Conference (2017)"
         },
         "home": {
             "registrdate": "Time left to register : \n {{days}} days, {{hours}} hours , {{minutes}} minutes , {{seconds}} seconds",

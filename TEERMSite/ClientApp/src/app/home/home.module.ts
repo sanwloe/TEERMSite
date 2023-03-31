@@ -35,10 +35,6 @@ const routes : Routes=[
             { path : 'info-partners',component : InformationPartnersComponent},
             { path : 'thematic-directions',component : ThematicdirectionsComponent},
             { path : 'organizational-committee',component : OrganizationalcommitteeComponent },
-            { path : 'conference-history',component : ConferencehistoryComponent,children : [
-              { path : 'history',component : HistoryComponent },
-              { path : 'funders',component : FundersComponent }
-            ] },
             { path : 'requirements-theses',component : RequirementsthesesComponent},
             { path : 'management-team',component : ManagementTeamComponent },
             { path : 'program-comittee',component : ProgramcomitteeComponent},
@@ -63,7 +59,6 @@ const routes : Routes=[
   ],
   imports: [
     CommonModule,
-    ConferenceHistoryModule,
     RouterModule.forChild(routes),
     TranslocoRootModule
   ],
