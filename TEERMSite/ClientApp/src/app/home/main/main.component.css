@@ -225,6 +225,24 @@ iframe{
 }
 
 }
+@media (max-width: 400px) {
+
+  .mainCoorganizators-item img{
+    height: 120px;
+  }
+
+  .coorganizators-item img{
+
+    height: 100px;
+  }
+
+  .org-text{
+
+    font-size: 30px;
+
+  }
+
+}
 
 @keyframes timerAnimation {
 0% {
