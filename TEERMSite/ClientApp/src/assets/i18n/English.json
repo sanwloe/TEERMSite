@@ -61,23 +61,31 @@
         },
         "importantdates" : {
             "date" : "Important Dates : ",
+            "regulationshead" : "Regulations",
+            "regulations" : "&nbsp; The VII International scientific and practical conference \"Theoretical and experimental research in the technologies of modern materials science and mechanical engineering\" is expected to be held in a remote format and with personal participation. With personal participation, the start of the conference is scheduled for May 29 in the walls of the Lutsk National Technical University.",
+            "regulations.1" : "05/29/2023 09-10 - registration of conference participants;",
+            "regulations.2" : "10-11:30 familiarization with the present LNTU and excursion;",
+            "regulations.3" : "12:00 opening of the conference, Plenary session, which will be held in parallel offline mode for other participants.",
+            "regulations.4" : "29/05. 2023 3:00 p.m. - departure of participants to the boarding house \"Prolisok\"",
+            "regulations.5" : "On May 30-31, the work of the conference in sections using Internet platforms;",
+            "regulations.6" : "On May 31, closing of the conference, results of the conference and adoption of recommendations.",
             "1" : "I. For participants who plan to participate in the conference remotely:",
             "2" : "II. For participants planning to personally participate in the work of the conference:",
             "1.1" : "05/23/2023 – deadline for submission of report abstracts and payment of the organizational fee;",
-            "1.2" : "25.05. 2023 – approval and distribution of the conference program;",
+            "1.2" : "25/05/2023 – approval and distribution of the conference program;",
             "1.3" : "05/26/2023 – distribution of electronic materials of the conference;",
-            "1.4" : "29.05. 2023. 12:00 opening of the conference. Plenary meeting;",
-            "1.5" : "30-05 - 31.05. 2023 work in sections;",
-            "1.6" : "01.06.2023 closing of the conference.",
-            "2.info" : "05.05.2023 - the deadline for accepting applications for personal participation in the conference, the deadline for booking seats at the \"Prolisok\" recreation center, website: - www.prolisok.info, Tel: +38 097 212 5061; +38 095 554 6474. (Reservations at the recreation center are made personally by each participant of the conference. The term of stay at the recreation center can be increased if desired and include medical services in addition to rest).",
-            "2.1" : "05.05.2023 - the deadline for accepting applications for personal participation in the work of the conference;",
+            "1.4" : "29/05/2023. 12:00 opening of the conference. Plenary meeting;",
+            "1.5" : "30/05 - 31/05/2023 work in sections;",
+            "1.6" : "01/06/2023 closing of the conference.",
+            "2.info" : "05/05/2023 - the deadline for accepting applications for personal participation in the conference, the deadline for booking seats at the \"Prolisok\" recreation center, website: - www.prolisok.info, Tel: +38 097 212 5061; +38 095 554 6474. (Reservations at the recreation center are made personally by each participant of the conference. The term of stay at the recreation center can be increased if desired and include medical services in addition to rest).",
+            "2.1" : "05/05/2023 - the deadline for accepting applications for personal participation in the work of the conference;",
             "2.2" : "05/23/2023 – deadline for abstracts of reports and payment of the organizational fee;",
-            "2.3" : "25.05. 2023 – approval and distribution of the conference program;",
+            "2.3" : "25/05/2023 – approval and distribution of the conference program;",
             "2.4" : "05/29/2023 09-10 - registration of conference participants, 10-11-30 familiarization with the present LNTU and excursion;",
-            "2.5" : "29.05. 2023. 12:00 opening of the conference. Plenary meeting;",
-            "2.6" : "29.05. 2023 3:00 p.m. - departure of the participants to the boarding house \"Prolisok\";",
-            "2.7" : "30-05 - 31.05. 2023 work in sections;",
-            "2.8" : "01.06.2023 closing of the conference."
+            "2.5" : "29/05/2023 12:00 opening of the conference. Plenary meeting;",
+            "2.6" : "29/05/2023 3:00 p.m. - departure of the participants to the boarding house \"Prolisok\";",
+            "2.7" : "30/05 - 31/05/2023 work in sections;",
+            "2.8" : "01/06/2023 closing of the conference."
         },
         "management-team" : {
             "header" : "Management Team",
@@ -154,6 +162,10 @@
             ,"3" : "Publication type: International Scientific and Technical Journal <br> Founders: Institute of Materials Science Problems named after I.M. Frantsevich of the National Academy of Sciences of Ukraine (Scopus) <br> Issues: Theory and technologies of obtaining powders; pressure treatment of porous semi-finished products; obtaining and researching the properties of materials based on metal powders, refractory compounds and ceramics; the basics of the theory and technology of coating, obtaining and studying the properties of fibrous and highly porous dispersion-reinforced and reinforced, functional-gradient and layered powder-based materials; nanostructured materials; study of heterogeneous equilibria in multicomponent systems."
             ,"4" : "Collection of scientific works \"Metallurgy\" <br> Publisher: Zaporizhzhia National University <br> Published since 1998 <br> Certificate of state registration of mass media: Series KV No. 23926-13766PR dated 04/23/2019 <br> Editor-in-chief Skachkov V. O., Dr. technical Sciences, professor (Zaporizhia National University, Zaporizhzhia, Ukraine)<br>Responsible secretaries: <br><ul><li>Volyar R.M., candidate technical Sciences, associate professor</li><li>O.S. Vodennikova, candidate technical of Sciences, associate professor</li><li>G.V. Karpenko, candidate technical Sciences, associate professor</li></ul><br>E-mail: metred@ukr.net<br>Site:<a href='http://metal.journalsofznu.zp.ua/index.php/journal '> http://metal.journalsofznu.zp.ua/index.php/journal</a>"
             ,"5" : "COMPUTER INTEGRATED TECHNOLOGIES: EDUCATION, SCIENCE, MANUFACTURING <br> Editor-in-Chief - Ph.D. Gordeev O.O.;<br> Responsible Secretary - N.A. Khrystinets<br> Main contact person Khrystinets Nataliya Anatoliivna<br>Candidate of Sciences. Lutsk National Technical University <br> Phone : (0332) 74-61-15 <br><a href='cit@lntu.edu.ua'>cit@lntu.edu.ua</a>"
+        },
+        "pay-info" : {
+            "head" : "Payment",
+            "info" : "To cover the expenses associated with organizing the conference and publishing the conference proceedings, an organizational contribution of 100 UAH is required. This includes the cost of remote participation in the conference with an electronic version of the conference proceedings.<br>In case of personal attendance in Lutsk (at the \"Prolysok\" recreation center), an organizational contribution of 450 UAH is required. This covers the expenses associated with organizing the conference (booking the conference room at the \"Prolysok\" recreation center) and publishing the conference proceedings."
         }
     },
     "auth" :
