@@ -32,8 +32,7 @@
             "history.thirdconf" : "III Conference (2011)",
             "history.fourthconf" : "IV Conference (2013)",
             "history.fifthconf" : "V Conference (2015)",
-            "history.sixthconf" : "VI Conference (2017)",
-            "history.seventhconf" : "VII Conference (2017)"
+            "history.sixthconf" : "VI Conference (2017)"
         },
         "home": {
             "registrdate": "Time left to register : \n {{days}} days, {{hours}} hours , {{minutes}} minutes , {{seconds}} seconds",

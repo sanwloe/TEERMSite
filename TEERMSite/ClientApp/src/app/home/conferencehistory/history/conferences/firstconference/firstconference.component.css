@@ -9,10 +9,19 @@
 }
 
 .conf_list{
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
     list-style-type: none;
+    flex-wrap: wrap;
 }
 
 .conf_list-item{
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
 
 }
 
