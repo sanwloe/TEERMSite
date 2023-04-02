@@ -5,8 +5,8 @@ using TEERMSite.Models;
 
 namespace TEERMSite.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    /*[Route("api/[controller]")]
+    [ApiController]*/
     public class AuthController : ControllerBase
     {
         public AuthDbContext _authdbcontext;

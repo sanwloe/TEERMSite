@@ -11,10 +11,10 @@ namespace TEERMSite
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AuthDbContext>((options) =>
+           /* builder.Services.AddDbContext<AuthDbContext>((options) =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connectString"));
-            });
+            });*/
 
             var app = builder.Build();
 
