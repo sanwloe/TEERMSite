@@ -22,6 +22,7 @@ import { RequirementsthesesComponent } from './requirementstheses/requirementsth
 import { ManagementTeamComponent } from './management-team/management-team.component';
 import { ProgramcomitteeComponent } from './programcomittee/programcomittee.component';
 import { FormsModule } from '@angular/forms';
+import { ContributionComponent } from './contribution/contribution.component';
 
 
 
@@ -39,6 +40,7 @@ const routes : Routes=[
             { path : 'requirements-theses',component : RequirementsthesesComponent},
             { path : 'management-team',component : ManagementTeamComponent },
             { path : 'program-comittee',component : ProgramcomitteeComponent},
+            { path : 'pay-info',component : ContributionComponent }
         ]
     }
 ]
@@ -57,6 +59,7 @@ const routes : Routes=[
     RequirementsthesesComponent,
     ManagementTeamComponent,
     ProgramcomitteeComponent,
+    ContributionComponent,
   ],
   imports: [
     CommonModule,

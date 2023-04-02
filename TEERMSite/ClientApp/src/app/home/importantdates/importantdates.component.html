@@ -1,4 +1,15 @@
 <div class="container">
+    <p class="important-text">{{ 'index.importantdates.regulationshead' | transloco }}</p>
+    <p [innerHTML]="'index.importantdates.regulations' | transloco" ></p>
+    <ul class="dates-list">
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.1' | transloco }}</li>
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.2' | transloco }}</li>
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.3' | transloco }}</li>
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.4' | transloco }}</li>
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.5' | transloco }}</li>
+        <li class="dates-list-item">{{ 'index.importantdates.regulations.6' | transloco }}</li>
+    </ul>
+
     <p class="important-text">{{ 'index.importantdates.date' | transloco }}</p>
     <ul class="dates-list">
         <p class="member">
