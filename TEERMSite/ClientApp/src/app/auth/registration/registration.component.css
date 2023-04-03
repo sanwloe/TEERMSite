@@ -39,7 +39,7 @@ button{
     flex-direction: column;
     height: 100%;
     align-items: center;
-    width: 150%;
+    width: auto;
 }
 
 .registration_header-title{
@@ -89,28 +89,6 @@ span{
     text-decoration: none;
 }
 
-@keyframes move-it {
-    0% {
-      background-position: initial;
-    }
-    100% {
-      background-position: 100px 0px;
-    }
-  }
-  
-  .form_wrapper {  
-    /* border: 3px dashed rgb(9, 0, 133); */
-    background: repeating-linear-gradient(
-    45deg,
-    #0020f3,
-    #0022ff 5%,
-    #ffffff 5%,
-    #ffffff 10%
-    );
-    background-size: 300px 200px;
-    animation: move-it 4s linear infinite;
-  }
-
 @media (max-width: 1540px){
     .form{
         width: 38%;
@@ -155,21 +133,16 @@ span{
 @media (max-width: 560px){
     .registration_header-title{
         font-weight: bold;
-        font-size: 30px;
-        color: rgb(0, 0, 0);
+        font-size: 24px;
     }
     
     .registration_header-subtitle{
-        font-size: 18px;
-        color: rgb(136, 166, 221);
+        font-size: 16px;
     }
 }
 
 @media (max-width: 428px){
     input{
         font-size: 14px;
-    }
-    .registration_header-subtitle{
-        display: none;
     }
 }
