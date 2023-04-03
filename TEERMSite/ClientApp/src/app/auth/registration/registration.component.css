@@ -1,15 +1,165 @@
-div label,input,div{
-    padding : 10px;
-}
 
+.valid-feedback{
+    margin-top: 10px;
+}
 
 div button{
     padding-bottom : 10px;
     margin-bottom: 10px;
 }
+button{
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+}
+
+.wrapper{
+    background-color: rgb(255, 255, 255);
+    position: absolute; 
+    display: flex;
+
+    height: 100%;
+    width:100%
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration_header{
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+.registration_header-title{
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.registration_header-subtitle{
+    font-weight: 500;
+    font-size: 24px;
+    color: rgb(136, 166, 221);
+}
+
+.form_wrapper{
+    border-radius: 10px;
+    margin: 6% auto;
+    width: 40%;
+}
 
 .formsign{
-    border-radius: 5%;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
     background-color: aliceblue;
-    width: 33%;
+
+}
+
+.goback:link{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@keyframes move-it {
+    0% {
+      background-position: initial;
+    }
+    100% {
+      background-position: 100px 0px;
+    }
+  }
+  
+  .form_wrapper {  
+    /* border: 3px dashed rgb(9, 0, 133); */
+    background: repeating-linear-gradient(
+    45deg,
+    #0020f3,
+    #0022ff 5%,
+    #ffffff 5%,
+    #ffffff 10%
+    );
+    background-size: 300px 200px;
+    animation: move-it 4s linear infinite;
+  }
+
+@media (max-width: 1540px){
+    .form{
+        width: 38%;
+    }
+}
+
+
+@media (max-width: 1382px){
+    .form{
+        width: 45%;
+    }
+}
+
+@media (max-width: 1400px){
+    .form{
+        width: 55%;
+    }
+}
+@media (max-width: 1000px){
+    .form{
+        width: 65%;
+    }
+}
+@media (max-width: 830px){
+    .form{
+        width: 75%;
+    }
+}
+
+@media (max-width: 725px){
+    .form{
+        width: 85%;
+    }
+}
+
+@media (max-width: 630px){
+    .form{
+        width: 95%;
+    }
+}
+
+@media (max-width: 560px){
+    .registration_header-title{
+        font-weight: bold;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+    }
+    
+    .registration_header-subtitle{
+        font-size: 18px;
+        color: rgb(136, 166, 221);
+    }
+}
+
+@media (max-width: 428px){
+    input{
+        font-size: 14px;
+    }
+    .registration_header-subtitle{
+        display: none;
+    }
 }
