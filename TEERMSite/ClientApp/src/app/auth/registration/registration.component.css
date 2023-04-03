@@ -15,9 +15,8 @@ button{
 
 .wrapper{
     background-color: rgb(255, 255, 255);
-    position: absolute; 
+    /* position: absolute;  */
     display: flex;
-
     height: 100%;
     width:100%
 }
@@ -26,32 +25,43 @@ button{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    height: 100%;
-    width: 33%;
+    width: 43%;
     align-items: center;
     justify-content: center;
 }
 
 .registration_header{
+
     border-radius: 10px;
     background-color: aliceblue;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    height: 100%;
     align-items: center;
-    width: 95%;
+    width: 150%;
 }
 
 .registration_header-title{
+    text-align: center;
     font-weight: bold;
-    font-size: 40px;
-    color: rgb(0, 0, 0);
+    font-size: 34px;
+    color: #00159b;
+
+}
+
+span{
+    font-size: 24px;
+    text-decoration: underline;
+    color: rgb(255, 0, 0);
 }
 
 .registration_header-subtitle{
+    margin-top: 10px;
+    text-align: center;
     font-weight: 500;
-    font-size: 24px;
-    color: rgb(136, 166, 221);
+    font-size: 20px;
+
 }
 
 .form_wrapper{

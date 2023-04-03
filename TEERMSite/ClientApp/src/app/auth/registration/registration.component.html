@@ -2,38 +2,95 @@
     <!-- <div class="form_wrapper"> -->
         <form class="form">
             <div class="registration_header">
-                    <div class="registration_header-title">Реєстрація</div>
-                    <div class="registration_header-subtitle">Заповніть форму, щоб зареєструватися</div>
+                    <div class="registration_header-title">Реєстрація учасника
+                        ІХ Міжнародної науково-практичної конференції "Теоретичні і експериментальні дослідження в сучасних технологіях матеріалознавства та машинобудування – TERMM-2023"
+                        «Theoretical and Experimental Research in Materials Science and Mechanical Engineering – TERMM-2023»
+                        </div>
+                    <div class="registration_header-subtitle">Реєстраційна картка заповнюється <span>один раз</span> для одного  учасника конференції, не залежно від кількості доповідей. Співавтори доповіді заповнюють окрему реєстраційну картку. </div>
             </div>
     
             <div class="formsign">
-    
                 
-    
-                <input emailvalid type="email" class="form-control is-valid" id="emailvalid" placeholder="{{ 'auth.register.email' | transloco }}"
+
+                <!-- Прізвище, ім'я, по-батькові* -->
+                <input namevalid type="text" class="form-control is-valid" id="pibvalid" placeholder="Прізвище, ім'я, по батькові автора*"
+                    required>
+                <label for="piblvalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Науковий ступінь* -->
+                <input namevalid type="text" class="form-control is-valid" id="nauk-stupvalid" placeholder="Науковий ступінь*"
+                    required>
+                <label for="nauk-stupvalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Вчене звання* -->
+                <input namevalid type="text" class="form-control is-valid" id="vchen-zvanvalid" placeholder="Вчене звання*"
+                    required>
+                <label for="vchen-zvanvalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Місце роботи* -->
+                <input namevalid type="text" class="form-control is-valid" id="work-placevalid" placeholder="Місце роботи*"
+                    required>
+                <label for="work-placevalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Посада* -->
+                <input namevalid type="text" class="form-control is-valid" id="posadavalid" placeholder="Посада*"
+                    required>
+                <label for="posadavalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Контактний телефон (бажано мобільний)* -->
+                <input numbervalid type="tel" class="form-control is-valid" id="phonenumber" placeholder="Контактний телефон (бажано мобільний)*"
+                    required>
+                <label for="phonenumber" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
+                <!-- Адреса електронної пошти e-mail* -->
+                <input emailvalid type="email" class="form-control is-valid" id="emailvalid" placeholder="Адреса електронної пошти e-mail*"
                     required>
                 <label for="emailvalid" class="valid-feedback">
                     {{ 'auth.register.ok' | transloco }}
                 </label>
-    
-                <input namevalid type="text" class="form-control is-valid" id="namevalid" placeholder="{{ 'auth.register.name' | transloco }}"
+
+                <!-- Назва доповіді* -->
+                <input namevalid type="text" class="form-control is-valid" id="name-of-dopvalid" placeholder="Назва доповіді*"
                     required>
-                <label for="namevalid" class="valid-feedback">
+                <label for="name-of-dopvalid" class="valid-feedback">
                     {{ 'auth.register.ok' | transloco }}
                 </label>
-    
-                <input numbervalid type="tel" class="form-control is-valid" id="phonenumber" placeholder="{{ 'auth.register.phone' | transloco }}"
+
+                <!-- Секція, на яку подається доповідь* -->
+                <input namevalid type="text" class="form-control is-valid" id="sectionvalid" placeholder="Секція, на яку подається доповідь*"
                     required>
-                <label for="phone" class="valid-feedback">
+                <label for="sectionvalid" class="valid-feedback">
                     {{ 'auth.register.ok' | transloco }}
                 </label>
-    
-                <input type="text" class="form-control is-valid" id="nameorg" placeholder="{{ 'auth.register.nameoforganiz' | transloco }}" required>
-                <label for="nameorg" class="valid-feedback">
+
+                <!-- Формат участі в конференції -->
+                <input namevalid type="text" class="form-control is-valid" id="formatvalid" placeholder="Формат участі в конференції"
+                    required>
+                <label for="formatvalid" class="valid-feedback">
                     {{ 'auth.register.ok' | transloco }}
                 </label>
+
+                <!-- Інформація про сплату оргвнеску -->
+                <input namevalid type="text" class="form-control is-valid" id="informvalid" placeholder="Інформація про сплату оргвнеску"
+                    required>
+                <label for="informvalid" class="valid-feedback">
+                    {{ 'auth.register.ok' | transloco }}
+                </label>
+
     
-                <div class="custom-file">
+                <!-- <div class="custom-file">
                     <input type="file" class="custom-file-input" id="validatedCustomFile">
                     <label class="custom-file-label" for="validatedCustomFile">
                         <font style="vertical-align: inherit;">
@@ -42,10 +99,11 @@
                             </font>
                         </font>
                     </label>
-                </div>
+                </div> -->
     
                 <br>
-                <button class="btn btn-primary" type="submit">Реєстрація!</button>
+                <button class="btn btn-primary" type="submit">Надіслати</button>
+                <button class="btn btn-primary" type="reset">Очистити форму</button>
                 <a class="goback" [routerLink]="['/index']"> ⬅ Повернутися на головну</a>
             </div>
         </form>
