@@ -4,15 +4,28 @@ ul{
     list-style-position: inside;
     list-style-type: none;
 }
+
 ul li{
+    margin-bottom: 20px;
+    align-items: center;
     display: flex;
-    flex-direction: row;
     padding-bottom: 30px;
 }
+
 p{
     padding-left: 30px;
 }
+
 img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    object-fit: contain;
     height: 300px;
     width: 300px;
+}
+
+@media (max-width: 992px) {
+    li{
+        flex-direction: column;
+    }
 }
