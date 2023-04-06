@@ -35,10 +35,12 @@ li figure{
     display: flex;
     flex-direction: column;
 }
+
 .list li{
     text-align: center;
     margin: 10px;
 }
+
 figcaption{
     text-align: center;
     font-size: 17px;
@@ -49,19 +51,30 @@ img{
     width: 250px;
 }
 
+@media (max-width: 992px) {
+    .list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width:600px) {
+
     img {
         width: 300px;
         height: 400px;
     }
+
     figure{
         display: flex;
         justify-content: left;
         flex-direction: column;
     }
+
     figcaption{
         text-align: center;
     }
+
     .list{
         padding-top: 20px;
         display: flex;
@@ -69,8 +82,21 @@ img{
         justify-content: left;
         list-style-type: none;
     }
+
     figcaption{
         padding: 0;
     }
 }
 
+@media (max-width: 360px) {
+    .list {
+        padding: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    img {
+        width: 250px;
+        height: 300px;
+    }
+}
