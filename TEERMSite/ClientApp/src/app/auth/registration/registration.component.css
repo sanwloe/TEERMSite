@@ -80,6 +80,9 @@ span{
     background-color: aliceblue;
 
 }
+.form-control{
+    margin-bottom: 20px;
+}
 
 .goback:link{
     margin-top: 10px;
