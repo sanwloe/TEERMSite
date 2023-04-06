@@ -23,6 +23,7 @@ import { ManagementTeamComponent } from './management-team/management-team.compo
 import { ProgramcomitteeComponent } from './programcomittee/programcomittee.component';
 import { FormsModule } from '@angular/forms';
 import { ContributionComponent } from './contribution/contribution.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 
 
@@ -33,7 +34,7 @@ const routes : Routes=[
         [
             { path : '', component : MainComponent},
             { path : 'important-dates', component : ImportantdatesComponent },
-            { path : 'conference-program',component : ConferenceprogramComponent},
+            { path : 'conference-program',component : ConferenceprogramComponent,canActivate : [AuthGuard],data : { permittedRoles : ['ADMIN'] }},
             { path : 'info-partners',component : InformationPartnersComponent},
             { path : 'thematic-directions',component : ThematicdirectionsComponent},
             { path : 'organizational-committee',component : OrganizationalcommitteeComponent },

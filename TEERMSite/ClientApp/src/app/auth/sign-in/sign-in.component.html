@@ -1,0 +1,11 @@
+
+{{ errormessage }}
+<form [formGroup]="loginform" (ngSubmit)="login(loginform.value)" #formDirective="ngForm" class="form">
+    <label>Введіть E-mail</label>
+    <input formControlName="email" type="text">
+    <br>
+    <label>Введіть Password</label>
+    <input formControlName="password" type="text">
+    <br>
+    <button type="submit" class="btn btn-primary">Увійти</button>
+</form>

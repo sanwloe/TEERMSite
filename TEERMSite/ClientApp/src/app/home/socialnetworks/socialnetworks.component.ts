@@ -31,6 +31,8 @@ export class SocialnetworksComponent implements OnInit {
     const eventTarget = lang as HTMLSelectElement;
 
     this.servicelang.setActiveLang(eventTarget.value);
+
+    localStorage.setItem('lang',eventTarget.value)
   }
 
 

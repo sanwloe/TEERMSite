@@ -8,15 +8,15 @@ namespace TEERMSite.Models
 {
     public class CryptService
     {
-        /*public static string Encrypt(string password)
+        public static string Encrypt(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
-        public static bool Verify(string password,string hpassword) 
+        public static bool Verify(string password, string hpassword)
         {
-            return BCrypt.Net.BCrypt.Verify(password,hpassword);
-        }*/
-        public static string NewToken(string email)
+            return BCrypt.Net.BCrypt.Verify(password, hpassword);
+        }
+        public static string NewToken(string email,string academicrank,string section,string TitleReport)
         {
             var claims = new SecurityTokenDescriptor
             {
@@ -24,6 +24,9 @@ namespace TEERMSite.Models
                     new Claim[]
                     {
                         new Claim("email", email),
+                        new Claim("academicrank",academicrank),
+                        new Claim("section", section),
+                        new Claim("titlereport",TitleReport)
                     }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(

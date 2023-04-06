@@ -1,103 +1,57 @@
 <div class="wrapper">
     <!-- <div class="form_wrapper"> -->
-        <form class="form">
-            <div class="registration_header">
-                    <div class="registration_header-title">Реєстрація учасника
-                        ІХ Міжнародної науково-практичної конференції "Теоретичні і експериментальні дослідження в сучасних технологіях матеріалознавства та машинобудування – TERMM-2023"
-                        «Theoretical and Experimental Research in Materials Science and Mechanical Engineering – TERMM-2023»
-                        </div>
-                    <div class="registration_header-subtitle">Реєстраційна картка заповнюється <span>один раз</span> для одного  учасника конференції, не залежно від кількості доповідей. Співавтори доповіді заповнюють окрему реєстраційну картку. </div>
-            </div>
-    
+        <div class="registration_header">
+        </div>
+        <form  [formGroup]="regform" (ngSubmit)="register(regform.value)" #formDirective="ngForm" class="form">
             <div class="formsign">
-                
-
+                <div class="registration_header-title">{{'auth.head.reg1' | transloco}}</div>
+                <div [innerHTML]="'auth.head.reg2' | transloco" class="registration_header-subtitle transloco"></div>
+                <p style="color: red;" *ngIf="errormessage">{{ errormessage }}</p>  
+     
                 <!-- Прізвище, ім'я, по-батькові* -->
-                <input namevalid type="text" class="form-control is-valid" id="pibvalid" placeholder="Прізвище, ім'я, по батькові автора*"
+                <input formControlName="fullname" namevalid type="text" class="form-control is-invalid" id="pibvalid" placeholder="{{ 'auth.register.name' | transloco }}"
                     required>
-                <label for="piblvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+               
                 <!-- Науковий ступінь* -->
-                <input namevalid type="text" class="form-control is-valid" id="nauk-stupvalid" placeholder="Науковий ступінь*"
-                    required>
-                <label for="nauk-stupvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
+                <input formControlName="academicdegree" namevalid type="text" class="form-control is-invalid" id="naukstupvalid" placeholder="{{ 'auth.register.academicdegree' | transloco }}"
+                    required>      
 
                 <!-- Вчене звання* -->
-                <input namevalid type="text" class="form-control is-valid" id="vchen-zvanvalid" placeholder="Вчене звання*"
+                <input formControlName="academicrank" namevalid type="text" class="form-control is-invalid" id="vchenzvanvalid" placeholder="{{ 'auth.register.academicrank' | transloco }}"
                     required>
-                <label for="vchen-zvanvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Місце роботи* -->
-                <input namevalid type="text" class="form-control is-valid" id="work-placevalid" placeholder="Місце роботи*"
+                <input formControlName="workplace" namevalid type="text" class="form-control is-invalid" id="workplacevalid" placeholder="{{ 'auth.register.workplace' | transloco }}"
                     required>
-                <label for="work-placevalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Посада* -->
-                <input namevalid type="text" class="form-control is-valid" id="posadavalid" placeholder="Посада*"
+                <input formControlName="jobtitle" namevalid type="text" class="form-control is-invalid" id="posadavalid" placeholder="{{ 'auth.register.jobtitle' | transloco }}"
                     required>
-                <label for="posadavalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Контактний телефон (бажано мобільний)* -->
-                <input numbervalid type="tel" class="form-control is-valid" id="phonenumber" placeholder="Контактний телефон (бажано мобільний)*"
+                <input formControlName="phone" numbervalid type="tel" class="form-control is-invalid" id="phonenumber" placeholder="{{ 'auth.register.phone' | transloco }}"
                     required>
-                <label for="phonenumber" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Адреса електронної пошти e-mail* -->
-                <input emailvalid type="email" class="form-control is-valid" id="emailvalid" placeholder="Адреса електронної пошти e-mail*"
+                <input formControlName="email" emailvalid type="email" class="form-control is-invalid" id="emailvalid" placeholder="{{ 'auth.register.email' | transloco }}"
                     required>
-                <label for="emailvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Ваш пароль* -->
-                <input namevalid type="password" class="form-control is-valid" id="passwordvalid" placeholder="Ваш пароль*"
+                <input formControlName="password" namevalid type="password" class="form-control is-invalid" id="passwordvalid" placeholder="{{ 'auth.register.password' | transloco }}"
                     required>
-                <label for="passwordvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
-                <!-- Підтвердьте Ваш пароль* -->
-                <input namevalid type="password" class="form-control is-valid" id="sec-passwordvalid" placeholder="Підтвердьте Ваш пароль*"
-                    required>
-                <label for="sec-passwordvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Назва доповіді* -->
-                <input namevalid type="text" class="form-control is-valid" id="name-of-dopvalid" placeholder="Назва доповіді*"
+                <input formControlName="titlereport" namevalid type="text" class="form-control is-invalid" id="dopvalid" placeholder="{{ 'auth.register.titlereport' | transloco }}"
                     required>
-                <label for="name-of-dopvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+                
                 <!-- Секція, на яку подається доповідь* -->
-                <input namevalid type="text" class="form-control is-valid" id="sectionvalid" placeholder="Секція, на яку подається доповідь*"
+                <input formControlName="section" namevalid type="text" class="form-control is-invalid" id="sectionvalid" placeholder="{{ 'auth.register.section' | transloco }}"
                     required>
-                <label for="sectionvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
-
+            
                 <!-- Формат участі в конференції -->
-                <input namevalid type="text" class="form-control is-valid" id="formatvalid" placeholder="Формат участі в конференції"
+                <input formControlName="participationformat" namevalid type="text" class="form-control is-invalid" id="formatvalid" placeholder="{{ 'auth.register.format' | transloco }}"
                     required>
-                <label for="formatvalid" class="valid-feedback">
-                    {{ 'auth.register.ok' | transloco }}
-                </label>
 
-
-    
                 <!-- <div class="custom-file">
                     <input type="file" class="custom-file-input" id="validatedCustomFile">
                     <label class="custom-file-label" for="validatedCustomFile">
@@ -110,9 +64,9 @@
                 </div> -->
     
                 <br>
-                <button class="btn btn-primary" type="submit">Надіслати</button>
-                <button class="btn btn-primary" type="reset">Очистити форму</button>
-                <a class="goback" href="/index"> ⬅ Повернутися на головну</a>
+                <button class="btn btn-primary" type="submit">{{ 'auth.register.send' | transloco}}</button>
+                <button class="btn btn-primary" type="reset">{{'auth.register.clear' | transloco}}</button>
+                <a class="goback" href="/index"> ⬅ {{ 'auth.register.goback' | transloco }}</a>
             </div>
         </form>
     <!-- </div> -->

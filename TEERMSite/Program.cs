@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using TEERMSite.Models;
 
 namespace TEERMSite
@@ -11,19 +12,30 @@ namespace TEERMSite
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-           /* builder.Services.AddDbContext<AuthDbContext>((options) =>
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AuthDbContext>((options) =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connectString"));
-            });*/
+            });
 
             var app = builder.Build();
-
+            
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+                app.UseCors(options =>
+                {
+                    options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                });
+                
+                
             }
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

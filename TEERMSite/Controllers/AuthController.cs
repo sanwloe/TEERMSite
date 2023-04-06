@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TEERMSite.Models;
 
 namespace TEERMSite.Controllers
 {
-    /*[Route("api/[controller]")]
-    [ApiController]*/
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
         public AuthDbContext _authdbcontext;
@@ -17,35 +18,71 @@ namespace TEERMSite.Controllers
         [HttpPost("sign-up")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
-            if (await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email) != null)
+            try
             {
-                return Conflict("This user already exists!");
+                if (await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email) != null)
+                {
+                    return Conflict("This user already exists!");
+                }
+                User newuser = new User();
+
+                newuser.FullName = user.FullName;
+                newuser.AcademicDegree = user.AcademicDegree;
+                newuser.Section = user.Section;
+                newuser.AcademicRank = user.AcademicRank;
+                newuser.Email = user.Email;
+                newuser.Phone = user.Phone;
+                newuser.Password = CryptService.Encrypt(user.Password);
+                newuser.DateRegistration = DateTime.Now;
+                newuser.TitleReport = user.TitleReport;
+                newuser.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport);
+                newuser.JobTitle = user.JobTitle;
+                newuser.WorkPlace = user.WorkPlace;
+                newuser.ParticipationFormat = user.ParticipationFormat;
+                newuser.RoleId = 2;
+                
+                newuser.Role = await _authdbcontext.Roles.FirstOrDefaultAsync((r) => r.Id == 2);
+                newuser.Tenant = new Tenant() { Created = DateTime.UtcNow, LastUpdated = DateTime.UtcNow };
+
+
+                await _authdbcontext.Users.AddAsync(newuser);
+
+                await _authdbcontext.SaveChangesAsync();
+
+                return Ok(newuser);
             }
-            if (await _authdbcontext.Users.FirstOrDefaultAsync(u => u.PhoneNumber == user.PhoneNumber) != null)
+            catch(Exception ex) 
             {
-                return Conflict("This user already exists");
+                return Conflict($"{ex.Message}");
             }
-            User newuser = new User();
+        }
+        [HttpPost("sign-in")]
+        public async Task<ActionResult> Login([FromBody] User user)
+        {
+            try
+            {
+                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
 
-            newuser.Email = user.Email;
+                if (dbuser != null)
+                {
+                    if(CryptService.Verify(user.Password,dbuser.Password))
+                    {
+                        user = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == dbuser.Email);
 
-            newuser.PhoneNumber = user.PhoneNumber;
+                        user.Token = CryptService.NewToken(user.Email,user.AcademicRank,user.Section,user.TitleReport);
 
-            newuser.UserName = user.UserName;
+                        user.Role = await _authdbcontext.Roles.FirstOrDefaultAsync(r => r.Id == user.RoleId);
 
-            newuser.TopicReport = user.TopicReport;
-
-            newuser.File = user.File;
-
-            newuser.AcademicStatus = user.AcademicStatus;
-
-            newuser.MailAddress = user.MailAddress;
-
-            await _authdbcontext.Users.AddAsync(newuser);
-
-            await _authdbcontext.SaveChangesAsync();
-
-            return Ok(true);
+                        return Ok(user);
+                    }
+                    return Conflict("Password Error");
+                }
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }

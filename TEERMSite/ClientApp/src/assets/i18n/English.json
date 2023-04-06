@@ -37,7 +37,8 @@
         "home": {
             "registrdate": "Time left to register : \n {{days}} days, {{hours}} hours , {{minutes}} minutes , {{seconds}} seconds",
             "historyconf": "History of conferences",
-            "registration": "Registration / Log-in",
+            "registration": "Registration",
+            "login" : "Log-in",
             "co-organizers": "Co-organizers",
             "ourPartnersAndPromoter": "Our partners and Promoters",
             "days" : "Days",
@@ -165,25 +166,34 @@
         },
         "pay-info" : {
             "head" : "Payment",
-            "info" : "To cover the expenses associated with organizing the conference and publishing the conference proceedings, an organizational contribution of 100 UAH is required. This includes the cost of remote participation in the conference with an electronic version of the conference proceedings.<br>In case of personal attendance in Lutsk (at the \"Prolysok\" recreation center), an organizational contribution of 450 UAH is required. This covers the expenses associated with organizing the conference (booking the conference room at the \"Prolysok\" recreation center) and publishing the conference proceedings."
+            "info" : "To cover the expenses associated with organizing the conference and publishing the conference proceedings, an organizational contribution of 100 UAH is required. This includes the cost of remote participation in the conference with an electronic version of the conference proceedings.In case of personal attendance in Lutsk (at the \"Prolysok\" recreation center), an organizational contribution of 450 UAH is required. This covers the expenses associated with organizing the conference (booking the conference room at the \"Prolysok\" recreation center) and publishing the conference proceedings."
         }
     },
     "auth" :
     {
+        "head" : {
+        "reg1" : "Registration of a participant of the VII International Scientific and Practical Conference \"Theoretical and Experimental Research in Materials Science and Mechanical Engineering – TERMM-2023\""
+        ,"reg2" : "The registration form is completed <strong>once</strong> per conference participant, regardless of the number of presentations. Co-authors of a presentation should fill out a separate registration form."
+        },
         "register" :
         {
-            "name" : "Surname, Name, Patronymic",
-            "regme" : "Sign-Up!",
-            "selectfile" : "Select file .ZIP 20 MB",
-            "ok" : "Good!",
+            "name" : "Surname, Name, Patronymic : ",
+            "academicdegree" : "Academic Degree :",
+            "academicrank" : "Academic Rank : ",
+            "workplace" : "Work Place :",
+            "phone" : "Phone : +380123456789 : ",
+            "jobtitle" : "Job Title : ",
             "email" : "Email : ",
-            "phone" : "Phone number : ",
-            "academicstatus" : "Academic status : ",
-            "nameoforganiz" : "Name of the organization, position :",
-            "mailadress" : "Postal address",
-            "zipfile": "Files : ",
-            "topicreport" : "Topic Report : ",
-            "formparticipiation" : "Form of Participiation : "
+            "password" : "Password : ",
+            "titlereport" : "Title Report : ",
+            "section" : "The section to which the presentation is submitted : ",
+            "format" : "Conference participation format : ",
+            "send" : "Send!",
+            "clear" : "Clear Form!",
+            "goback" : "Go back to the homepage!"
+        },
+        "guard" : {
+            "right" : "Please register or log in to your account to view!"
         }
     }
 }
