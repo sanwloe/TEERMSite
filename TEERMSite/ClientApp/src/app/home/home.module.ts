@@ -34,7 +34,7 @@ const routes : Routes=[
         [
             { path : '', component : MainComponent},
             { path : 'important-dates', component : ImportantdatesComponent },
-            { path : 'conference-program',component : ConferenceprogramComponent,canActivate : [AuthGuard],data : { permittedRoles : ['ADMIN'] }},
+            { path : 'conference-program',component : ConferenceprogramComponent,canActivate : [AuthGuard],data : { permittedRoles : ['ADMIN','USER'] }},
             { path : 'info-partners',component : InformationPartnersComponent},
             { path : 'thematic-directions',component : ThematicdirectionsComponent},
             { path : 'organizational-committee',component : OrganizationalcommitteeComponent },
