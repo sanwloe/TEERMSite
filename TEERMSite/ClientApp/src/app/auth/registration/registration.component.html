@@ -1,7 +1,5 @@
 <div class="wrapper">
     <!-- <div class="form_wrapper"> -->
-        <div class="registration_header">
-        </div>
         <form  [formGroup]="regform" (ngSubmit)="register(regform.value)" #formDirective="ngForm" class="form">
             <div class="formsign">
                 <div class="registration_header-title">{{'auth.head.reg1' | transloco}}</div>

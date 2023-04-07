@@ -1,11 +1,16 @@
 
 {{ errormessage }}
-<form [formGroup]="loginform" (ngSubmit)="login(loginform.value)" #formDirective="ngForm" class="form">
-    <label>Введіть E-mail</label>
-    <input formControlName="email" type="text">
-    <br>
-    <label>Введіть Password</label>
-    <input formControlName="password" type="text">
-    <br>
-    <button type="submit" class="btn btn-primary">Увійти</button>
-</form>
+<div class="form_wrapper">
+    <div class="form_container">
+        <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)" #formDirective="ngForm" class="form">
+            <h2>Вхід</h2>
+            <label for="emailinput">E-mail</label>
+            <input formControlName="email" type="text" id="emailinput" placeholder="Ведіть E-mail...">
+            <br>
+            <label for="passinput">Пароль</label>
+            <input formControlName="password" type="text" id="passinput" placeholder="Введіть пароль...">
+            <br>
+            <button type="submit" class="btn btn-primary">Увійти</button>
+        </form>
+    </div>
+</div>
