@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
 using TEERMSite.Models;
 
 namespace TEERMSite.Controllers
@@ -11,9 +14,12 @@ namespace TEERMSite.Controllers
     public class AuthController : ControllerBase
     {
         public AuthDbContext _authdbcontext;
+        public ConfigurationManager _configuration;
         public AuthController(AuthDbContext authDbContext)
         {
             _authdbcontext = authDbContext;
+            
+            
         }
         [HttpPost("sign-up")]
         public async Task<IActionResult> Register([FromBody] User user)
@@ -40,7 +46,7 @@ namespace TEERMSite.Controllers
                 newuser.WorkPlace = user.WorkPlace;
                 newuser.ParticipationFormat = user.ParticipationFormat;
                 newuser.RoleId = 2;
-                
+
                 newuser.Role = await _authdbcontext.Roles.FirstOrDefaultAsync((r) => r.Id == 2);
                 newuser.Tenant = new Tenant() { Created = DateTime.UtcNow, LastUpdated = DateTime.UtcNow };
 
@@ -51,7 +57,7 @@ namespace TEERMSite.Controllers
 
                 return Ok(newuser);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 return Conflict($"{ex.Message}");
             }
@@ -65,11 +71,11 @@ namespace TEERMSite.Controllers
 
                 if (dbuser != null)
                 {
-                    if(CryptService.Verify(user.Password,dbuser.Password))
+                    if (CryptService.Verify(user.Password, dbuser.Password))
                     {
                         user = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == dbuser.Email);
 
-                        user.Token = CryptService.NewToken(user.Email,user.AcademicRank,user.Section,user.TitleReport);
+                        user.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport);
 
                         user.Role = await _authdbcontext.Roles.FirstOrDefaultAsync(r => r.Id == user.RoleId);
 
@@ -83,6 +89,45 @@ namespace TEERMSite.Controllers
             {
                 return BadRequest(ex);
             }
+        }
+        [HttpPost("check-token")]
+        public async Task<bool> TokenIsValid([FromBody] User user)
+        {
+
+            var rsa = new RSACryptoServiceProvider();
+
+            rsa.FromXmlString(CryptService.GetValue("publickey"));
+
+            var tokenvalidator = new TokenValidationParameters
+            {
+                ValidAudience = "memberconference",
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new RsaSecurityKey(rsa),
+                ValidateIssuer = true,
+                ValidIssuer = "backendtermmsite",
+            }; 
+             
+            try
+            {
+                var handler = new JwtSecurityTokenHandler();
+                
+                if(user != null)
+                {
+                    handler.ValidateToken(user.Token,tokenvalidator,out var result);
+                    return true;
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            
         }
     }
 }

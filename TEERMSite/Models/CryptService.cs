@@ -1,7 +1,13 @@
 ﻿using BCrypt.Net;
+using Microsoft.Azure.KeyVault;
+using Microsoft.Azure.KeyVault.Cryptography.Algorithms;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics.Arm;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace TEERMSite.Models
@@ -18,23 +24,39 @@ namespace TEERMSite.Models
         }
         public static string NewToken(string email,string academicrank,string section,string TitleReport)
         {
-            var claims = new SecurityTokenDescriptor
+            var rsaprivatekey = new RSACryptoServiceProvider();
+            
+            rsaprivatekey.FromXmlString(GetValue("privatekey"));
+
+            var claims = new Claim[]
             {
-                Subject = new System.Security.Claims.ClaimsIdentity(
-                    new Claim[]
-                    {
-                        new Claim("email", email),
-                        new Claim("academicrank",academicrank),
-                        new Claim("section", section),
-                        new Claim("titlereport",TitleReport)
-                    }),
-                Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes("conferenceskeyrandomfromstudent")), SecurityAlgorithms.HmacSha256Signature)
+                new Claim("email", email),
+                new Claim("academicrank", academicrank),
+                new Claim("section", section),
+                new Claim("titlereport", TitleReport)
             };
+
+
+            var jwtToken = new JwtSecurityToken(
+                expires: DateTime.UtcNow.AddMinutes(30),
+                claims: claims,
+                signingCredentials: new SigningCredentials(new RsaSecurityKey(rsaprivatekey), SecurityAlgorithms.RsaSha256),
+                issuer : "backendtermmsite",
+                audience: "memberconference"
+                );
+
+
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-            var token = handler.CreateToken(claims);
-            return handler.WriteToken(token);
+            return handler.WriteToken(jwtToken);
+        }
+        public static string GetValue(string field)
+        {
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+            return configuration[field];
         }
     }
 }

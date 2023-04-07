@@ -18,9 +18,10 @@ export class AuthGuard implements CanActivate {
       let roles = route.data['permittedRoles'] as Array<string>;
 
       if(user.role!=null && roles.length > 0 && roles.includes(user.role.name)){
-        return true;
-      }
-      
+        alert(user.token);
+        console.log(user.token);
+        return true;    
+      }   
     }
     alert(translate('auth.guard.right'));
     

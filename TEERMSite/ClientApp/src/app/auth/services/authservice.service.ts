@@ -27,4 +27,7 @@ export class AuthserviceService {
     else 
       this.router.navigateByUrl('/');
   }
+  checktoken(user : User) : Observable<User> {
+    return this.http.post<User>('https://localhost:7108/api/Auth/check-token',user);
+  }
 }
