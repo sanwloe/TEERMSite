@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { TranslocoService } from '@ngneat/transloco';
+import { translate, TranslocoService } from '@ngneat/transloco';
 import { AuthserviceService } from './auth/services/authservice.service';
 
 @Component({
@@ -24,13 +24,26 @@ export class AppComponent implements OnInit {
     }
     //Check user session out or not
     let user = JSON.parse(localStorage.getItem('user')!);
-    //Check
+    //Check token is expired
+    let jwthelper = new JwtHelperService();
+
     setTimeout(() =>{
-      if(!this.authservice.checktoken(user)){
-        alert('Session is not valid , please log-in ');
+      if(jwthelper.isTokenExpired(user.token)){
+        alert(translate('auth.guard.sessionOut'));
         this.authservice.logout('/auth/sign-in');
       }    
     },5000);
+
+    if(!this.authservice.checktoken(user)){
+      alert(translate('auth.guard.checktoken'));
+      this.authservice.logout('/auth/sign-in')
+    }
+    else
+    {
+      console.log('Session is valid!');
+    }
+
+
 
 
   }

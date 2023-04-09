@@ -12,9 +12,10 @@ const routes : Routes = [
     {
         path : 'auth',component : AuthComponent,
         children : [
-            { path : 'sign-up',component : RegistrationComponent ,pathMatch : 'full'},
-            { path : '',redirectTo : 'sign-up', pathMatch: 'full'},
-            { path : 'sign-in',component : SignInComponent}
+            { path : 'sign-up',component : RegistrationComponent ,pathMatch : 'full' },
+            { path : '',redirectTo : 'sign-up', pathMatch: 'full' },
+            { path : 'sign-in',component : SignInComponent },
+            { path : 'recovery-password',component : RecoveryPasswordComponent }
         ]
     }
 ]

@@ -193,7 +193,17 @@
             "goback" : "Go back to the homepage!"
         },
         "guard" : {
-            "right" : "Please register or log in to your account to view!"
+            "right" : "Please register or log in to your account to view!",
+            "sessionOut" : "The session has expired, log in to your account again!",
+            "checktoken" : "The session is invalid, log in to your account again!"
+        },
+        "sign-in" : {
+            "signin" : "Sign-in",
+            "pass" : "Password",
+            "login" : "Sign-in",
+            "recoverypass" : "Forgot your password?",
+            "enteremail" : "Enter your e-mail ... ",
+            "enterpass" : "Enter your password ... "
         }
     }
 }

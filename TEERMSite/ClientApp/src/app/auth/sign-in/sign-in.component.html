@@ -1,16 +1,19 @@
-
 {{ errormessage }}
 <div class="form_wrapper">
     <div class="form_container">
         <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)" #formDirective="ngForm" class="form">
-            <h2>Вхід</h2>
+            <h2>{{ 'auth.sign-in.signin' | transloco }}</h2>
             <label for="emailinput">E-mail</label>
-            <input formControlName="email" type="text" id="emailinput" placeholder="Ведіть E-mail...">
+            <input formControlName="email" type="text" id="emailinput" placeholder="{{ 'auth.sign-in.enteremail' | transloco }}">
             <br>
-            <label for="passinput">Пароль</label>
-            <input formControlName="password" type="text" id="passinput" placeholder="Введіть пароль...">
+            <label for="passinput">{{ 'auth.sign-in.pass' | transloco }}</label>
+            <input formControlName="password" type="text" id="passinput" placeholder="{{ 'auth.sign-in.enterpassword' | transloco }}">
             <br>
-            <button type="submit" class="btn btn-primary">Увійти</button>
+            <button type="submit" class="btn btn-primary">{{ 'auth.sign-in.login' | transloco }}</button>
+            <br>
+            <div>
+                <a routerLink="/auth/recovery-password">{{ 'auth.sign-in.recoverypass' | transloco }}</a>
+            </div>
         </form>
     </div>
 </div>
