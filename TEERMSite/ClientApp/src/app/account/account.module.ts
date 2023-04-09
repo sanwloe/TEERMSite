@@ -1,22 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyaccountComponent } from './myaccount/myaccount.component';
-import { Route, Routes } from '@angular/router';
-import { AuthGuard } from '../auth/auth.guard';
+import { MyinfoComponent } from './myinfo/myinfo.component';
+import { PayinfoComponent } from './payinfo/payinfo.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AccountComponent } from './account.component';
 
 
 const routes : Routes = [
-    { path : 'myaccount',component : MyaccountComponent ,canActivate : [AuthGuard],data : { permittedRoles : ['ADMIN','USER'] }}
+  { path : 'account',component : AccountComponent ,children : [
+    { path : 'my-info',component : MyinfoComponent },
+    { path : 'pay-info',component : PayinfoComponent }
+  ]}
 ]
-
 
 
 @NgModule({
   declarations: [
-    MyaccountComponent
+    MyinfoComponent,
+    PayinfoComponent,
+    AccountComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
   ]
 })
 export class AccountModule { }
