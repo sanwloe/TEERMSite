@@ -7,9 +7,10 @@ import { AccountComponent } from './account.component';
 
 
 const routes : Routes = [
-  { path : 'account',component : AccountComponent ,children : [
+  { path : 'account' ,component : AccountComponent ,children : [   
     { path : 'my-info',component : MyinfoComponent },
-    { path : 'pay-info',component : PayinfoComponent }
+    { path : 'pay-info',component : PayinfoComponent },
+    { path : '',redirectTo : 'my-info',pathMatch : 'full'},
   ]}
 ]
 
@@ -23,6 +24,7 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-  ]
+  ],
+  exports : [RouterModule]
 })
 export class AccountModule { }
