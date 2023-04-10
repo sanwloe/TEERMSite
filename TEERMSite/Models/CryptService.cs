@@ -38,7 +38,7 @@ namespace TEERMSite.Models
 
 
             var jwtToken = new JwtSecurityToken(
-                expires: DateTime.UtcNow.AddMinutes(30),
+                expires: DateTime.UtcNow.AddDays(1),
                 claims: claims,
                 signingCredentials: new SigningCredentials(new RsaSecurityKey(rsaprivatekey), SecurityAlgorithms.RsaSha256),
                 issuer : "backendtermmsite",

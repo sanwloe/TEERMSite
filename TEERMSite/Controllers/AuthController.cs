@@ -91,43 +91,83 @@ namespace TEERMSite.Controllers
             }
         }
         [HttpPost("check-token")]
-        public async Task<bool> TokenIsValid([FromBody] User user)
+        public async Task<ActionResult> TokenCheckValid([FromBody] User user)
         {
-
-            var rsa = new RSACryptoServiceProvider();
-
-            rsa.FromXmlString(CryptService.GetValue("publickey"));
-
-            var tokenvalidator = new TokenValidationParameters
+            if (AuthService.TokenIsValid(user))
             {
-                ValidAudience = "memberconference",
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new RsaSecurityKey(rsa),
-                ValidateIssuer = true,
-                ValidIssuer = "backendtermmsite",
-            }; 
-             
-            try
-            {
-                var handler = new JwtSecurityTokenHandler();
-                
-                if(user != null)
-                {
-                    handler.ValidateToken(user.Token,tokenvalidator,out var result);
-                    return true;
-                }
-                else
-                {
-                    throw new InvalidOperationException();
-                }
+                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+                dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport);
+
+                return Ok(dbuser);
             }
-            catch (Exception ex)
+            else
             {
-                return false;
+                return Conflict("Session is not valid!");
             }
+
 
             
+        }
+        [HttpPost("user-update-info")]
+        public async Task<ActionResult> UserUpdateInfo([FromBody] User user)
+        {
+            var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+            if(dbuser != null) 
+            {
+                if (AuthService.TokenIsValid(user))
+                {
+
+
+                    dbuser.FullName = user.FullName;
+                    dbuser.AcademicRank = user.AcademicRank;
+                    dbuser.AcademicDegree = user.AcademicDegree;
+                    dbuser.JobTitle = user.JobTitle;
+                    dbuser.Section = user.Section;
+                    dbuser.WorkPlace = user.WorkPlace;
+                    dbuser.TitleReport = user.TitleReport;
+
+                    _authdbcontext.Users.Update(dbuser);
+
+                    _authdbcontext.SaveChanges();
+
+                    dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
+
+                    dbuser.Role = _authdbcontext.Roles.FirstOrDefault(u => u.Id == dbuser.RoleId);
+
+                    dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport);
+
+                    return Ok(dbuser);
+                }
+                return Conflict("Session is not valid");
+            }
+
+
+            /*if(dbuser!=null)
+            {
+   
+                    dbuser.FullName = user.FullName;
+                    dbuser.AcademicRank = user.AcademicRank;
+                    dbuser.AcademicDegree = user.AcademicDegree;
+                    dbuser.JobTitle = user.JobTitle;
+                    dbuser.Section = user.Section;
+                    dbuser.WorkPlace = user.WorkPlace;
+                    dbuser.TitleReport = user.TitleReport;
+
+                    _authdbcontext.Users.Update(dbuser);
+
+                    _authdbcontext.SaveChanges();
+
+                    dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
+
+                    user.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport);
+
+                    Ok(user);
+                
+            }*/
+
+            return NotFound("error");
         }
     }
 }
