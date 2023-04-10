@@ -1,6 +1,67 @@
-<p>account works!</p>
-
-
-<div>
+<div class="account">
     <router-outlet></router-outlet>
+
+    <div class="account_wrapper">
+        <div class="account_nav">
+            <ul class="account_nav-items">
+                <li class="account_nav-item"><a href="/account">Моя інформація</a></li>
+                <li class="account_nav-item"><a href="/payinfo">Платежі</a></li>
+            </ul>
+        </div>
+
+        <div class="account_page">
+            <div class="account_page-information">
+                <h3>Інформація про акаунт</h3>
+                <div class="account_page-information-tagcomponent">
+                    <div class="account_page-information-fhalf">
+                        <p class="account_page-information-tag">ПІБ:</p>
+                        <p class="account_page-information-tag-item">"Прізвище І'мя По-Батькові"</p>
+                        <br>
+                        <p class="account_page-information-tag">Академічний статус:</p>
+                        <p class="account_page-information-tag-item">"Статус"</p>
+                        <br>
+                        <p class="account_page-information-tag">Вчене звання:</p>
+                        <p class="account_page-information-tag-item">"Звання"</p>
+                        <br>
+                    </div>
+                    <div class="account_page-information-shalf">
+                        <p class="account_page-information-tag">Місце роботи:</p>
+                        <p class="account_page-information-tag-item">"Місце"</p>
+                        <br>
+                        <p class="account_page-information-tag">Посада:</p>
+                        <p class="account_page-information-tag-item">"Посада"</p>
+                        <br>
+                        <p class="account_page-information-tag">Телефон:</p>
+                        <p class="account_page-information-tag-item">+38 097-00-000-00</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account_page-information">
+                <h3>Змінити пошту/e-mail</h3>
+                <div class="account_page-information-component">
+                    <p class="account_page-information-label">E-mail</p>
+                    <input class="form__field" type="email" placeholder="{email користувача, який він ввів}"/>
+                </div>
+            </div>
+
+            <div class="account_page-information">
+                <h3>Змінити пароль</h3>
+                <div class="account_page-information-component">
+                    <div class="account_page-information-label">Пароль</div>
+                    <input class="form__field" type="password" placeholder="{пароль користувача}"/>
+                </div>
+                <div class="account_page-information-component">
+                    <p class="account_page-information-label">Новий пароль</p>
+                    <input class="form__field" type="password" placeholder="{новий пароль користувача}"/>
+                </div>
+                <div class="account_page-information-component">
+                    <p class="account_page-information-label">Підтвердіть новий пароль</p>
+                    <input class="form__field" type="password" placeholder="{щераз новий пароль}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

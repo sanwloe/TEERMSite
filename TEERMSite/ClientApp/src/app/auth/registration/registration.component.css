@@ -74,6 +74,7 @@ span{
 }
 
 .formsign{
+
     align-items: center;
     margin-top: 20px;
     padding: 20px;
@@ -100,6 +101,7 @@ span{
     background-size: cover;
     border-radius: 20px;
     box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.575);
+    margin: 40px;
 
 }
 .form-control{
