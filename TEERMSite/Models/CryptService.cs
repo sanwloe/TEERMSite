@@ -22,7 +22,7 @@ namespace TEERMSite.Models
         {
             return BCrypt.Net.BCrypt.Verify(password, hpassword);
         }
-        public static string NewToken(string email,string academicrank,string section,string TitleReport)
+        public static string NewToken(string email,string academicrank,string section,string TitleReport,DateTime expires)
         {
             var rsaprivatekey = new RSACryptoServiceProvider();
             
@@ -38,7 +38,7 @@ namespace TEERMSite.Models
 
 
             var jwtToken = new JwtSecurityToken(
-                expires: DateTime.UtcNow.AddDays(1),
+                expires: expires,
                 claims: claims,
                 signingCredentials: new SigningCredentials(new RsaSecurityKey(rsaprivatekey), SecurityAlgorithms.RsaSha256),
                 issuer : "backendtermmsite",

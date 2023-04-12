@@ -6,34 +6,46 @@ namespace TEERMSite.Models
 {
     public class EmailService : IDisposable
     {
-        public EmailService() 
+        MailMessage _messageRecoveryPass;
+        SmtpClient _smtpClient;
+        
+        public EmailService()
         {
-            smtpClient = new SmtpClient();
-            mail = new MailMessage();
-            mail.IsBodyHtml = true;
-            mail.Subject = "LNTU TEERM Service";
-            mail.From = new MailAddress("service@LNTU-TEERM.com");
-            mail.BodyEncoding = Encoding.UTF8;
-            mail.Body = "<html>" +
-                "<h2>Ласкаво Просимо!</h2>" +
-                "Тільки що ви були зареєстровані на www.Teerm.lntu.edu.ua!" +
-                "</html>";
-            smtpClient.Port = 587;
-            smtpClient.Host = "smtp.gmail.com";
-            smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new NetworkCredential("service@LNTU-TEERM.com", "");
+            _smtpClient = new SmtpClient()
+            {
+                UseDefaultCredentials = false,
+                Host = "smtp.gmail.com",
+                Port = 587,               
+                EnableSsl = true,
+                Credentials = new NetworkCredential("termm.service@gmail.com", "lgjmdrmruijedtao"),
+            };
+            _messageRecoveryPass = new MailMessage();
+            
         }
-        public MailMessage mail { get; set; }
-        public SmtpClient smtpClient { get; set; }
-
-        public void SendWelcomeEmail()
+        public async Task<bool> SendRecovery(string email,string origin)
         {
-            smtpClient.SendMailAsync(mail);
-            Dispose();
+            try
+            {
+                _messageRecoveryPass.IsBodyHtml = true;
+                _messageRecoveryPass.BodyEncoding = Encoding.UTF8;
+                _messageRecoveryPass.Body = $"<h3>Your recovery link : <br><a href='{origin}'>Click!<h3>";
+                _messageRecoveryPass.Subject = "TEERMM Service";
+                _messageRecoveryPass.From = new MailAddress("termm.service@gmail.com");
+                _messageRecoveryPass.To.Add(new MailAddress(email));
+
+
+                await _smtpClient.SendMailAsync(_messageRecoveryPass);
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
         public void Dispose()
         {
-            mail.Dispose();
+            _smtpClient.Dispose();
         }
         
 
