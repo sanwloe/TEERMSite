@@ -3,7 +3,7 @@
 }
 
 .account_wrapper{
-    background: linear-gradient(-45deg, #ffffff, #1562d6);
+    background: linear-gradient(-45deg, #37086d, #5e60d4e0);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     min-height: 100vh;
