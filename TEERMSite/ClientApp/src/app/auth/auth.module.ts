@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RecoveryPasswordComponent } from './recovery-password/recovery-password.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes : Routes = [
     {
@@ -27,6 +28,7 @@ const routes : Routes = [
     AuthComponent,
     SignInComponent,
     RecoveryPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,

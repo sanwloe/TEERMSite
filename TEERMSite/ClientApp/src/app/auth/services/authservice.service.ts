@@ -33,4 +33,7 @@ export class AuthserviceService {
   userupdateinfo(user : User) : Observable<User> {
     return this.http.post<User>('https://localhost:7108/api/Auth/user-update-info',user);
   }
+  sendrecoverylink(user : User) : Observable<User>{
+    return this.http.post<User>('https://localhost:7108/api/Auth/recovery-password',user);
+  }
 }
