@@ -35,7 +35,7 @@ input {
     color: #333;
     line-height: 1.2;
     display: block;
-    width: 100%;
+    /* width: 30%; */
     height: 55px;
     background: 0 0;
     padding: 0 7px 0 43px;
@@ -61,11 +61,9 @@ input:focus{
     margin-top: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 60px;
     width: 100%;
-    /* align-items: center; */
 }
 
 .account_page-information-component{
@@ -93,4 +91,14 @@ h3{
 
 button{
     margin-top: 5px;
+}
+
+.account_page-information-form{
+    justify-content: space-around;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.575);
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(230, 230, 230);
 }

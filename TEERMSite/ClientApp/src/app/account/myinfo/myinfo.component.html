@@ -2,38 +2,43 @@
     <div class="account_page-information">
         <h3>Інформація про акаунт:</h3>
         <div class="account_page-information-tagcomponent">
-            <form [formGroup]="updateform" (ngSubmit)="update(updateform.value)" #formDirective="ngForm"  class="account_page-information-fhalf">
-                <p class="account_page-information-tag">ПІБ:</p>
-                <input formControlName="fullname" type="text" class="account_page-information-tag-item" value="{{ user.fullName }}"/>
-                <br>
-                <p class="account_page-information-tag">Академічний статус:</p>
-                <input formControlName="academicdegree" type="text" class="account_page-information-tag-item" value="{{ user.academicDegree }}" />
-                <br>
-                <p class="account_page-information-tag">Вчене звання:</p>
-                <input formControlName="academicrank" type="text" class="account_page-information-tag-item" value="{{ user.academicRank }}"/>
-                <br>
-                <p class="account_page-information-tag">Місце роботи:</p>
-                <input formControlName="workplace" type="text" class="account_page-information-tag-item" value="{{ user.workPlace }}" />
-                <br>
-                <p class="account_page-information-tag">Посада:</p>
-                <input formControlName="jobtitle" type="text" class="account_page-information-tag-item" value="{{ user.jobTitle }}" />
-                <br>
-                <p class="account_page-information-tag">Телефон:</p>
-                <input disabled type="text" class="account_page-information-tag-item" value="{{ user.phone }}" />
-                <br>
-                <p class="account_page-information-tag">E-mail : </p>
-                <input disabled type="text" value="{{ user.email }}" >
-                <br>
-                <p class="account_page-information-tag">Тема доповіді:</p>
-                <input formControlName="titlereport" type="text" class="account_page-information-tag-item" value="{{ user.titleReport }}" />
-                <br>
-                <p class="account_page-information-tag">Секція на яку подавалась доповідь : </p>
-                <input formControlName="section" type="text" class="account_page-information-tag-item" value="{{ user.section }}" />
-                <br>
-                <p class="account_page-information-tag">Формат участі : </p>
-                <input disabled type="text" class="account_page-information-tag-item" value="{{ user.participationFormat }}" />
+            <form [formGroup]="updateform" (ngSubmit)="update(updateform.value)" #formDirective="ngForm"  class="account_page-information-form">
+                <div class="account_page-information-form-ones">
+                    <p class="account_page-information-tag">ПІБ:</p>
+                    <input formControlName="fullname" type="text" class="account_page-information-tag-item" value="{{ user.fullName }}"/>
+                    <br>
+                    <p class="account_page-information-tag">Академічний статус:</p>
+                    <input formControlName="academicdegree" type="text" class="account_page-information-tag-item" value="{{ user.academicDegree }}" />
+                    <br>
+                    <p class="account_page-information-tag">Вчене звання:</p>
+                    <input formControlName="academicrank" type="text" class="account_page-information-tag-item" value="{{ user.academicRank }}"/>
+                    <br>
+                    <p class="account_page-information-tag">Місце роботи:</p>
+                    <input formControlName="workplace" type="text" class="account_page-information-tag-item" value="{{ user.workPlace }}" />
+                    <br>
+                    <p class="account_page-information-tag">Посада:</p>
+                    <input formControlName="jobtitle" type="text" class="account_page-information-tag-item" value="{{ user.jobTitle }}" />
+                    </div>
+                <div class="d">
+                    <p class="account_page-information-tag">Телефон:</p>
+                    <input disabled type="text" class="account_page-information-tag-item" value="{{ user.phone }}" />
+                    <br>
+                    <p class="account_page-information-tag">E-mail : </p>
+                    <input disabled type="text" value="{{ user.email }}" >
+                    <br>
+                    <p class="account_page-information-tag">Тема доповіді:</p>
+                    <input formControlName="titlereport" type="text" class="account_page-information-tag-item" value="{{ user.titleReport }}" />
+                    <br>
+                    <p class="account_page-information-tag">Секція на яку подавалась доповідь : </p>
+                    <input formControlName="section" type="text" class="account_page-information-tag-item" value="{{ user.section }}" />
+                    <br>
+                    <p class="account_page-information-tag">Формат участі : </p>
+                    <input disabled type="text" class="account_page-information-tag-item" value="{{ user.participationFormat }}" />
+                    <button [disabled]="!updateform.dirty" type="submit" id="btnsumbit" class="btn btn-primary">Змінити</button>
+                </div>
+                
 
-                <button [disabled]="!updateform.dirty" type="submit" id="btnsumbit" class="btn btn-primary">Змінити</button>
+                
             </form>
         </div>
     </div>
