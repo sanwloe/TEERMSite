@@ -16,7 +16,8 @@ const routes : Routes = [
             { path : 'sign-up',component : RegistrationComponent ,pathMatch : 'full' },
             { path : '',redirectTo : 'sign-up', pathMatch: 'full' },
             { path : 'sign-in',component : SignInComponent },
-            { path : 'recovery-password',component : RecoveryPasswordComponent }
+            { path : 'recovery-password',component : RecoveryPasswordComponent },
+            { path : 'reset-password',component : ResetPasswordComponent }
         ]
     }
 ]
