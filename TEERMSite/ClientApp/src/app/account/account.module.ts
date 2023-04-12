@@ -4,6 +4,7 @@ import { MyinfoComponent } from './myinfo/myinfo.component';
 import { PayinfoComponent } from './payinfo/payinfo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes : Routes = [
@@ -23,6 +24,8 @@ const routes : Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   exports : [RouterModule]

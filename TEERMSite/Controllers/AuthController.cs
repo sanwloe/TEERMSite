@@ -41,7 +41,7 @@ namespace TEERMSite.Controllers
                 newuser.Password = CryptService.Encrypt(user.Password);
                 newuser.DateRegistration = DateTime.Now;
                 newuser.TitleReport = user.TitleReport;
-                newuser.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport);
+                newuser.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport,DateTime.UtcNow.AddDays(1));
                 newuser.JobTitle = user.JobTitle;
                 newuser.WorkPlace = user.WorkPlace;
                 newuser.ParticipationFormat = user.ParticipationFormat;
@@ -75,7 +75,7 @@ namespace TEERMSite.Controllers
                     {
                         user = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == dbuser.Email);
 
-                        user.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport);
+                        user.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport,DateTime.UtcNow.AddDays(1));
 
                         user.Role = await _authdbcontext.Roles.FirstOrDefaultAsync(r => r.Id == user.RoleId);
 
@@ -91,43 +91,85 @@ namespace TEERMSite.Controllers
             }
         }
         [HttpPost("check-token")]
-        public async Task<bool> TokenIsValid([FromBody] User user)
+        public async Task<ActionResult> TokenCheckValid([FromBody] User user)
         {
-
-            var rsa = new RSACryptoServiceProvider();
-
-            rsa.FromXmlString(CryptService.GetValue("publickey"));
-
-            var tokenvalidator = new TokenValidationParameters
+            if (AuthService.TokenIsValid(user))
             {
-                ValidAudience = "memberconference",
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new RsaSecurityKey(rsa),
-                ValidateIssuer = true,
-                ValidIssuer = "backendtermmsite",
-            }; 
-             
-            try
-            {
-                var handler = new JwtSecurityTokenHandler();
-                
-                if(user != null)
-                {
-                    handler.ValidateToken(user.Token,tokenvalidator,out var result);
-                    return true;
-                }
-                else
-                {
-                    throw new InvalidOperationException();
-                }
+                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+                dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
+
+                return Ok(dbuser);
             }
-            catch (Exception ex)
+            else
             {
-                return false;
+                return Conflict("Session is not valid!");
             }
+
 
             
+        }
+        [HttpPost("user-update-info")]
+        public async Task<ActionResult> UserUpdateInfo([FromBody] User user)
+        {
+            var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+            if(dbuser != null) 
+            {
+                if (AuthService.TokenIsValid(user))
+                {
+                    dbuser.FullName = user.FullName;
+                    dbuser.AcademicRank = user.AcademicRank;
+                    dbuser.AcademicDegree = user.AcademicDegree;
+                    dbuser.JobTitle = user.JobTitle;
+                    dbuser.Section = user.Section;
+                    dbuser.WorkPlace = user.WorkPlace;
+                    dbuser.TitleReport = user.TitleReport;
+
+                    _authdbcontext.Users.Update(dbuser);
+
+                    _authdbcontext.SaveChanges();
+
+                    dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
+
+                    dbuser.Role = _authdbcontext.Roles.FirstOrDefault(u => u.Id == dbuser.RoleId);
+
+                    dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
+
+                    return Ok(dbuser);
+                }
+                return Conflict("Session is not valid");
+            }
+            return NotFound("error");
+        }
+        [HttpPost("recovery-password")]
+        public async Task <IActionResult> SendRecoveryLink([FromBody] User user)
+        {
+            var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+            if(dbuser != null) 
+            {
+                try
+                {
+                    string token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport, DateTime.UtcNow.AddMinutes(5));
+
+                    EmailService emailService = new EmailService();
+
+                    string recoverylink = "https://localhost:44403/auth/recovery-password/" + token;
+
+                    var result = emailService.SendRecovery(dbuser.Email,recoverylink);
+
+                    return Ok(result.Result);
+                }
+                catch (Exception ex)
+                {
+                    return Conflict(ex.Message);
+                }
+                
+
+            }
+
+            return BadRequest();
         }
     }
 }

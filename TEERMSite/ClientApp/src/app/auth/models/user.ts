@@ -19,6 +19,7 @@ export class User
     token!: string;
     tenantId!: number;
     tenant!: number;
+    participationFormat! : string;
 
     
 }

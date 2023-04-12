@@ -55,7 +55,7 @@ namespace TEERMSite.Models
                     Email = "oleksandr.ill.x@gmail.com",
                     Phone = "+380977012344",
                     Password = CryptService.Encrypt("iadministrator2023@"),
-                    Token = CryptService.NewToken("oleksandr.ill.x@gmail.com","null","null","null"),
+                    Token = CryptService.NewToken("oleksandr.ill.x@gmail.com","null","null","null",DateTime.UtcNow.AddDays(1)),
                     DateRegistration = DateTime.Now,
                     TitleReport = "",
                     JobTitle = "",

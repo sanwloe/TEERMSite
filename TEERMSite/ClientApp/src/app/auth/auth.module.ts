@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RecoveryPasswordComponent } from './recovery-password/recovery-password.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes : Routes = [
     {
@@ -15,7 +16,8 @@ const routes : Routes = [
             { path : 'sign-up',component : RegistrationComponent ,pathMatch : 'full' },
             { path : '',redirectTo : 'sign-up', pathMatch: 'full' },
             { path : 'sign-in',component : SignInComponent },
-            { path : 'recovery-password',component : RecoveryPasswordComponent }
+            { path : 'recovery-password',component : RecoveryPasswordComponent },
+            { path : 'reset-password',component : ResetPasswordComponent }
         ]
     }
 ]
@@ -27,6 +29,7 @@ const routes : Routes = [
     AuthComponent,
     SignInComponent,
     RecoveryPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,
