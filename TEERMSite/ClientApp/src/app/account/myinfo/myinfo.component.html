@@ -1,6 +1,6 @@
 <div class="account_page">
     <div class="account_page-information">
-        <h3>Інформація про акаунт11</h3>
+        <h3>Інформація про акаунт:</h3>
         <div class="account_page-information-tagcomponent">
             <form [formGroup]="updateform" (ngSubmit)="update(updateform.value)" #formDirective="ngForm"  class="account_page-information-fhalf">
                 <p class="account_page-information-tag">ПІБ:</p>
@@ -33,7 +33,7 @@
                 <p class="account_page-information-tag">Формат участі : </p>
                 <input disabled type="text" class="account_page-information-tag-item" value="{{ user.participationFormat }}" />
 
-                <button [disabled]="!updateform.dirty" type="submit" id="btnsumbit">Змінити</button>
+                <button [disabled]="!updateform.dirty" type="submit" id="btnsumbit" class="btn btn-primary">Змінити</button>
             </form>
         </div>
     </div>
