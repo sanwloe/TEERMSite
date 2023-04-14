@@ -1,4 +1,5 @@
 {
+    "test" : "teeest",
     "index" : 
     {
         "progcomite" : "Program Committee",
@@ -32,7 +33,9 @@
             "history.thirdconf" : "III Conference (2011)",
             "history.fourthconf" : "IV Conference (2013)",
             "history.fifthconf" : "V Conference (2015)",
-            "history.sixthconf" : "VI Conference (2017)"
+            "history.sixthconf" : "VI Conference (2017)",
+            "logout" : "Logout",
+            "myacc" : "My Account"
         },
         "home": {
             "registrdate": "Time left to register : \n {{days}} days, {{hours}} hours , {{minutes}} minutes , {{seconds}} seconds",
@@ -204,6 +207,41 @@
             "recoverypass" : "Forgot your password?",
             "enteremail" : "Enter your e-mail ... ",
             "enterpass" : "Enter your password ... "
+        },
+        "rec-res" : {
+            "recoveryresult400" : "No user found!",
+            "recoveryresult200" : "Instruction sheet has been successfully sent to your email!",
+            "reset" : "Password successfully changed!",
+            "resetnomatch" : "Passwords do not match!",
+            "passrequirements" : "Passwords must contain at least 8 characters!",
+            "enternewpass" : "Enter your new password : ",
+            "enterconfpass" : "Confirm your new password : ",
+            "newpass" : "New Password",
+            "confpass" : "Confirm your new password",
+            "btnreset" : "Reset!",
+            "goback" : "Go Back",
+            "headresetpass" : "Password Recovery"
+        }
+    },
+    "account" : {
+        "my-info" : {
+            "head" : "Account Information : ",
+            "fullname" : "Full Name",
+            "phone" : "Phone",
+            "academicstatus" : "Academic Status",
+            "academicrank" : "Academic Rank",
+            "titlereport" : "Title of the Report",
+            "placework" : "Work place",
+            "section" : "Section for which the report was submitted",
+            "jobtitle" : "Job Title",
+            "format" : "Participation Format",
+            "btnsubmit" : "Save Changes!"
+            },
+        "nav-menu" : {
+            "myinfo" : "My Information",
+            "pay" : "Payments",
+            "main" : "Main"
         }
     }
+
 }

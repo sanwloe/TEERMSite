@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -35,5 +35,8 @@ export class AuthserviceService {
   }
   sendrecoverylink(user : User) : Observable<User>{
     return this.http.post<User>('https://localhost:7108/api/Auth/recovery-password',user);
+  }
+  resetpassword(user : User) : Observable<User>{
+    return this.http.post<User>('https://localhost:7108/api/Auth/reset-password',user);
   }
 }

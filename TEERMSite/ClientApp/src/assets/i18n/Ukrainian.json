@@ -1,4 +1,5 @@
 {
+    "test" : "teest",
     "index" :
     {
         "progcomite" : "Програмний комітет",
@@ -33,7 +34,9 @@
             "history.thirdconf" : "III Конференція (2011)",
             "history.fourthconf" : "IV Конференція (2013)",
             "history.fifthconf" : "V Конференція (2015)",
-            "history.sixthconf" : "VI Конференція (2017)"
+            "history.sixthconf" : "VI Конференція (2017)",
+            "logout" : "Вийти",
+            "myacc" : "Мій аккаунт"
         },
         "home" :
         {
@@ -210,7 +213,38 @@
         },
         "rec-res" : {
             "recoveryresult400" : "Не найдено користувача!",
-            "recoveryresult200" : "Успішно відправлено лист на пошту з інструкціями!"
+            "recoveryresult200" : "Успішно відправлено лист на пошту з інструкціями!",
+            "reset" : "Пароль успішно змінено!",
+            "resetnomatch" : "Паролі не співпадають!",
+            "passrequirements" : "Паролі повинні містити не менше 8 символів!",
+            "enternewpass" : "Введіть свій новий пароль : ",
+            "enterconfpass" : "Підтвердіть свій новий пароль : ",
+            "newpass" : "Новий пароль",
+            "confpass" : "Старий пароль",
+            "btnreset" : "Змінити!",
+            "goback" : "Повернутися",
+            "headresetpass" : "Зміна паролю"
+        }
+    },
+    "account" : 
+    {
+        "my-info" : {
+            "head" : "Інформація про аккаунт : ",
+            "fullname" : "ПІБ",
+            "phone" : "Телефон",
+            "academicstatus" : "Академічний статус",
+            "academicrank" : "Вчене звання",
+            "titlereport" : "Тема доповіді",
+            "placework" : "Місце роботи",
+            "section" : "Секція на яку подавалась доповідь",
+            "jobtitle" : "Посада",
+            "format" : "Формат участі",
+            "btnsubmit" : "Зберегти зміни!"
+        },
+        "nav-menu" : {
+            "myinfo" : "Моя інформація",
+            "pay" : "Платежі",
+            "main" : "Головна"
         }
     }
 }

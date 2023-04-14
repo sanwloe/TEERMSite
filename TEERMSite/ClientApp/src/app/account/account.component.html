@@ -1,8 +1,9 @@
 <div class="account_wrapper">
     <div class="account_nav">
         <ul class="account_nav-items">
-            <li class="account_nav-item"><a routerLink="/account">Моя інформація</a></li>
-            <li class="account_nav-item"><a routerLink="pay-info">Платежі</a></li>
+            <li class="account_nav-item"><a routerLink="">{{ 'account.nav-menu.main' | transloco }}</a></li>
+            <li class="account_nav-item"><a routerLink="/account">{{ 'account.nav-menu.myinfo' | transloco }}</a></li>
+            <li class="account_nav-item"><a routerLink="pay-info">{{ 'account.nav-menu.pay' | transloco }}</a></li>
         </ul>
     </div>
     <router-outlet></router-outlet>

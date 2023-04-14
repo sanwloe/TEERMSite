@@ -29,6 +29,7 @@ namespace TEERMSite.Models
                 if (user != null)
                 {
                     handler.ValidateToken(user.Token, tokenvalidator, out var result);
+                    
                     return true;
                 }
                 else

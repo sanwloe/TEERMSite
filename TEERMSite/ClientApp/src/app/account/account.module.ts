@@ -5,6 +5,7 @@ import { PayinfoComponent } from './payinfo/payinfo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslocoModule } from '@ngneat/transloco';
 
 
 const routes : Routes = [
@@ -26,6 +27,7 @@ const routes : Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslocoModule,
     RouterModule.forChild(routes),
   ],
   exports : [RouterModule]

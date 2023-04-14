@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -67,19 +68,15 @@ namespace TEERMSite.Controllers
         {
             try
             {
-                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+                var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == user.Email);
 
                 if (dbuser != null)
                 {
                     if (CryptService.Verify(user.Password, dbuser.Password))
                     {
-                        user = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == dbuser.Email);
+                        dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
 
-                        user.Token = CryptService.NewToken(user.Email, user.AcademicRank, user.Section, user.TitleReport,DateTime.UtcNow.AddDays(1));
-
-                        user.Role = await _authdbcontext.Roles.FirstOrDefaultAsync(r => r.Id == user.RoleId);
-
-                        return Ok(user);
+                        return Ok(dbuser);
                     }
                     return Conflict("Password Error");
                 }
@@ -95,7 +92,7 @@ namespace TEERMSite.Controllers
         {
             if (AuthService.TokenIsValid(user))
             {
-                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+                var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == user.Email);
 
                 dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
 
@@ -130,9 +127,7 @@ namespace TEERMSite.Controllers
 
                     _authdbcontext.SaveChanges();
 
-                    dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
-
-                    dbuser.Role = _authdbcontext.Roles.FirstOrDefault(u => u.Id == dbuser.RoleId);
+                    dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == user.Email);
 
                     dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
 
@@ -145,17 +140,17 @@ namespace TEERMSite.Controllers
         [HttpPost("recovery-password")]
         public async Task <IActionResult> SendRecoveryLink([FromBody] User user)
         {
-            var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+            var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == user.Email);
 
-            if(dbuser != null) 
+            if (dbuser != null) 
             {
                 try
                 {
-                    string token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport, DateTime.UtcNow.AddMinutes(5));
+                    string token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport, DateTime.UtcNow.AddMinutes(30));
 
                     EmailService emailService = new EmailService();
 
-                    string recoverylink = "https://localhost:44403/auth/recovery-password/" + token;
+                    string recoverylink = "https://localhost:44403/auth/reset-password/" + token;
 
                     var result = emailService.SendRecovery(dbuser.Email,recoverylink);
 
@@ -170,6 +165,28 @@ namespace TEERMSite.Controllers
             }
 
             return BadRequest();
+        }
+        [HttpPost("reset-password")]
+        public async Task<ActionResult> ResetPassword([FromBody] User user)
+        {
+            if(AuthService.TokenIsValid(user))
+            {
+                var dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
+
+                if (dbuser!=null)
+                {
+                    dbuser.Password = CryptService.Encrypt(user.Password);
+
+                    _authdbcontext.Users.Update(dbuser);
+
+                    _authdbcontext.SaveChanges();
+
+                    return Ok();
+                }
+                return NotFound("User not found");
+            }
+
+            return Conflict("Token no valid");
         }
     }
 }

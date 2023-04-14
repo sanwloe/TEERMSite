@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Cryptography;
 using TEERMSite.Models;
 
 namespace TEERMSite
@@ -11,8 +14,10 @@ namespace TEERMSite
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddJsonOptions(p =>
+            {
+                p.JsonSerializerOptions.Converters.Add(new IgnoreMethodBaseException());
+            });
             builder.Services.AddDbContext<AuthDbContext>((options) =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connectString"));
@@ -38,6 +43,9 @@ namespace TEERMSite
             {
                 options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
             });
+
+            
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

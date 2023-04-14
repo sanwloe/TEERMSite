@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TranslocoRootModule } from '../transloco-root.module';
+import { TranslocoHttpLoader, TranslocoRootModule } from '../transloco-root.module';
 import { AuthComponent } from './auth.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CommonModule } from '@angular/common';
@@ -8,6 +8,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RecoveryPasswordComponent } from './recovery-password/recovery-password.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { TranslocoModule, TranslocoService, TRANSLOCO_LOADER } from '@ngneat/transloco';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes : Routes = [
     {
@@ -17,7 +19,7 @@ const routes : Routes = [
             { path : '',redirectTo : 'sign-up', pathMatch: 'full' },
             { path : 'sign-in',component : SignInComponent },
             { path : 'recovery-password',component : RecoveryPasswordComponent },
-            { path : 'reset-password',component : ResetPasswordComponent }
+            { path : 'reset-password/:token',component : ResetPasswordComponent }
         ]
     }
 ]
@@ -37,6 +39,8 @@ const routes : Routes = [
     TranslocoRootModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    TranslocoModule,
   ],
   exports : [RouterModule],
   providers: [],

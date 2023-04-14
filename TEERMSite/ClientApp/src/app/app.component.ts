@@ -9,12 +9,15 @@ import { AuthserviceService } from './auth/services/authservice.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
   title = 'app';
   user!: User;
   constructor(private langservice: TranslocoService,
 
-    private authservice: AuthserviceService) { }
+    private authservice: AuthserviceService) 
+    {
+
+    }
 
   ngOnInit() {
     //load lang which select user
@@ -23,6 +26,7 @@ export class AppComponent implements OnInit {
     if (lang) {
       this.langservice.setActiveLang(lang);
     }
+    
     //Check user session out or not
     this.user = JSON.parse(localStorage.getItem('user')!);
     //Check token is expired

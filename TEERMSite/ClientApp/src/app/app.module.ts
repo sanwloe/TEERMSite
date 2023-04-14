@@ -14,6 +14,7 @@ import { ConferencesHistoryModule } from './home/conferencehistory/history/confe
 import { Error404Component } from './error404/error404.component';
 import { AccountComponent } from './account/account.component';
 import { AccountModule } from './account/account.module';
+import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
 
 
 @NgModule({
@@ -29,13 +30,13 @@ import { AccountModule } from './account/account.module';
     ConferenceHistoryModule,
     ConferencesHistoryModule,
     AccountModule,
+    TranslocoModule,
     RouterModule.forRoot([
       { path: 'index', component : HomeComponent },
       { path: 'auth',component : AuthComponent },
       { path: '' ,redirectTo : '/index',pathMatch : 'full' },
       { path: '**',component : Error404Component }
-  ]),
-    TranslocoRootModule
+  ])
   ],
   exports : [RouterModule,TranslocoRootModule],
   providers: [],
