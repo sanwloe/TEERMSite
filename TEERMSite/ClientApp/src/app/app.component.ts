@@ -37,7 +37,6 @@ export class AppComponent implements OnInit{
           console.log('Session is valid!');
           if (jwthelper.isTokenExpired(this.user.token)) {
             alert(translate('auth.guard.sessionOut'));
-            console.log(JSON.stringify(this.user));
             this.authservice.logout('/auth/sign-in');
           }
         },

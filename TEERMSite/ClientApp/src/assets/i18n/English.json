@@ -211,6 +211,8 @@
         "rec-res" : {
             "recoveryresult400" : "No user found!",
             "recoveryresult200" : "Instruction sheet has been successfully sent to your email!",
+            "recovery" : "Password Recovery",
+            "sent" : "Send",
             "reset" : "Password successfully changed!",
             "resetnomatch" : "Passwords do not match!",
             "passrequirements" : "Passwords must contain at least 8 characters!",
