@@ -150,6 +150,8 @@ namespace TEERMSite.Controllers
 
                     EmailService emailService = new EmailService();
 
+                    //
+
                     string recoverylink = "https://localhost:44403/auth/reset-password/" + token;
 
                     var result = emailService.SendRecovery(dbuser.Email,recoverylink);

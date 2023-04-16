@@ -33,17 +33,19 @@ export class ResetPasswordComponent implements OnInit {
 
   resultlabel! : HTMLElement;
 
-  token : string;
+  entoken! : string;
+
+  token! : string;
   
   ngOnInit(): void {
-    try
-    {
-      this.jwtservice.decodeToken(this.token);
-    }
-    catch
-    {
-      this.router.navigateByUrl('/auth/sign-in');
-    }
+    // try
+    // {
+    //   this.jwtservice.decodeToken(this.token);
+    // }
+    // catch
+    // {
+    //   this.router.navigateByUrl('/auth/sign-in');
+    // }
 
     if(this.jwtservice.isTokenExpired(this.token))
     {

@@ -14,11 +14,11 @@ export class AuthserviceService {
 
   signup(user : User) : Observable<User>
   {
-    return this.http.post<User>('https://localhost:7108/api/Auth/sign-up',user);
+    return this.http.post<User>(environment.BASEURI +  '/api/Auth/sign-up',user);
   }
   signin(user : User) : Observable<User>
   {
-    return this.http.post<User>('https://localhost:7108/api/Auth/sign-in',user);
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/sign-in',user);
   }
   logout(navigateTo : string) : void{
     localStorage.removeItem('user');
@@ -28,15 +28,15 @@ export class AuthserviceService {
       this.router.navigateByUrl('/');
   }
   checktoken(user : User) : Observable<User> {
-    return this.http.post<User>('https://localhost:7108/api/Auth/check-token',user);
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/check-token',user);
   }
   userupdateinfo(user : User) : Observable<User> {
-    return this.http.post<User>('https://localhost:7108/api/Auth/user-update-info',user);
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/user-update-info',user);
   }
   sendrecoverylink(user : User) : Observable<User>{
-    return this.http.post<User>('https://localhost:7108/api/Auth/recovery-password',user);
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/recovery-password',user);
   }
   resetpassword(user : User) : Observable<User>{
-    return this.http.post<User>('https://localhost:7108/api/Auth/reset-password',user);
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/reset-password',user);
   }
 }
