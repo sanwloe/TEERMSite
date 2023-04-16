@@ -1,4 +1,3 @@
-
 .important-text{
     padding-top: 20px;
     text-align: center;
@@ -28,8 +27,7 @@
     top: 3;
     content: url(calendar.svg);
     display: inline-block;
-    
-  }
+}
 
 .member{
     margin-top: 10px;

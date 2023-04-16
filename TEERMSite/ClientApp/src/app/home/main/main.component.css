@@ -103,7 +103,6 @@ iframe{
     border: none;
     box-shadow: 5px 5px 40px -10px rgb(23, 0, 128);
     transition: 1s all;
-
 }
 
 .coorganizators-item img{
@@ -118,7 +117,6 @@ iframe{
     border: none;
     box-shadow: 5px 5px 20px -10px rgb(23, 0, 128);
     transition: 1s all;
-
 }
 
 p{
@@ -179,8 +177,8 @@ ul{
 }
 
 .carousel-item img {
-  height: 580px;
-  width: 100%;
+    height: 580px;
+    width: 100%;
 }
 
 @media (max-width:600px) {
@@ -243,7 +241,6 @@ ul{
     .org-text{
         font-size: 30px;
     }
-
 }
 
 @keyframes timerAnimation {

@@ -1,4 +1,3 @@
-
 .general{
     text-align: center;
     padding-top: 20px;
@@ -17,7 +16,6 @@ ul{
     list-style-type: none;
 }
 
-
 li{
     font-size: 18px;
 }
@@ -35,7 +33,6 @@ li::marker{
 .footer-text{
     font-weight: 700;
     font-size: 20px;
-
 }
 
 .footer-email{
@@ -46,6 +43,5 @@ li::marker{
 
 .footer-phone{
     font-weight: 500;
-    /* color: brown; */
     font-size: 20px;
 }

@@ -4,12 +4,7 @@
     text-align: center;
 }
 
-.conf-title{
-    
-}
-
 .conf_list{
-
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -22,9 +17,4 @@
     margin: 0 auto;
     width: 600px;
     height: auto;
-
-}
-
-.conf-img{
-
 }
