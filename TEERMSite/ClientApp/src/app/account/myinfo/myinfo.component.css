@@ -1,4 +1,5 @@
 .account-page{
+    position: relative;
     width: 100%;
     background: linear-gradient(-45deg, #37086d, #5e60d4e0);
     background-size: 400% 400%;
@@ -8,7 +9,7 @@
 .account_page{
     width: 1300px;
     border-radius: 10px;
-    margin: 70px 100px 70px 0px;
+    margin: 70px 100px 0px 0px;
     padding: 10px;
 
     background-color: #f1f1f1;
@@ -93,17 +94,15 @@ button{
 
 
 
-@media (max-width: 1630px) {
+@media (max-width: 1740px) {
     .account_page{
         width: 1000px;
-
     }
 }
 
 @media (max-width: 1450px) {
     .account_page{
         width: 800px;
-        
     }
     .account_page-information-form{
         gap: 100px;
