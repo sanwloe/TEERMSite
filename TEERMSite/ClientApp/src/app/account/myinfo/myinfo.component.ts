@@ -35,9 +35,9 @@ export class MyinfoComponent implements OnInit {
   ngOnInit(): void {
     //Get user info
     this.user = JSON.parse(localStorage.getItem('user')!);
-    if(this.user==null){
-      this.authservice.logout('auth/sign-in');
-    }
+    // if(this.user==null){
+    //   this.authservice.logout('auth/sign-in');
+    // }
 
     if (this.user.fullName != null) {
       this.updateform = this.formbuilder.group({
