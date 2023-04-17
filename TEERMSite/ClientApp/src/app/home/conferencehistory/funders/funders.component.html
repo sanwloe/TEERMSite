@@ -23,8 +23,8 @@
         <li class="list-item">
             <figure>
                 <img src="../../../../assets/funders/lebedev.jpg">
-                <figcaption class="list-item-text">
-                    {{ 'index.funders.descr2' | transloco }}
+                <figcaption [innerHTML]="'index.funders.descr2' | transloco" class="list-item-text">
+                    
                 </figcaption>
             </figure>
         </li>
@@ -38,9 +38,7 @@
                 </figcaption>
             </figure>
         </li>
-
         <hr>
-
         <li>
             <p style="text-align: center;font-size: 18px;">
                 {{ 'index.funders.descr4' | transloco }}

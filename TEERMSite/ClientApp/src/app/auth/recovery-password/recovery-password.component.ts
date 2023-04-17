@@ -30,6 +30,7 @@ export class RecoveryPasswordComponent implements OnInit {
       user =>{
         labelresult!.style.color = "green";
         this.resultmessage = translate('auth.rec-res.recoveryresult200');
+        console.log(user);
 
       },
       error=>{

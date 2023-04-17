@@ -1,8 +1,8 @@
-{{ errormessage }}
 <div class="form_wrapper">
     <div class="form_container">
         <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)" #formDirective="ngForm" class="form">
             <h2>{{ 'auth.sign-in.signin' | transloco }}</h2>
+            <h4 style="color:red">{{ errormessage }}</h4>
             <label for="emailinput">E-mail</label>
             <input formControlName="email" type="text" id="emailinput" placeholder="{{ 'auth.sign-in.enteremail' | transloco }}">
             <br>
