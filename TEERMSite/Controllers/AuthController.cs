@@ -1,8 +1,10 @@
 ﻿using Azure.Core;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
@@ -46,6 +48,7 @@ namespace TEERMSite.Controllers
                 newuser.JobTitle = user.JobTitle;
                 newuser.WorkPlace = user.WorkPlace;
                 newuser.ParticipationFormat = user.ParticipationFormat;
+                newuser.PayInfo = user.PayInfo;
                 newuser.RoleId = 2;
 
                 newuser.Role = await _authdbcontext.Roles.FirstOrDefaultAsync((r) => r.Id == 2);
@@ -53,6 +56,8 @@ namespace TEERMSite.Controllers
                 await _authdbcontext.Users.AddAsync(newuser);
 
                 await _authdbcontext.SaveChangesAsync();
+
+                newuser.Password = "1";
 
                 return Ok(newuser);
             }
@@ -74,6 +79,8 @@ namespace TEERMSite.Controllers
                     {
                         dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
 
+                        dbuser.Password = "1";
+                        
                         return Ok(dbuser);
                     }
                     return Conflict("Password Error");
@@ -93,6 +100,8 @@ namespace TEERMSite.Controllers
                 var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == user.Email);
 
                 dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
+
+                dbuser.Password = "1";
 
                 return Ok(dbuser);
             }
@@ -129,6 +138,8 @@ namespace TEERMSite.Controllers
 
                     dbuser.Token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport,DateTime.UtcNow.AddDays(1));
 
+                    dbuser.Password = "1";
+
                     return Ok(dbuser);
                 }
                 return Conflict("Session is not valid");
@@ -144,7 +155,7 @@ namespace TEERMSite.Controllers
             {
                 try
                 {
-                    string token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport, DateTime.UtcNow.AddMinutes(30));
+                    string token = CryptService.NewToken(dbuser.Email, dbuser.AcademicRank, dbuser.Section, dbuser.TitleReport, DateTime.UtcNow.AddMinutes(10));
 
                     EmailService emailService = new EmailService();
 
@@ -197,6 +208,120 @@ namespace TEERMSite.Controllers
             }
 
             return Conflict("Token no valid");
+        }
+        [HttpPost("get-all-users")]
+        public async Task<ActionResult> GetUsersAsync([FromBody] User user)
+        {
+            var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Id == user.Id);
+
+            if(dbuser.Role.Name == "ADMIN")
+            {
+                var result = await _authdbcontext.Users.ToArrayAsync();
+
+                return Ok(result);
+
+            }
+            return BadRequest();
+        }
+        [HttpPost("get-user")]
+        public async Task<ActionResult> GetUserAsync([FromBody] User user)
+        {
+            var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Id == user.Id);
+
+            if (dbuser.Role.Name == "ADMIN" && dbuser!=null)
+            {
+                var result = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
+
+                if (result != null)
+                {
+                    return Ok(result);
+                }
+
+                return NotFound();
+
+            }
+            return BadRequest();
+        }
+        [HttpPut("update-user")]
+        public async Task<IActionResult> UpdateUser([FromBody] User[] userlist)
+        {
+            var admin = userlist[0];
+
+            var changerequestuser = userlist[1];
+
+            var dbuser = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Id == admin.Id);
+
+            var checkemail = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == changerequestuser.Email);
+
+            if (checkemail != null)
+            {
+                if (checkemail.Id != changerequestuser.Id)
+                {
+                    return Conflict("This e-mail is exists");
+                }
+            }
+
+            if (dbuser.Role.Name == "ADMIN" && changerequestuser!=null)
+            {
+                try
+                {
+                    var updateuser = await _authdbcontext.Users.FirstOrDefaultAsync(x => x.Id == changerequestuser.Id);
+
+                    updateuser.Email = changerequestuser.Email;
+                    updateuser.PayInfo = changerequestuser.PayInfo;
+                    updateuser.WorkPlace = changerequestuser.WorkPlace;
+                    updateuser.FullName = changerequestuser.FullName;
+                    updateuser.AcademicDegree = changerequestuser.AcademicDegree;
+                    updateuser.JobTitle = changerequestuser.JobTitle;
+                    updateuser.TitleReport = changerequestuser.TitleReport;
+                    updateuser.AcademicRank = changerequestuser.AcademicRank;
+                    updateuser.ParticipationFormat = changerequestuser.ParticipationFormat;
+                    updateuser.Phone = changerequestuser.Phone;
+                    updateuser.Section = changerequestuser.Section;
+
+                    _authdbcontext.Update(updateuser);
+
+                    await _authdbcontext.SaveChangesAsync();
+
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    return Conflict(ex.Message);
+                    
+                }
+
+
+               
+            }
+
+            return BadRequest();
+        }
+        [HttpPost("delete-user")]
+        public async Task<IActionResult> DeleteUser([FromBody] User[] userlist)
+        {
+            var adminuser = userlist[0];
+
+            var deleteuser = userlist[1];
+
+            var checkadmin = await _authdbcontext.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Id == adminuser.Id);
+
+            var checkdeleteuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == deleteuser.Email);
+
+            if (checkadmin != null && checkdeleteuser!=null) 
+            {
+                if(checkadmin.Role.Name == "ADMIN" )
+                {
+                    
+                    _authdbcontext.Users.Remove(checkdeleteuser);
+
+                    await _authdbcontext.SaveChangesAsync();
+
+                    return Ok();
+                }
+            }
+
+            return BadRequest(checkdeleteuser);
         }
     }
 }

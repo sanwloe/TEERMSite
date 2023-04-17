@@ -2,10 +2,6 @@
     <nav class="navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
         <div class="nav-div">
             <a class="navbar-brand" [routerLink]="['/']"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="navbar navbar-collapse collapse d-sm-inline-flex justify-content-center"
                 [ngClass]="{ show: isExpanded }">
 
@@ -82,20 +78,24 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['pay-info']">{{ 'index.pay-info.head' | transloco }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/auth/sign-up']" > {{ 'index.home.registration' | transloco }}</a>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a [routerLink]="['/account']" class="nav-link">{{ 'index.nav-menu.myacc' | transloco }}</a>
                 </li>
                 <li class="nav-item">
                     <a [routerLink]="['/auth/sign-in']" class="nav-link">{{ 'index.home.login' | transloco }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/auth/sign-up']" > {{ 'index.home.registration' | transloco }}</a>
+                </li>
                 <li *ngIf="isLogin" class="nav-item">
                     <a class="nav-link" (click)="logout()">{{ 'index.nav-menu.logout' | transloco }}</a>
                 </li>
-                <li class="nav-item">
-                    <a [routerLink]="['/account']" class="nav-link">{{ 'index.nav-menu.myacc' | transloco }}</a>
-                </li>
                 </ul>
             </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
 </header>

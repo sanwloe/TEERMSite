@@ -18,6 +18,8 @@
                     <br>
                     <p class="account_page-information-tag">{{ 'account.my-info.jobtitle' | transloco }}</p>
                     <input formControlName="jobtitle" type="text" class="account_page-information-tag-item" value="{{ user.jobTitle }}" />
+                    <p class="account_page-information-tag">{{ 'account.my-info.payinfo' | transloco }}</p>
+                    <input disabled type="text" class="account_page-information-tag-item" value="{{ user.payInfo }}" />
                     </div>
                 <div class="d">
                     <p class="account_page-information-tag">{{ 'account.my-info.phone' | transloco }}</p>

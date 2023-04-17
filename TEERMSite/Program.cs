@@ -22,6 +22,11 @@ namespace TEERMSite
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connectString"));
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("https://localhost:44403", "https://localhost:1555", "https://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+            });
 
             var app = builder.Build();
             
@@ -32,23 +37,13 @@ namespace TEERMSite
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
-                app.UseCors(options =>
-                {
-                    options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                });
-                
-                
+                app.UseCors("AllowSpecificOrigin");
             }
-            app.UseCors(options =>
-            {
-                options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-            });
-
-            
-
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseCors("AllowSpecificOrigin");
             app.UseRouting();
 
 

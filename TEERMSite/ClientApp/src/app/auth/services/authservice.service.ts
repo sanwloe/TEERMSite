@@ -39,4 +39,16 @@ export class AuthserviceService {
   resetpassword(user : User) : Observable<User>{
     return this.http.post<User>(environment.BASEURI + '/api/Auth/reset-password',user);
   }
+  getusers(user : User) : Observable<User[]> {
+    return this.http.post<User[]>(environment.BASEURI + '/api/Auth/get-all-users',user);
+  }
+  getuser(user : User) : Observable<User>{
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/get-user',user);
+  }
+  update(user : User[]) : Observable<User>{
+    return this.http.put<User>(environment.BASEURI + '/api/Auth/update-user',user);
+  }
+  deleteuser(user : User[]) : Observable<User> {
+    return this.http.post<User>(environment.BASEURI + '/api/Auth/delete-user',user);
+  }
 }

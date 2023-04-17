@@ -89,11 +89,11 @@ export class ResetPasswordComponent implements OnInit {
 
       this.authservice.resetpassword(resetUser).subscribe(
         user =>{
-          alert('Nice');
+          alert(translate('auth.rec-res.resetsucceeded'));
           this.router.navigateByUrl('/auth/sign-in');
         },
         error =>{
-          alert('((');
+          alert(translate('auth.rec-res.resetwrong'));
           this.router.navigateByUrl('auth/sign-in');
         }
       )

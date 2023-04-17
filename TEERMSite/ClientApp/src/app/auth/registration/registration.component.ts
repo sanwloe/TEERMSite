@@ -32,7 +32,8 @@ export class RegistrationComponent implements OnInit {
       password: ['',[Validators.required,Validators.minLength(8)]],
       titlereport: ['', Validators.required],
       section: ['', Validators.required],
-      participationformat: ['', Validators.required]
+      participationformat: ['', Validators.required],
+      payinfo : ['',Validators.required]
     });
     //error event
     this.regform.get('fullname')?.valueChanges.subscribe(value =>{
@@ -153,6 +154,17 @@ export class RegistrationComponent implements OnInit {
       else
       {
         const label = document.getElementById('sectionvalid');
+        label?.classList.replace('is-invalid','is-valid');
+      }
+    });
+    this.regform.get('payinfo')?.valueChanges.subscribe(value =>{
+      if(this.regform.get('payinfo')?.invalid){
+        const label = document.getElementById('payvalid');
+        label?.classList.replace('is-valid','is-invalid');
+      }
+      else
+      {
+        const label = document.getElementById('payvalid');
         label?.classList.replace('is-invalid','is-valid');
       }
     }); 

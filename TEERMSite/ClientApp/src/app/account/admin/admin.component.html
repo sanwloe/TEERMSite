@@ -1,0 +1,94 @@
+<div class="payinfo_page">
+    <div class="payinfo_page-information">
+        <h3>Кабінет адміна</h3>
+        <br>
+        <h3>Список усіх зареєстрованих</h3>
+        <br>
+        <div>
+            <table style="font-size: 16px;">
+                <thead>
+                    <tr>
+                        <th style="border-left: 1px solid black;">ПІБ</th>
+                        <th style="border-left: 1px solid black;">Посада</th>
+                        <th style="border-left: 1px solid black;">Місце роботи</th>
+                        <th style="border-left: 1px solid black;">Телефон</th>
+                        <th style="border-left: 1px solid black;">Email</th>
+                        <th style="border-left: 1px solid black;">Формат участі</th>
+                        <th style="border-left: 1px solid black;">Чек</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border: 1px solid black;" *ngFor="let user of users | async">
+                        <td style="border-left: 1px solid black;">{{ user.fullName }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.jobTitle }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.workPlace }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.phone }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.email }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.participationFormat }}</td>
+                        <td style="border-left: 1px solid black;">{{ user.payInfo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <h3>Видалити користувача : </h3>
+        <form [formGroup]="deleteform" (ngSubmit)="delete(deleteform.value)" #formDirective="ngForm" class="form">
+            <label>E-mail : </label>
+            <input formControlName="email" type="email">
+            <br>
+            <button class="btn btn-danger" type="submit">Видалити!</button>
+        </form>
+        <br>
+        <h3>(Введіть e-mail користувача та натисніть (Найти) , щоб редагувати)<br>Обновити користувача : </h3><br>
+        <button (click)="finduser()" class="btn btn-primary">Найти</button>
+            <br>    
+        <form [formGroup]="updateform" (ngSubmit)="update(updateform.value)" #formDirective="ngForm" class="form">
+            <!-- Адреса електронної пошти e-mail* -->
+            <input formControlName="email" emailvalid type="email" id="emailvalid"
+                placeholder="{{ 'auth.register.email' | transloco }}">
+            <br>
+            <input formControlName="id" type="text" placeholder="GUID користувача : "/>
+            <br>
+            <input formControlName="fullname" namevalid type="text" id="pibvalid"
+                placeholder="{{ 'auth.register.name' | transloco }}">
+            <br>
+            <!-- Науковий ступінь* -->
+            <input formControlName="academicdegree" namevalid type="text" id="naukstupvalid"
+                placeholder="{{ 'auth.register.academicdegree' | transloco }}">
+            <br>
+            <!-- Вчене звання* -->
+            <input formControlName="academicrank" namevalid type="text" id="vchenzvanvalid"
+                placeholder="{{ 'auth.register.academicrank' | transloco }}">
+            <br>
+            <!-- Місце роботи* -->
+            <input formControlName="workplace" namevalid type="text" id="workplacevalid"
+                placeholder="{{ 'auth.register.workplace' | transloco }}">
+            <br>
+            <!-- Посада* -->
+            <input formControlName="jobtitle" namevalid type="text" id="posadavalid"
+                placeholder="{{ 'auth.register.jobtitle' | transloco }}">
+            <br>
+            <!-- Контактний телефон (бажано мобільний)* -->
+            <input formControlName="phone" numbervalid type="tel" id="phonenumber"
+                placeholder="{{ 'auth.register.phone' | transloco }}">
+            <br>
+            <!-- Назва доповіді* -->
+            <input formControlName="titlereport" namevalid type="text" id="dopvalid"
+                placeholder="{{ 'auth.register.titlereport' | transloco }}">
+            <br>
+            <!-- Секція, на яку подається доповідь* -->
+            <input formControlName="section" namevalid type="text" id="sectionvalid"
+                placeholder="{{ 'auth.register.section' | transloco }}">
+            <br>
+            <!-- Формат участі в конференції -->
+            <input formControlName="participationformat" namevalid type="text" id="formatvalid"
+                placeholder="{{ 'auth.register.format' | transloco }}">
+            <!-- Номер платежу --><br>
+
+            <input formControlName="payinfo" namevalid type="text" id="payvalid"
+                placeholder="{{ 'auth.register.payinfo' | transloco }}">
+
+            <button class="btn btn-danger" type="submit">Зберегти</button>
+        </form>
+    </div>
+</div>

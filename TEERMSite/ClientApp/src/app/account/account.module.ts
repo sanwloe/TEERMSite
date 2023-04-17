@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyinfoComponent } from './myinfo/myinfo.component';
-import { PayinfoComponent } from './payinfo/payinfo.component';
+import { AdminComponent } from './admin/admin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 const routes : Routes = [
   { path : 'account' ,component : AccountComponent ,children : [   
     { path : 'my-info',component : MyinfoComponent },
-    { path : 'pay-info',component : PayinfoComponent },
+    { path : 'admin',component : AdminComponent },
     { path : '',redirectTo : 'my-info',pathMatch : 'full'},
   ]}
 ]
@@ -20,7 +20,7 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     MyinfoComponent,
-    PayinfoComponent,
+    AdminComponent,
     AccountComponent
   ],
   imports: [

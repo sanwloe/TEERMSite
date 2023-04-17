@@ -192,6 +192,7 @@
             "titlereport": "Title Report : ",
             "section": "The section to which the presentation is submitted : ",
             "format": "Conference participation format : ",
+            "payinfo" : "Receipt : ",
             "send": "Send!",
             "clear": "Clear Form!",
             "goback": "Go back to the homepage!"
@@ -226,7 +227,9 @@
             "confpass": "Confirm your new password",
             "btnreset": "Reset!",
             "goback": "Go Back",
-            "headresetpass": "Password Recovery"
+            "headresetpass": "Password Recovery",
+            "resetsucceeded" : "Password reset successful!",
+            "resetwrong" : "Something went wrong..."
         }
     },
     "account": {
@@ -241,7 +244,8 @@
             "section": "Section for which the report was submitted",
             "jobtitle": "Job Title",
             "format": "Participation Format",
-            "btnsubmit": "Save Changes!"
+            "btnsubmit": "Save Changes!",
+            "payinfo" : "Receipt"
         },
         "nav-menu": {
             "myinfo": "My Information",
