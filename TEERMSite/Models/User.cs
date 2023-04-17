@@ -27,6 +27,5 @@ namespace TEERMSite.Models
         public Role? Role { get; set; }
         [NotMapped]
         public string? Token { get; set; }
-        public Tenant? Tenant { get; set; }
     }
 }

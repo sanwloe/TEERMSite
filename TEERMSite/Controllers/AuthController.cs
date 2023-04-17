@@ -15,7 +15,7 @@ namespace TEERMSite.Controllers
     public class AuthController : ControllerBase
     {
         public AuthDbContext _authdbcontext;
-        public ConfigurationManager _configuration;
+
         public AuthController(AuthDbContext authDbContext)
         {
             _authdbcontext = authDbContext;
@@ -49,8 +49,6 @@ namespace TEERMSite.Controllers
                 newuser.RoleId = 2;
 
                 newuser.Role = await _authdbcontext.Roles.FirstOrDefaultAsync((r) => r.Id == 2);
-                newuser.Tenant = new Tenant() { Created = DateTime.UtcNow, LastUpdated = DateTime.UtcNow };
-
 
                 await _authdbcontext.Users.AddAsync(newuser);
 
@@ -154,16 +152,26 @@ namespace TEERMSite.Controllers
 
                     string recoverylink = "https://localhost:44403/auth/reset-password/" + token;
 
-                    var result = emailService.SendRecovery(dbuser.Email,recoverylink);
+                    try
+                    {
+                        var result = emailService.SendRecovery(dbuser.Email,recoverylink);
 
-                    return Ok(result.Result);
+                        if (result.Exception != null)
+                        {
+                            return BadRequest(false);
+                        }
+
+                        return Ok(result.Result);
+                    }
+                    catch (Exception)
+                    {
+                        return BadRequest(false);
+                    }
                 }
                 catch (Exception ex)
                 {
                     return Conflict(ex.Message);
                 }
-                
-
             }
 
             return BadRequest();
@@ -173,7 +181,7 @@ namespace TEERMSite.Controllers
         {
             if(AuthService.TokenIsValid(user))
             {
-                var dbuser = _authdbcontext.Users.FirstOrDefault(u => u.Email == user.Email);
+                var dbuser = await _authdbcontext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
 
                 if (dbuser!=null)
                 {

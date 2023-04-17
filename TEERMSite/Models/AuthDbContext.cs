@@ -27,7 +27,6 @@ namespace TEERMSite.Models
         
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<Tenant> Tenants { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -63,7 +62,6 @@ namespace TEERMSite.Models
                     ParticipationFormat = "",
                     RoleId = 1,
                     Role = Roles.FirstOrDefault(r => r.Name == "ADMIN"),
-                    Tenant = new Tenant() { Created = DateTime.UtcNow, LastUpdated = DateTime.UtcNow }
                 }
             }.ToArray();
         }
