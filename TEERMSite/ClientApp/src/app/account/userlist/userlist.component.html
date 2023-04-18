@@ -1,28 +1,66 @@
-<h3>Список усіх зареєстрованих</h3>
-<br>
-<div>
-    <table class="table" style="font-size: 16px;">
-        <thead>
-            <tr>
-                <th style="border-left: 1px solid black;">ПІБ</th>
-                <th style="border-left: 1px solid black;">Посада</th>
-                <th style="border-left: 1px solid black;">Місце роботи</th>
-                <th style="border-left: 1px solid black;">Телефон</th>
-                <th style="border-left: 1px solid black;">Email</th>
-                <th style="border-left: 1px solid black;">Формат участі</th>
-                <th style="border-left: 1px solid black;">Чек</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border: 1px solid black;" *ngFor="let user of users | async">
-                <td style="border-left: 1px solid black;">{{ user.fullName }}</td>
-                <td style="border-left: 1px solid black;">{{ user.jobTitle }}</td>
-                <td style="border-left: 1px solid black;">{{ user.workPlace }}</td>
-                <td style="border-left: 1px solid black;">{{ user.phone }}</td>
-                <td style="border-left: 1px solid black;">{{ user.email }}</td>
-                <td style="border-left: 1px solid black;">{{ user.participationFormat }}</td>
-                <td style="border-left: 1px solid black;">{{ user.payInfo }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="table_container">
+    <h3>Список усіх зареєстрованих</h3>
+    <br>
+    <div class="table_wrapper">
+        <table class="styled-table" style="font-size: 16px;">
+            <thead>
+                <tr>
+                    <th>ПІБ</th>
+                    <th>Посада</th>
+                    <th>Місце роботи</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>Формат участі</th>
+                    <th>Чек</th>
+                </tr>
+            </thead>
+            <!-- <tbody>
+                <tr style="border: 1px solid black;" *ngFor="let user of users | async">
+                    <td style="border-left: 1px solid black;">{{ user.fullName }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.jobTitle }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.workPlace }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.phone }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.email }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.participationFormat }}</td>
+                    <td style="border-left: 1px solid black;">{{ user.payInfo }}</td>
+                </tr>
+            </tbody> -->
+
+            <tbody>
+                <tr>
+                    <td>Іванченко Іван Іванович</td>
+                    <td>Голова орг комітету</td>
+                    <td>Луцький НТУ</td>
+                    <td>+ 380 97 99 97 999</td>
+                    <td>someemail@gmail.com</td>
+                    <td>Дистанційно</td>
+                    <td>4859038958490358495</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>Іванченко Іван Іванович</td>
+                    <td>Голова орг комітету</td>
+                    <td>Луцький НТУ</td>
+                    <td>+ 380 97 99 97 999</td>
+                    <td>someemail@gmail.com</td>
+                    <td>Дистанційно</td>
+                    <td>4859038958490358495</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>Іванченко Іван Іванович</td>
+                    <td>Голова орг комітету</td>
+                    <td>Луцький НТУ</td>
+                    <td>+ 380 97 99 97 999</td>
+                    <td>someemail@gmail.com</td>
+                    <td>Дистанційно</td>
+                    <td>4859038958490358495</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
