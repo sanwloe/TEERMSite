@@ -1,35 +1,5 @@
 <div class="payinfo_page">
     <div class="payinfo_page-information">
-        <h3>Кабінет адміна</h3>
-        <br>
-        <h3>Список усіх зареєстрованих</h3>
-        <br>
-        <div>
-            <table style="font-size: 16px;">
-                <thead>
-                    <tr>
-                        <th style="border-left: 1px solid black;">ПІБ</th>
-                        <th style="border-left: 1px solid black;">Посада</th>
-                        <th style="border-left: 1px solid black;">Місце роботи</th>
-                        <th style="border-left: 1px solid black;">Телефон</th>
-                        <th style="border-left: 1px solid black;">Email</th>
-                        <th style="border-left: 1px solid black;">Формат участі</th>
-                        <th style="border-left: 1px solid black;">Чек</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border: 1px solid black;" *ngFor="let user of users | async">
-                        <td style="border-left: 1px solid black;">{{ user.fullName }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.jobTitle }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.workPlace }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.phone }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.email }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.participationFormat }}</td>
-                        <td style="border-left: 1px solid black;">{{ user.payInfo }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
         <br>
         <h3>Видалити користувача : </h3>
         <form [formGroup]="deleteform" (ngSubmit)="delete(deleteform.value)" #formDirective="ngForm" class="form">

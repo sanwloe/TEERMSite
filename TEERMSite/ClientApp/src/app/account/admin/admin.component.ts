@@ -14,13 +14,10 @@ export class AdminComponent implements OnInit {
   constructor(private authservice: AuthserviceService,
     private formbuilder: FormBuilder) { }
 
-  users!: Observable<User[]>;
   deleteform!: FormGroup;
   updateform!: FormGroup;
   ngOnInit() {
-
-    let user = JSON.parse(localStorage.getItem('user')!);
-    this.users = this.authservice.getusers(user);
+    
     this.deleteform = this.formbuilder.group(
       {
         email: ['', Validators.required]

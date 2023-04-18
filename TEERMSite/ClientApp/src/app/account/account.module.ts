@@ -6,12 +6,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule } from '@ngneat/transloco';
+import { UserlistComponent } from './userlist/userlist.component';
+import { AdminGuard } from './admin.guard';
 
 
 const routes : Routes = [
   { path : 'account' ,component : AccountComponent ,children : [   
     { path : 'my-info',component : MyinfoComponent },
     { path : 'admin',component : AdminComponent },
+    // canActivate : [AdminGuard], data : { permittedRoles : ['ADMIN'] }
+    { path : 'userlist',component : UserlistComponent},
     { path : '',redirectTo : 'my-info',pathMatch : 'full'},
   ]}
 ]
@@ -21,7 +25,8 @@ const routes : Routes = [
   declarations: [
     MyinfoComponent,
     AdminComponent,
-    AccountComponent
+    AccountComponent,
+    UserlistComponent
   ],
   imports: [
     CommonModule,
