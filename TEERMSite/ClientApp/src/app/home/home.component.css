@@ -1,3 +1,29 @@
 p{
     font-size: 20px;
 }
+
+.scroll-to-top-arrow {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent; /* Размер левой границы, можно настроить по вашему вкусу */
+    border-right: 9px solid transparent; /* Размер правой границы, можно настроить по вашему вкусу */
+    border-bottom: 9px solid #3B3C93; /* Цвет и размер верхней границы, можно настроить по вашему вкусу */
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out; /* Анимация при наведении */
+  }
+  
+  /* Стили для фиксированной позиции */
+  .scroll-to-top {
+    position: fixed;
+    bottom: 50px; /* Расстояние от нижнего края экрана */
+    right: 50px; /* Расстояние от правого края экрана */
+    z-index: 9999; /* При необходимости можно задать z-index, чтобы кнопка была выше других элементов страницы */
+    cursor: pointer;
+    /* Установите желаемые стили для вашей кнопки, такие как размер, цвет фона, шрифт и т.д. */
+  }
+  
+  /* Анимация при наведении */
+  .scroll-to-top:hover .scroll-to-top-arrow {
+    transform: translateY(-3px); /* Можно настроить по вашему вкусу */
+  }

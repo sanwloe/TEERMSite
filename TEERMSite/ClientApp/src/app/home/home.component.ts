@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls : ['./home.component.css']
 })
 export class HomeComponent {
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -8,14 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule } from '@ngneat/transloco';
 import { UserlistComponent } from './userlist/userlist.component';
 import { AdminGuard } from './admin.guard';
+import { AuthGuard } from '../auth/auth.guard';
 
 
 const routes : Routes = [
-  { path : 'account' ,component : AccountComponent ,children : [   
+  { path : 'account' ,canActivate :[AuthGuard], data : { permittedRoles : ['ADMIN','USER']} , component : AccountComponent ,children : [   
     { path : 'my-info',component : MyinfoComponent },
-    { path : 'admin',component : AdminComponent },
-    // canActivate : [AdminGuard], data : { permittedRoles : ['ADMIN'] }
-    { path : 'userlist',component : UserlistComponent},
+    { path : 'admin',component : AdminComponent,canActivate : [AdminGuard], data : { permittedRoles : ['ADMIN'] } },
+    { path : 'userlist',component : UserlistComponent,canActivate : [AdminGuard], data : { permittedRoles : ['ADMIN']} },
     { path : '',redirectTo : 'my-info',pathMatch : 'full'},
   ]}
 ]

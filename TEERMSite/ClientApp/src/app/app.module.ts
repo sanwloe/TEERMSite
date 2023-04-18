@@ -15,6 +15,7 @@ import { Error404Component } from './error404/error404.component';
 import { AccountComponent } from './account/account.component';
 import { AccountModule } from './account/account.module';
 import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
+import { AuthGuard } from './auth/auth.guard';
 
 
 @NgModule({

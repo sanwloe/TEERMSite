@@ -14,51 +14,15 @@
                     <th>Чек</th>
                 </tr>
             </thead>
-            <!-- <tbody>
-                <tr style="border: 1px solid black;" *ngFor="let user of users | async">
-                    <td style="border-left: 1px solid black;">{{ user.fullName }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.jobTitle }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.workPlace }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.phone }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.email }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.participationFormat }}</td>
-                    <td style="border-left: 1px solid black;">{{ user.payInfo }}</td>
-                </tr>
-            </tbody> -->
-
             <tbody>
-                <tr>
-                    <td>Іванченко Іван Іванович</td>
-                    <td>Голова орг комітету</td>
-                    <td>Луцький НТУ</td>
-                    <td>+ 380 97 99 97 999</td>
-                    <td>someemail@gmail.com</td>
-                    <td>Дистанційно</td>
-                    <td>4859038958490358495</td>
-                </tr>
-            </tbody>
-
-            <tbody>
-                <tr>
-                    <td>Іванченко Іван Іванович</td>
-                    <td>Голова орг комітету</td>
-                    <td>Луцький НТУ</td>
-                    <td>+ 380 97 99 97 999</td>
-                    <td>someemail@gmail.com</td>
-                    <td>Дистанційно</td>
-                    <td>4859038958490358495</td>
-                </tr>
-            </tbody>
-
-            <tbody>
-                <tr>
-                    <td>Іванченко Іван Іванович</td>
-                    <td>Голова орг комітету</td>
-                    <td>Луцький НТУ</td>
-                    <td>+ 380 97 99 97 999</td>
-                    <td>someemail@gmail.com</td>
-                    <td>Дистанційно</td>
-                    <td>4859038958490358495</td>
+                <tr *ngFor="let user of users | async">
+                    <td>{{ user.fullName }}</td>
+                    <td>{{ user.jobTitle }}</td>
+                    <td>{{ user.workPlace }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.participationFormat }}</td>
+                    <td>{{ user.payInfo }}</td>
                 </tr>
             </tbody>
         </table>

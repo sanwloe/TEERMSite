@@ -173,6 +173,37 @@
             "info": "To cover the expenses associated with organizing the conference and publishing the conference proceedings, an organizational contribution of 100 UAH is required. This includes the cost of remote participation in the conference with an electronic version of the conference proceedings.In case of personal attendance in Lutsk (at the \"Prolysok\" recreation center), an organizational contribution of 450 UAH is required. This covers the expenses associated with organizing the conference (booking the conference room at the \"Prolysok\" recreation center) and publishing the conference proceedings.",
             "info1": "<strong>For legal entities:</strong><br>Lutsk National Technical University<br>EDRPOU 05477296 in DKSU in Kyiv. MFO 820172<br>Р/р UA558201720313201001201017820<br>Payment purpose: Participation fee for TERMM-2023 conference (Full name).",
             "info2": "<strong>For individuals:</strong><br>to PrivatBank card 4149 4999 9084 4506<br>Recipient: Melnyk Yuliia Anatoliivna<br>Payment purpose: Participation fee for TERMM-2023-2023 conference (Full name).<br>Contact: Melnyk Y.A. Phone: +38 095 502 4856<br>E-mail: melnykjulka@gmail.com"
+        },
+        "conferences": {
+            "conference1": {
+                "name": "I INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date": "May 28-31, 2007",
+                "titlereport": "THEORETICAL AND EXPERIMENTAL RESEARCH IN MATERIALS SCIENCE AND MECHANICAL ENGINEERING"
+            },
+            "conference2": {
+                "name": "II INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date": "June 1-6, 2009"
+            },
+            "conference3": {
+                "name": "III INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date": "June 6-10, 2011"
+            },
+            "conference4": {
+                "name": "IV INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date": "June 3-7, 2013"
+            },
+            "conference5": {
+                "name": "V INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date": "May 25-29, 2015"
+            },
+            "conference6": {
+                "name": "VI INTERNATIONAL SCIENTIFIC PRACTICAL CONFERENCE",
+                "date2": "May 30 - June 3",
+                "title2": "Dedicated to the 10th anniversary of foundation",
+                "place": "Lutsk, 2017",
+                "country": "Ukraine",
+                "titlereport": "THEORETICAL AND EXPERIMENTAL RESEARCH IN MATERIALS SCIENCE AND MECHANICAL ENGINEERING"
+            }
         }
     },
     "auth": {
@@ -192,7 +223,7 @@
             "titlereport": "Title Report : ",
             "section": "The section to which the presentation is submitted : ",
             "format": "Conference participation format : ",
-            "payinfo" : "Receipt : ",
+            "payinfo": "Receipt : ",
             "send": "Send!",
             "clear": "Clear Form!",
             "goback": "Go back to the homepage!"
@@ -228,8 +259,8 @@
             "btnreset": "Reset!",
             "goback": "Go Back",
             "headresetpass": "Password Recovery",
-            "resetsucceeded" : "Password reset successful!",
-            "resetwrong" : "Something went wrong..."
+            "resetsucceeded": "Password reset successful!",
+            "resetwrong": "Something went wrong..."
         }
     },
     "account": {
@@ -245,7 +276,7 @@
             "jobtitle": "Job Title",
             "format": "Participation Format",
             "btnsubmit": "Save Changes!",
-            "payinfo" : "Receipt"
+            "payinfo": "Receipt"
         },
         "nav-menu": {
             "myinfo": "My Information",

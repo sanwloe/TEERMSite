@@ -62,6 +62,23 @@ namespace TEERMSite.Models
                     ParticipationFormat = "",
                     RoleId = 1,
                     Role = Roles.FirstOrDefault(r => r.Name == "ADMIN"),
+                },
+                new User {
+                    FullName = "Admin",
+                    AcademicDegree = "",
+                    Section = "",
+                    AcademicRank = "",
+                    Email = "termm.service@gmail.com",
+                    Phone = "+380977012344",
+                    Password = CryptService.Encrypt("iadministrator2023@"),
+                    Token = CryptService.NewToken("oleksandr.ill.x@gmail.com","null","null","null",DateTime.UtcNow.AddDays(1)),
+                    DateRegistration = DateTime.Now,
+                    TitleReport = "",
+                    JobTitle = "",
+                    WorkPlace = "",
+                    ParticipationFormat = "",
+                    RoleId = 1,
+                    Role = Roles.FirstOrDefault(r => r.Name == "ADMIN"),
                 }
             }.ToArray();
         }
