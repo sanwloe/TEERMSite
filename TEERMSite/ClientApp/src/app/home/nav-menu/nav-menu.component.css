@@ -1,22 +1,19 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-  
-}
-
-button.navbar-toggler{
-  background-color: white;
+nav{
+  background-color: #3B3C93;
 }
 
 .nav-div{
-  background-color: #3B3C93;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
 }
 
-ul li .nav-link {
-  color:white;
-  font-size: 16px;
+.nav-item{
+  color: white;
+  margin: auto;
+  height: auto;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -66,7 +63,15 @@ ul li .nav-link {
   .nav-div{
     display: flex;
     flex-direction: row;
-    background-color: #3B3C93;
+    justify-content: center;
+    height: 50px;
+  }
+  .nav-item{
+    height: 100%;
+    padding-top : 10px;
+  }
+  .nav-link{
+    height: 80%;
   }
 }
 @media (max-width:600px) {
@@ -74,10 +79,11 @@ ul li .nav-link {
     font-size : 14px;
   }
   .nav-div{
-    display: flex;
-    flex-direction: column;
-    background-color: #3B3C93;
-    width: 100%;
+    display: block; 
+  }
+  .nav-item{
+    margin: 0;
+    padding: 20px 0 0 20px;
   }
   .navbar-nav{
     padding-left: 20px;

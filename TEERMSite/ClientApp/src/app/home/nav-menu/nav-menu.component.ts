@@ -20,8 +20,18 @@ export class NavMenuComponent implements OnInit {
   rightmenu = document.getElementById('droprightmenu');
 
   toggle() {
-    this.isExpanded = !this.isExpanded;
-    // this.dataservice.nav_expand = !this.isExpanded;
+    if(this.isExpanded == true)
+    {
+      let navmenu = document.getElementById('navmenu');
+      navmenu!.style.display = 'none';
+      this.isExpanded = false;
+    }
+    else if(this.isExpanded == false)
+    {
+      let navmenu = document.getElementById('navmenu');
+      navmenu!.style.display = 'block';
+      this.isExpanded = true;
+    }
   }
 
   ngOnInit(): void {
