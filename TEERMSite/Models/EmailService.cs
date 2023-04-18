@@ -17,7 +17,7 @@ namespace TEERMSite.Models
                 Host = "smtp.gmail.com",
                 Port = 587,               
                 EnableSsl = true,
-                Credentials = new NetworkCredential("termm.service@gmail.com", "lgjmdrmruijedtao"),
+                Credentials = new NetworkCredential(CryptService.GetValue("emailservice"), CryptService.GetValue("emailapppass")),
             };
             _messageRecoveryPass = new MailMessage();
             
