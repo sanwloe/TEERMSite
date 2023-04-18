@@ -99,7 +99,7 @@
             <a class="nav-link" [routerLink]="['/auth/sign-up']"> {{ 'index.home.registration' | transloco }}</a>
         </div>
         <div *ngIf="isLogin" class="nav-item">
-            <a class="nav-link" (click)="logout()">{{ 'index.nav-menu.logout' | transloco }}</a>
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()">{{ 'index.nav-menu.logout' | transloco }}</a>
         </div>
         <br>
     </div>
