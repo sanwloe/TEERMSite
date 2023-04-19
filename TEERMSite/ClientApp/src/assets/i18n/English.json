@@ -219,7 +219,7 @@
             "phone": "Phone : +380123456789 : ",
             "jobtitle": "Job Title : ",
             "email": "Email : ",
-            "password": "Password : ",
+            "password": "Come up with a password (at least 8 characters):",
             "titlereport": "Title Report : ",
             "section": "The section to which the presentation is submitted : ",
             "format": "Conference participation format : ",
