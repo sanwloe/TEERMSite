@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  BASEURI : "https://localhost:1555"
+  BASEURI : "https://termm.lntu.edu.ua"
 };

@@ -57,6 +57,10 @@ namespace TEERMSite.Controllers
 
                 await _authdbcontext.SaveChangesAsync();
 
+                EmailService emailService = new EmailService();
+
+                await emailService.SendUser("samchuk204@gmail.com", newuser);
+
                 newuser.Password = "1";
 
                 return Ok(newuser);

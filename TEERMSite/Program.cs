@@ -25,7 +25,7 @@ namespace TEERMSite
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("https://localhost:44403", "https://localhost:1555", "https://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+                    builder => builder.WithOrigins("https://localhost:44403", "https://localhost:1555", "https://localhost:4200", "https://termm.lntu.edu.ua").AllowAnyMethod().AllowAnyHeader());
             });
 
             var app = builder.Build();

@@ -8,7 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 export class MainComponent implements OnInit, OnDestroy {
 
-  timeEnd : Date = new Date('May 1,2023 00:00:00');
+  timeEnd : Date = new Date('May 23,2023 00:00:00');
 
   result: any = null;
 
