@@ -1,0 +1,53 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-weight: bold;
+}
+.header img{
+    width: 50%;
+    height: 100px;
+}
+.program_2{
+    display: flex;
+    padding-left: 30px;
+}
+.program_2 img{
+    height: 100px;
+}
+.program_2_1{
+    margin-left: 30px;
+    width: 100%;
+}
+.program_date{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.description{
+    font-weight: bold;
+}
+.time{
+    min-width: 130px;
+}
+.program_date_element{
+    display: inline-flex;
+    padding-left: 30px;
+    
+}
+.program_date_element .time{
+    padding-right: 30px;
+    
+}
+
+
+@media(max-width : 700px){
+    .header{
+        flex-wrap: wrap;
+    }
+    .header img{
+        width: 100%;
+        height: 100px;
+    }
+}

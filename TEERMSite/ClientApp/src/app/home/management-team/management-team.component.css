@@ -1,115 +1,75 @@
-ul {
+img{
+    height: 450px;
+    width: auto;
+    padding-bottom: 20px;
+}
+.photolist{
     display: flex;
-    flex-direction: column;
-    list-style-position: inside;
-    list-style-type: none;
-    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
-
-.management_h4 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 30px;
-    text-align: center;
+.photolist_item{
+    width: min-content;
 }
-
-.team_name{
-    font-weight: 700;
+p.header2{
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+p.name{
     font-size: 22px;
-    text-align: center;
-    margin-bottom: 5px;
+    font-weight: bold;
 }
-
-.team_info{
-    font-size: 16px;
-    text-align: center;
+p.description{
+    font-size: 18px;
+    font-weight: 500;
 }
 p{
-    font-size: 22px;
-}
-
-.coChairs{
-    font-size: 30px;
+    word-wrap: break-word;
     text-align: center;
+
+}
+.photolist div{
+    margin: 20px;
 }
 
-.list{
-    display: flex;
-    gap:20px;
-    flex-direction: row;
+
+
+
+@media(max-width:1600px){
+    img{
+        height: 490px;
+        width: auto;
+    }
 }
-
-.list li {
-    width: calc(100% / 3);
+@media(max-width:1300px){
+    img{
+        height: 400px;
+        width: auto;
+    }
 }
-
-.list li img {
-    height: 450px;
+@media(max-width:1200px){
+    img{
+        height: 330px;
+        width: auto;
+    }
 }
-
-.rector {
-    max-width: 25%;
-    margin-left: auto;
-    margin-right: auto;
+@media(max-width:1000px){
+    img{
+        height: 240px;
+        width: auto;
+    }
 }
-
-@media (max-width: 1100px) {
-    .rector {
-        max-width: 45%;
-        margin-left: auto;
-        margin-right: auto;
+@media(max-width:600px){
+    img{
+        height: 400px;
+        width: auto;
     }
-} 
-
-@media (max-width: 900px) {
-    .rector {
-        max-width: 55%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .list {
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .list li {
-        width: 70%;
-    }
-} 
-
-@media (max-width: 750px) {
-    .rector {
-        max-width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .list li {
-        width: 80%;
-        height: 80%;
-    }
-} 
-
-@media (max-width: 600px) {
-    .list{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .list .list-item {
-        margin-top: 170px;
-        height: 450px;
-        width: 100%;
-    }
-
-    .list  :nth-of-type(1){
-        margin-top: 10px;
-    }
-
-    .rector {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+}
+@media(max-width:400px){
+    img{
+        height: 350px;
+        width: auto;
     }
 }

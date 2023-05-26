@@ -59,7 +59,7 @@ namespace TEERMSite.Controllers
 
                 EmailService emailService = new EmailService();
 
-                await emailService.SendUser("samchuk204@gmail.com", newuser);
+                //await emailService.SendUser("samchuk204@gmail.com", newuser);
 
                 newuser.Password = "1";
 

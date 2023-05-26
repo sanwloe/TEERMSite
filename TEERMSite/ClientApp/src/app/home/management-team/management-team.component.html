@@ -1,73 +1,91 @@
-<div class="container">
-    <ul class="management">
-        <h4 class="management_h4">{{ 'index.management-team.header' | transloco }}</h4>
-        <li class="rector">
-            <figure>
-                <p class="team-img">
-                    <img src="../../../assets/management-team/vahovych.jpg">
-                </p>
-                <figcaption>
-                    <div class="team_name">
-                        {{ 'index.management-team.1.name' | transloco }}
-                    </div> 
-                    <div class="team_info">
-                        {{ 'index.management-team.1' | transloco }}
-                    </div>
-                </figcaption>
-            </figure>
-        </li>
-    </ul>
-    <hr>
+<!-- <div class="container">
+    <div class="newlist">
+        <div>
+            <h4 class="management_h4" style="text-align: center;">{{ 'index.management-team.header' | transloco }}</h4>
+            <img src="../../../assets/management-team/vahovych.jpg">
+            <div class="team_name">
+                {{ 'index.management-team.1.name' | transloco }}
+            </div>
+            <div class="team_info">
+                {{ 'index.management-team.1' | transloco }}
+            </div>
+        </div>
+    </div>
     <p class="coChairs">
         <strong>
             {{ 'index.management-team.header2' | transloco }}
         </strong>
     </p>
-    <ul class="list">
-        <li class="list-item">
-            <figure>
-                <p>
-                    <img src="../../../assets/management-team/nazarchuk.jpg">
-                </p>
-                <figcaption>
-                    <div class="team_name">
-                        {{ 'index.management-team.2.name' | transloco }}
-                    </div> 
-                    <div class="team_info">
-                        {{ 'index.management-team.2' | transloco }}
-                    </div>
-                </figcaption>
-            </figure>
-        </li>
-        <li class="list-item">
-            <figure>
-                <p>
-                    <img src="../../../assets/management-team/bagluk.jpg">
-                </p>
-                <figcaption>
-                    <div class="team_name">
-                        {{ 'index.management-team.3.name' | transloco }}
-                    </div> 
-                    <div class="team_info">
-                        {{ 'index.management-team.3' | transloco }}
-                    </div>
-                </figcaption>
-            </figure>
-        </li>
-        <li class="list-item">
-            <figure>
-                <p>
-                    <img src="../../../assets/management-team/klymenko.jpg">
-                </p>
-                <figcaption>
-                    <div class="team_name">
-                        {{ 'index.management-team.4.name' | transloco }}
-                    </div> 
-                    <div class="team_info">
-                        {{ 'index.management-team.4' | transloco }}
-                    </div>
-                </figcaption>
-            </figure>
-        </li>
-    </ul>
+    <div class="newlist">
+        <div>
+            <div>
+                <img src="../../../assets/management-team/nazarchuk.jpg">
+            </div>
+            <div class="team_name">
+                {{ 'index.management-team.2.name' | transloco }}
+            </div>
+            <div class="team_info">
+                {{ 'index.management-team.2' | transloco }}
+            </div>
+        </div>
+        <div>
+            <div class="rector">
+                <img src="../../../assets/management-team/bagluk.jpg">
+            </div>
+            <div class="team_name">
+                {{ 'index.management-team.3.name' | transloco }}
+            </div>
+            <div class="team_info">
+                {{ 'index.management-team.3' | transloco }}
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="../../../assets/management-team/klymenko.jpg">
+            </div>
+            <div class="team_name">
+                {{ 'index.management-team.4.name' | transloco }}
+            </div>
+            <div class="team_info">
+                {{ 'index.management-team.4' | transloco }}
+            </div>
+        </div>
+    </div>
+</div> -->
+<br>
+<p class="header2">{{ 'index.management-team.header' | transloco }}</p>     
+
+<div class="photolist">
+    <div class="photolist_item">
+        <img src="../../../assets/management-team/vahovych.jpg">
+        <p class="name">
+            {{ 'index.management-team.1.name' | transloco }}
+        </p>
+        <p class="description">
+            {{ 'index.management-team.1' | transloco }}
+        </p>
+    </div>
+</div>
+
+<hr>
+<p class="header2">
+    {{ 'index.management-team.header2' | transloco }}
+</p>
+<div class="photolist">
+    <div class="photolist_item">
+        <img src="../../../assets/management-team/nazarchuk.jpg">
+        <p class="name">{{ 'index.management-team.2.name' | transloco }}</p>
+        <p class="description">{{ 'index.management-team.2' | transloco }}</p>
+    </div>
+    <div class="photolist_item"> 
+        <img src="../../../assets/management-team/bagluk.jpg">
+        <p class="name">{{ 'index.management-team.3.name' | transloco }}</p>
+        <p class="description">{{ 'index.management-team.3' | transloco }}</p>          
+    </div>
+    <div class="photolist_item">
+        <img src="../../../assets/management-team/klymenko.jpg">
+        <p class="name">{{ 'index.management-team.4.name' | transloco }}</p>
+        <p class="description">{{ 'index.management-team.4' | transloco }}</p>      
+    </div>
+    
 </div>

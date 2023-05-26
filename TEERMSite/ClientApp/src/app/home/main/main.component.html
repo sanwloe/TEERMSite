@@ -1,24 +1,28 @@
 <div class="container">
     <section class="main">
-        <p class='main_timer-title'>{{ 'index.home.time' | transloco }}</p>
-        <div class="timer">
-            <div>
-                <p>{{ days }}</p>
-                <span>{{ 'index.home.days' | transloco }}</span>
+        <div *ngIf="!result">
+            <p class='main_timer-title'>{{ 'index.home.time' | transloco }}</p>
+            <div class="timer">
+                <div>
+                    <p>{{ days }}</p>
+                    <span>{{ 'index.home.days' | transloco }}</span>
+                </div>
+                <div>
+                    <p>{{ hours }}</p>
+                    <span>{{ 'index.home.hours' | transloco }}</span>
+                </div>
+                <div>
+                    <p>{{ minutes }}</p>
+                    <span>{{ 'index.home.minutes' | transloco }}</span>
+                </div>
+                <div>
+                    <p>{{ seconds }}</p>
+                    <span>{{ 'index.home.seconds' | transloco }}</span>
+                </div>
             </div>
-            <div>
-                <p>{{ hours }}</p>
-                <span>{{ 'index.home.hours' | transloco }}</span>
-            </div>
-            <div>
-                <p>{{ minutes }}</p>
-                <span>{{ 'index.home.minutes' | transloco }}</span>
-            </div>
-            <div>
-                <p>{{ seconds }}</p>
-                <span>{{ 'index.home.seconds' | transloco }}</span>
-            </div>
-            {{ result }}
+        </div>
+        <div *ngIf="result" class="timer">
+            <span style="font-size: 20px;">{{ 'index.home.registryend' | transloco }}</span>
         </div>
         <hr />
         <div>

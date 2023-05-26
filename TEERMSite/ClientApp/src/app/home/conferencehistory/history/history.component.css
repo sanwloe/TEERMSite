@@ -13,10 +13,10 @@ ul{
     list-style-type: none;
 }
 img{
-    height: 300px;
-    width: 300px;
     object-fit: cover;
-}
+    width: 100%;
+    height: auto;
+  }
 li{
     padding-left : 10px;
     padding-bottom: 10px;

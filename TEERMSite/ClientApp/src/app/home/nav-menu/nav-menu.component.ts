@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 import { AuthserviceService } from 'src/app/auth/services/authservice.service';
 import { DataService } from '../DataService';
 
@@ -9,13 +10,15 @@ import { DataService } from '../DataService';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor (private authservice : AuthserviceService)  {}
+  constructor (private authservice : AuthserviceService,private langservice : TranslocoService)  {}
 
   isExpanded = true;
 
   isLogin = false;
   
   showMenu = false;
+
+  public reglink : string = "";
 
   rightmenu = document.getElementById('droprightmenu');
 
@@ -35,6 +38,24 @@ export class NavMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // let lang = localStorage.getItem('lang');
+    // if(!lang) {
+    //   this.reglink = "https://docs.google.com/forms/d/1EJLUmctkUfGaQhLF304WP6_x2cqIY1JJqFLPZmep5bU/edit";
+    // }
+    this.langservice.langChanges$.subscribe(() =>{
+        let lang = localStorage.getItem('lang');
+        if(this.langservice.getActiveLang() == 'English')
+        {
+          this.reglink = "https://docs.google.com/forms/d/1mC9cxI-7HdxLrhFFtCW4Y5rp3gWmn-rfU4cfNsglxnI/edit";
+        }
+        else if(this.langservice.getActiveLang() == 'Ukrainian'){
+          this.reglink = "https://docs.google.com/forms/d/1EJLUmctkUfGaQhLF304WP6_x2cqIY1JJqFLPZmep5bU/edit";
+        }
+        else{
+          this.reglink = 'https://docs.google.com/forms/d/1mC9cxI-7HdxLrhFFtCW4Y5rp3gWmn-rfU4cfNsglxnI/edit';
+        }
+    });
 
     let user = JSON.parse(localStorage.getItem('user')!);
 

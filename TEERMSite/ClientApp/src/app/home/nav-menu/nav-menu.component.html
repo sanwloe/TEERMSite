@@ -89,18 +89,18 @@
         <div class="nav-item">
             <a class="nav-link" [routerLink]="['pay-info']">{{ 'index.pay-info.head' | transloco }}</a>
         </div>
-        <div *ngIf="isLogin" class="nav-item">
+        <!-- <div *ngIf="isLogin" class="nav-item">
             <a [routerLink]="['/account']" class="nav-link">{{ 'index.nav-menu.myacc' | transloco }}</a>
-        </div>
+        </div> -->
         <div class="nav-item">
-            <a class="nav-link" [routerLink]="['/auth/sign-up']"> {{ 'index.home.registration' | transloco }}</a>
+            <a class="nav-link" [href]="reglink"> {{ 'index.home.registration' | transloco }}</a>
         </div>
-        <div class="nav-item">
+        <!-- <div class="nav-item">
             <a [routerLink]="['/auth/sign-in']" class="nav-link">{{ 'index.home.login' | transloco }}</a>
-        </div>
-        <div *ngIf="isLogin" class="nav-item">
+        </div> -->
+        <!-- <div *ngIf="isLogin" class="nav-item">
             <a class="nav-link" style="cursor: pointer;" (click)="logout()">{{ 'index.nav-menu.logout' | transloco }}</a>
-        </div>
+        </div> -->
         <br>
     </div>
     <button style="background-color: white;text-align: center;width: 100%;" class="navbar-toggler" type="button" (click)="toggle()">

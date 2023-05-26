@@ -26,24 +26,28 @@ export class AppComponent implements OnInit{
     if (lang) {
       this.langservice.setActiveLang(lang);
     }
+    this.loadtranslate();
     
     //Check user session out or not
-    this.user = JSON.parse(localStorage.getItem('user')!);
-    //Check token is expired
-    let jwthelper = new JwtHelperService();
-    if (this.user != null)
-      this.authservice.checktoken(this.user).subscribe(
-        user => {
-          console.log('Session is valid!');
-          if (jwthelper.isTokenExpired(this.user.token)) {
-            alert(translate('auth.guard.sessionOut'));
-            this.authservice.logout('/auth/sign-in');
-          }
-        },
-        error => {
-          alert(translate('auth.guard.checktoken'));
-          this.authservice.logout('/auth/sign-in')
-        }
-      )
+    // this.user = JSON.parse(localStorage.getItem('user')!);
+    // //Check token is expired
+    // let jwthelper = new JwtHelperService();
+    // if (this.user != null)
+    //   this.authservice.checktoken(this.user).subscribe(
+    //     user => {
+    //       console.log('Session is valid!');
+    //       if (jwthelper.isTokenExpired(this.user.token)) {
+    //         alert(translate('auth.guard.sessionOut'));
+    //         this.authservice.logout('/auth/sign-in');
+    //       }
+    //     },
+    //     error => {
+    //       alert(translate('auth.guard.checktoken'));
+    //       this.authservice.logout('/auth/sign-in')
+    //     }
+    //   )
+  }
+  async loadtranslate(){
+    await this.langservice.load(this.langservice.getActiveLang()).toPromise();
   }
 }
