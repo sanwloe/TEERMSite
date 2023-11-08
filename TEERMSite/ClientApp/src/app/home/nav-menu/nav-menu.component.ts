@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
 import { AuthserviceService } from 'src/app/auth/services/authservice.service';
 import { DataService } from '../DataService';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-nav-menu',
@@ -10,7 +11,7 @@ import { DataService } from '../DataService';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor (private authservice : AuthserviceService,private langservice : TranslocoService)  {}
+  constructor (private authservice : AuthserviceService,private langservice : TranslocoService,private http : HttpClient)  {}
 
   isExpanded = true;
 
@@ -70,6 +71,24 @@ export class NavMenuComponent implements OnInit {
   }
   logout(){
     this.authservice.logout('/auth/sign-in');
+  }
+  uploadResultOfConference()
+  {
+    const fileName = 'TEERM2023.pdf'; // Встановіть ім'я вашого файлу
+    const url = '../ClientApp/src/assets/TEERM2023.pdf'; // Встановіть URL вашого файлу
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/octet-stream',
+    });
+
+    this.http.get(url, { headers: headers, responseType: 'blob' }).subscribe((response: any) => {
+      const url = window.URL.createObjectURL(response);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
   }
 
 
